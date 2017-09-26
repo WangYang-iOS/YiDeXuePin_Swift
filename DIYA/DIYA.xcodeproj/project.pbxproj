@@ -7,15 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		189A5FE21F7A3F8B00213BFB /* WYExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A5FE11F7A3F8B00213BFB /* WYExtensions.swift */; };
 		18F006821F7A04F200F68579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F006811F7A04F200F68579 /* AppDelegate.swift */; };
 		18F006891F7A04F200F68579 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F006881F7A04F200F68579 /* Assets.xcassets */; };
+		18F0069A1F7A241C00F68579 /* WYTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F006991F7A241C00F68579 /* WYTabBarController.swift */; };
+		18F0069C1F7A248600F68579 /* WYNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F0069B1F7A248600F68579 /* WYNavigationController.swift */; };
+		18F0069E1F7A249500F68579 /* WYBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F0069D1F7A249500F68579 /* WYBaseViewController.swift */; };
+		18F006A01F7A297600F68579 /* WYHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F0069F1F7A297600F68579 /* WYHomeViewController.swift */; };
+		18F006A21F7A297F00F68579 /* WYClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F006A11F7A297F00F68579 /* WYClassViewController.swift */; };
+		18F006A41F7A298A00F68579 /* WYMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F006A31F7A298A00F68579 /* WYMineViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		189A5FE11F7A3F8B00213BFB /* WYExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYExtensions.swift; sourceTree = "<group>"; };
 		18F0067E1F7A04F200F68579 /* DiYa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiYa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F006811F7A04F200F68579 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F006881F7A04F200F68579 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18F0068D1F7A04F200F68579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18F006991F7A241C00F68579 /* WYTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYTabBarController.swift; sourceTree = "<group>"; };
+		18F0069B1F7A248600F68579 /* WYNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYNavigationController.swift; sourceTree = "<group>"; };
+		18F0069D1F7A249500F68579 /* WYBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYBaseViewController.swift; sourceTree = "<group>"; };
+		18F0069F1F7A297600F68579 /* WYHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYHomeViewController.swift; sourceTree = "<group>"; };
+		18F006A11F7A297F00F68579 /* WYClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYClassViewController.swift; sourceTree = "<group>"; };
+		18F006A31F7A298A00F68579 /* WYMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYMineViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,11 +62,74 @@
 		18F006801F7A04F200F68579 /* DiYa */ = {
 			isa = PBXGroup;
 			children = (
+				18F006931F7A23F100F68579 /* Class */,
 				18F006811F7A04F200F68579 /* AppDelegate.swift */,
 				18F006881F7A04F200F68579 /* Assets.xcassets */,
 				18F0068D1F7A04F200F68579 /* Info.plist */,
 			);
 			path = DiYa;
+			sourceTree = "<group>";
+		};
+		18F006931F7A23F100F68579 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				18F006961F7A23F100F68579 /* Main */,
+				18F006951F7A23F100F68579 /* Home */,
+				18F006941F7A23F100F68579 /* Class */,
+				18F006971F7A23F100F68579 /* Mine */,
+				18F006981F7A23F100F68579 /* Tools */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		18F006941F7A23F100F68579 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				18F006A11F7A297F00F68579 /* WYClassViewController.swift */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		18F006951F7A23F100F68579 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				18F0069F1F7A297600F68579 /* WYHomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		18F006961F7A23F100F68579 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				18F006991F7A241C00F68579 /* WYTabBarController.swift */,
+				18F0069B1F7A248600F68579 /* WYNavigationController.swift */,
+				18F0069D1F7A249500F68579 /* WYBaseViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		18F006971F7A23F100F68579 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				18F006A31F7A298A00F68579 /* WYMineViewController.swift */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		18F006981F7A23F100F68579 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				18F006BA1F7A35AF00F68579 /* WYExtenisons */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		18F006BA1F7A35AF00F68579 /* WYExtenisons */ = {
+			isa = PBXGroup;
+			children = (
+				189A5FE11F7A3F8B00213BFB /* WYExtensions.swift */,
+			);
+			path = WYExtenisons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +203,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F0069C1F7A248600F68579 /* WYNavigationController.swift in Sources */,
+				189A5FE21F7A3F8B00213BFB /* WYExtensions.swift in Sources */,
 				18F006821F7A04F200F68579 /* AppDelegate.swift in Sources */,
+				18F0069A1F7A241C00F68579 /* WYTabBarController.swift in Sources */,
+				18F006A21F7A297F00F68579 /* WYClassViewController.swift in Sources */,
+				18F0069E1F7A249500F68579 /* WYBaseViewController.swift in Sources */,
+				18F006A41F7A298A00F68579 /* WYMineViewController.swift in Sources */,
+				18F006A01F7A297600F68579 /* WYHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,8 +334,10 @@
 				INFOPLIST_FILE = DiYa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.konggeek.DiYa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -267,8 +353,10 @@
 				INFOPLIST_FILE = DiYa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.konggeek.DiYa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

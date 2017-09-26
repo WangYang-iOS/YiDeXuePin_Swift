@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.backgroundColor = UIColor.white
         window?.makeKeyAndVisible()
-        window?.rootViewController = UIViewController()
+        window?.rootViewController = WYTabBarController()
         
         return true
     }
