@@ -1,19 +1,21 @@
 //
-//  WYClassViewController.swift
+//  WYShopCartController.swift
 //  DiYa
 //
-//  Created by wangyang on 2017/9/26.
+//  Created by wangyang on 2017/9/28.
 //  Copyright © 2017年 wangyang. All rights reserved.
 //
 
 import UIKit
 
-class WYClassViewController: WYBaseViewController {
+class WYShopCartController: WYBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        navigationItem.title = "购物车"
     }
 
     override func didReceiveMemoryWarning() {

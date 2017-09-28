@@ -14,6 +14,19 @@ class WYBaseViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(endEdit))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc fileprivate func endEdit() {
+        self.view .endEditing(true)
+    }
+    
+    func presentLoginVC(complete : (()->())?) -> () {
+        self.present(WYNavigationController(rootViewController: WYLoginViewController()), animated: true) {
+            complete?()
+        }
     }
 
     override func didReceiveMemoryWarning() {

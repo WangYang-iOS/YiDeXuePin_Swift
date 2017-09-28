@@ -14,6 +14,12 @@ class WYNavigationController: UINavigationController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        navigationBar.barTintColor = UIColor.hexString(colorString: COLOR_BACKGROUND)
+        navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
 
     override func didReceiveMemoryWarning() {

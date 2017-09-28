@@ -39,9 +39,10 @@ class WYTabBarController: UITabBarController {
 }
 
 extension WYTabBarController {
-    func setUI() {
+    fileprivate func setUI() {
         let array = [["vcName":"WYHomeViewController","imageName":"_home_"],
                      ["vcName":"WYClassViewController","imageName":"_class_"],
+                     ["vcName":"WYShopCartController","imageName":"_cart_"],
                      ["vcName":"WYMineViewController","imageName":"_personal_"]]
         var childs = [UIViewController]()
         
@@ -51,7 +52,7 @@ extension WYTabBarController {
         viewControllers = childs
     }
     
-    func addChilds(dictionary:[String:String]) -> UIViewController {
+    fileprivate func addChilds(dictionary:[String:String]) -> UIViewController {
         
         let spaceName = Bundle.main.infoDictionary?["CFBundleName"] as? String ?? ""
         

@@ -1,5 +1,5 @@
 //
-//  WYMineViewController.swift
+//  WYClassViewController.swift
 //  DiYa
 //
 //  Created by wangyang on 2017/9/26.
@@ -8,12 +8,13 @@
 
 import UIKit
 
-class WYMineViewController: WYBaseViewController {
+class WYClassViewController: WYBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        navigationItem.title = "分类"
     }
 
     override func didReceiveMemoryWarning() {

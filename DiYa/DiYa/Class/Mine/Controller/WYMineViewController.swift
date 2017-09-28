@@ -1,5 +1,5 @@
 //
-//  WYHomeViewController.swift
+//  WYMineViewController.swift
 //  DiYa
 //
 //  Created by wangyang on 2017/9/26.
@@ -8,17 +8,13 @@
 
 import UIKit
 
-class WYHomeViewController: WYBaseViewController {
+class WYMineViewController: WYBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "首页"
-//
-//        let button : UIButton = UIButton.wy_imageButton("ic_tabbar_home_dark")
-//        button.sizeToFit()
-//        button.center = CGPoint(x: self.view.bounds.size.width / 2.0, y: self.view.bounds.size.height / 2.0)
-//        self.view.addSubview(button)
+        // Do any additional setup after loading the view.
+        navigationItem.title = "个人中心"
     }
 
     override func didReceiveMemoryWarning() {

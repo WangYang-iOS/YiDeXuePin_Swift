@@ -43,7 +43,7 @@ extension UIColor {
 }
 
 extension UIButton {
-    class func wy_createButton(title:String,fontSize:CGFloat,normalColor:UIColor,highLightColor:UIColor,imageName:String) -> UIButton {
+    class  func wy_createButton(title:String,fontSize:CGFloat,normalColor:UIColor,highLightColor:UIColor,imageName:String) -> UIButton {
         let button = UIButton(type: .custom)
         button.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
         button.setTitle(title, for: .normal)
@@ -53,6 +53,16 @@ extension UIButton {
         button.sizeToFit()
         return button
     }
+    
+    convenience init(title:String,fontSize:CGFloat,normalColor:UIColor,highLightColor:UIColor,imageName:String) {
+        self.init()
+        titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        setTitle(title, for: .normal)
+        setTitleColor(normalColor, for: .normal)
+        setTitleColor(highLightColor, for: .highlighted)
+        setImage(UIImage.init(named: imageName), for: .normal)
+    }
+    
 }
 
 extension UILabel {
