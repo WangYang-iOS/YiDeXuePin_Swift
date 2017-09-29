@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import AFNetworking
+import Alamofire
+import SwiftyJSON
 
 class WYLoginViewController: WYBaseViewController {
     @IBOutlet weak var bgImageView: UIImageView!
@@ -33,7 +34,8 @@ class WYLoginViewController: WYBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        phoneTF.text = "13516829309"
+        passTF.text = "qqqqqqqq"
         changeViewState()
     }
     
@@ -104,8 +106,20 @@ extension WYLoginViewController {
 extension WYLoginViewController {
     func requestLogin(dic:[String:String], complete:((_ isSuccess:Bool)->())?) {
         //
-        WYNetWorkTool.startRequest(url: "/user/login.htm", dic: dic) {
-            //
+        WYNetWorkTool.request(url: "/user/login.htm", dic: dic) { (isSuccess, dictionary) in
+            
         }
+        
+//        WYNetWorkTool.startRequest(url: "/user/login.htm", dic: dic) { (isSuccess, response) in
+//            if isSuccess == true {
+//                //请求成功
+////                let dic = response as? [String:Any] ?? [:]
+//                let data = JSONSerialization
+//                let userInfo = UserInfo.mj_object(withFile: data)
+//                print(userInfo?.nickname ?? "")
+//            }else {
+//                //请求失败
+//            }
+//        }
     }
 }

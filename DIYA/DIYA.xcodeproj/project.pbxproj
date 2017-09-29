@@ -7,20 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1822A2D71F7D0F3F00E99A4E /* WYCommomMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1822A2D61F7D0F3F00E99A4E /* WYCommomMethod.swift */; };
+		1822A2D91F7D1C2A00E99A4E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1822A2D81F7D1C2A00E99A4E /* UserInfo.swift */; };
 		184AFC191F7CD1B8005A4378 /* WYLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184AFC171F7CD1B8005A4378 /* WYLoginViewController.swift */; };
 		184AFC1A1F7CD1B8005A4378 /* WYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184AFC181F7CD1B8005A4378 /* WYLoginViewController.xib */; };
 		184AFC1D1F7CE5C5005A4378 /* WYNetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184AFC1C1F7CE5C5005A4378 /* WYNetWorkTool.swift */; };
-		185954D11F7C89C700131B59 /* WYHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185954D01F7C89C700131B59 /* WYHeader.swift */; };
-		185954D21F7C8A3500131B59 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185954DC1F7C8A3500131B59 /* AFNetworking.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		185954D31F7C8A3500131B59 /* AliyunOSSiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185954DD1F7C8A3500131B59 /* AliyunOSSiOS.framework */; };
-		185954D41F7C8A3500131B59 /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185954DE1F7C8A3500131B59 /* Masonry.framework */; };
-		185954D51F7C8A3500131B59 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185954DF1F7C8A3500131B59 /* MBProgressHUD.framework */; };
-		185954D61F7C8A3500131B59 /* MJExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185954E01F7C8A3500131B59 /* MJExtension.framework */; };
-		185954D71F7C8A3500131B59 /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185954E11F7C8A3500131B59 /* MJRefresh.framework */; };
-		185954D81F7C8A3500131B59 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185954E21F7C8A3500131B59 /* SDWebImage.framework */; };
-		185954D91F7C8A3500131B59 /* YYCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185954E31F7C8A3500131B59 /* YYCache.framework */; };
-		185954DA1F7C8A3500131B59 /* YYImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185954E41F7C8A3500131B59 /* YYImage.framework */; };
-		185954DB1F7C8A3500131B59 /* YYWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185954E51F7C8A3500131B59 /* YYWebImage.framework */; };
 		185954E81F7C8C5E00131B59 /* WYShopCartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185954E71F7C8C5E00131B59 /* WYShopCartController.swift */; };
 		185954EA1F7C8E7800131B59 /* FunctionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185954E91F7C8E7800131B59 /* FunctionHeader.swift */; };
 		185954F81F7C907B00131B59 /* WYHomeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185954F71F7C907B00131B59 /* WYHomeTitleView.swift */; };
@@ -37,10 +28,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1822A2D61F7D0F3F00E99A4E /* WYCommomMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYCommomMethod.swift; sourceTree = "<group>"; };
+		1822A2D81F7D1C2A00E99A4E /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		1822A2DC1F7D21C600E99A4E /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1822A2DD1F7D21C600E99A4E /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		184AFC171F7CD1B8005A4378 /* WYLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYLoginViewController.swift; sourceTree = "<group>"; };
 		184AFC181F7CD1B8005A4378 /* WYLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WYLoginViewController.xib; sourceTree = "<group>"; };
 		184AFC1C1F7CE5C5005A4378 /* WYNetWorkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYNetWorkTool.swift; sourceTree = "<group>"; };
-		185954D01F7C89C700131B59 /* WYHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYHeader.swift; sourceTree = "<group>"; };
 		185954DC1F7C8A3500131B59 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		185954DD1F7C8A3500131B59 /* AliyunOSSiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AliyunOSSiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		185954DE1F7C8A3500131B59 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +49,7 @@
 		185954E91F7C8E7800131B59 /* FunctionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionHeader.swift; sourceTree = "<group>"; };
 		185954F71F7C907B00131B59 /* WYHomeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYHomeTitleView.swift; sourceTree = "<group>"; };
 		189A5FE11F7A3F8B00213BFB /* WYExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYExtensions.swift; sourceTree = "<group>"; };
+		18BCD1F71F7D2BA000A22FE6 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F0067E1F7A04F200F68579 /* DiYa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiYa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F006811F7A04F200F68579 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F006881F7A04F200F68579 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,16 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				185954D21F7C8A3500131B59 /* AFNetworking.framework in Frameworks */,
-				185954D31F7C8A3500131B59 /* AliyunOSSiOS.framework in Frameworks */,
-				185954D41F7C8A3500131B59 /* Masonry.framework in Frameworks */,
-				185954D51F7C8A3500131B59 /* MBProgressHUD.framework in Frameworks */,
-				185954D61F7C8A3500131B59 /* MJExtension.framework in Frameworks */,
-				185954D71F7C8A3500131B59 /* MJRefresh.framework in Frameworks */,
-				185954D81F7C8A3500131B59 /* SDWebImage.framework in Frameworks */,
-				185954D91F7C8A3500131B59 /* YYCache.framework in Frameworks */,
-				185954DA1F7C8A3500131B59 /* YYImage.framework in Frameworks */,
-				185954DB1F7C8A3500131B59 /* YYWebImage.framework in Frameworks */,
 				DF2AAFB72FF207E2DB35D039 /* Pods_DiYa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +84,14 @@
 				781644B67F6C84779FB63D0A /* Pods-DiYa.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		1822A2D51F7D0F2D00E99A4E /* WYCommonMethods */ = {
+			isa = PBXGroup;
+			children = (
+				1822A2D61F7D0F3F00E99A4E /* WYCommomMethod.swift */,
+			);
+			path = WYCommonMethods;
 			sourceTree = "<group>";
 		};
 		184AFC131F7CD17E005A4378 /* Login */ = {
@@ -123,6 +116,7 @@
 		184AFC151F7CD19B005A4378 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1822A2D81F7D1C2A00E99A4E /* UserInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -268,7 +262,6 @@
 			children = (
 				18F006931F7A23F100F68579 /* Class */,
 				18F006811F7A04F200F68579 /* AppDelegate.swift */,
-				185954D01F7C89C700131B59 /* WYHeader.swift */,
 				185954E91F7C8E7800131B59 /* FunctionHeader.swift */,
 				18F006881F7A04F200F68579 /* Assets.xcassets */,
 				18F0068D1F7A04F200F68579 /* Info.plist */,
@@ -333,6 +326,7 @@
 		18F006981F7A23F100F68579 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				1822A2D51F7D0F2D00E99A4E /* WYCommonMethods */,
 				184AFC1B1F7CE5B2005A4378 /* NetWorkTools */,
 				18F006BA1F7A35AF00F68579 /* WYExtenisons */,
 			);
@@ -350,6 +344,9 @@
 		D13AE96C48803F72C1527745 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18BCD1F71F7D2BA000A22FE6 /* Alamofire.framework */,
+				1822A2DC1F7D21C600E99A4E /* Alamofire.framework */,
+				1822A2DD1F7D21C600E99A4E /* SwiftyJSON.framework */,
 				185954DC1F7C8A3500131B59 /* AFNetworking.framework */,
 				185954DD1F7C8A3500131B59 /* AliyunOSSiOS.framework */,
 				185954DE1F7C8A3500131B59 /* Masonry.framework */,
@@ -443,29 +440,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DiYa/Pods-DiYa-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AliyunOSSiOS/AliyunOSSiOS.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
-				"${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework",
-				"${BUILT_PRODUCTS_DIR}/YYWebImage/YYWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AliyunOSSiOS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -516,11 +507,12 @@
 				18F0069C1F7A248600F68579 /* WYNavigationController.swift in Sources */,
 				189A5FE21F7A3F8B00213BFB /* WYExtensions.swift in Sources */,
 				185954F81F7C907B00131B59 /* WYHomeTitleView.swift in Sources */,
+				1822A2D91F7D1C2A00E99A4E /* UserInfo.swift in Sources */,
 				18F006821F7A04F200F68579 /* AppDelegate.swift in Sources */,
 				18F0069A1F7A241C00F68579 /* WYTabBarController.swift in Sources */,
-				185954D11F7C89C700131B59 /* WYHeader.swift in Sources */,
 				185954EA1F7C8E7800131B59 /* FunctionHeader.swift in Sources */,
 				185954E81F7C8C5E00131B59 /* WYShopCartController.swift in Sources */,
+				1822A2D71F7D0F3F00E99A4E /* WYCommomMethod.swift in Sources */,
 				18F006A21F7A297F00F68579 /* WYClassViewController.swift in Sources */,
 				184AFC1D1F7CE5C5005A4378 /* WYNetWorkTool.swift in Sources */,
 				18F0069E1F7A249500F68579 /* WYBaseViewController.swift in Sources */,
