@@ -6,9 +6,9 @@
 //  Copyright © 2017年 wangyang. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class UserInfo: NSObject {
+@objcMembers class UserInfo: NSObject {
     var accessToken = ""
     var address = ""
     var createTime = ""
@@ -29,7 +29,7 @@ class UserInfo: NSObject {
     var weiboUnionid = ""
     var qqUnionid = ""
     var borrowBookStatus = ""
-    
+
     var bookNumber = ""
     var deposit = ""
     var id = ""
@@ -39,5 +39,9 @@ class UserInfo: NSObject {
     var serverPointer = ""
     var discount = ""
     var borrowNumber = ""
+    
+    override var description: String {
+        return self.yy_modelDescription()
+    }
     
 }

@@ -16,21 +16,20 @@ class WYMineViewController: WYBaseViewController {
         // Do any additional setup after loading the view.
         navigationItem.title = "个人中心"
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+         super.viewWillAppear(animated)
+        if !isLogin() {
+            presentLoginVC(complete: nil)
+        }
     }
-    */
+}
 
+extension WYMineViewController {
+    func isLogin() -> Bool{
+        guard let _ = WYCommomMethod.valueForKey(key: ACCESS_TOKEN) else {
+            return false;
+        }
+        return true;
+    }
 }

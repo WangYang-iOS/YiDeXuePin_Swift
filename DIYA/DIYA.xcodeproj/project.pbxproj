@@ -15,6 +15,10 @@
 		185954E81F7C8C5E00131B59 /* WYShopCartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185954E71F7C8C5E00131B59 /* WYShopCartController.swift */; };
 		185954EA1F7C8E7800131B59 /* FunctionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185954E91F7C8E7800131B59 /* FunctionHeader.swift */; };
 		185954F81F7C907B00131B59 /* WYHomeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185954F71F7C907B00131B59 /* WYHomeTitleView.swift */; };
+		18724CD51FB4412E0084B324 /* YYModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18724CD61FB4412E0084B324 /* YYModel.framework */; };
+		18724CD71FB450E80084B324 /* MJExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18724CD81FB450E80084B324 /* MJExtension.framework */; };
+		187D334C1FB1A9E8000BFA1D /* YYNetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D334B1FB1A9E8000BFA1D /* YYNetWorkTool.swift */; };
+		188B10C71FB2EF3100B940D8 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B10C61FB2EF3100B940D8 /* HomeModel.swift */; };
 		189A5FE21F7A3F8B00213BFB /* WYExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A5FE11F7A3F8B00213BFB /* WYExtensions.swift */; };
 		18F006821F7A04F200F68579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F006811F7A04F200F68579 /* AppDelegate.swift */; };
 		18F006891F7A04F200F68579 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F006881F7A04F200F68579 /* Assets.xcassets */; };
@@ -48,6 +52,11 @@
 		185954E71F7C8C5E00131B59 /* WYShopCartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYShopCartController.swift; sourceTree = "<group>"; };
 		185954E91F7C8E7800131B59 /* FunctionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionHeader.swift; sourceTree = "<group>"; };
 		185954F71F7C907B00131B59 /* WYHomeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYHomeTitleView.swift; sourceTree = "<group>"; };
+		18724CD61FB4412E0084B324 /* YYModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YYModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18724CD81FB450E80084B324 /* MJExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MJExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		187D334B1FB1A9E8000BFA1D /* YYNetWorkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYNetWorkTool.swift; sourceTree = "<group>"; };
+		187D334D1FB1B40C000BFA1D /* DiYa-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DiYa-Bridging-Header.h"; sourceTree = "<group>"; };
+		188B10C61FB2EF3100B940D8 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		189A5FE11F7A3F8B00213BFB /* WYExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYExtensions.swift; sourceTree = "<group>"; };
 		18BCD1F71F7D2BA000A22FE6 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F0067E1F7A04F200F68579 /* DiYa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiYa.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18724CD71FB450E80084B324 /* MJExtension.framework in Frameworks */,
+				18724CD51FB4412E0084B324 /* YYModel.framework in Frameworks */,
 				DF2AAFB72FF207E2DB35D039 /* Pods_DiYa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				184AFC1C1F7CE5C5005A4378 /* WYNetWorkTool.swift */,
+				187D334B1FB1A9E8000BFA1D /* YYNetWorkTool.swift */,
 			);
 			path = NetWorkTools;
 			sourceTree = "<group>";
@@ -166,6 +178,7 @@
 		185954ED1F7C8FD500131B59 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				188B10C61FB2EF3100B940D8 /* HomeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -263,6 +276,7 @@
 				18F006931F7A23F100F68579 /* Class */,
 				18F006811F7A04F200F68579 /* AppDelegate.swift */,
 				185954E91F7C8E7800131B59 /* FunctionHeader.swift */,
+				187D334D1FB1B40C000BFA1D /* DiYa-Bridging-Header.h */,
 				18F006881F7A04F200F68579 /* Assets.xcassets */,
 				18F0068D1F7A04F200F68579 /* Info.plist */,
 			);
@@ -344,6 +358,8 @@
 		D13AE96C48803F72C1527745 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18724CD81FB450E80084B324 /* MJExtension.framework */,
+				18724CD61FB4412E0084B324 /* YYModel.framework */,
 				18BCD1F71F7D2BA000A22FE6 /* Alamofire.framework */,
 				1822A2DC1F7D21C600E99A4E /* Alamofire.framework */,
 				1822A2DD1F7D21C600E99A4E /* SwiftyJSON.framework */,
@@ -443,20 +459,24 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AliyunOSSiOS/AliyunOSSiOS.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AliyunOSSiOS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -511,6 +531,8 @@
 				18F006821F7A04F200F68579 /* AppDelegate.swift in Sources */,
 				18F0069A1F7A241C00F68579 /* WYTabBarController.swift in Sources */,
 				185954EA1F7C8E7800131B59 /* FunctionHeader.swift in Sources */,
+				187D334C1FB1A9E8000BFA1D /* YYNetWorkTool.swift in Sources */,
+				188B10C71FB2EF3100B940D8 /* HomeModel.swift in Sources */,
 				185954E81F7C8C5E00131B59 /* WYShopCartController.swift in Sources */,
 				1822A2D71F7D0F3F00E99A4E /* WYCommomMethod.swift in Sources */,
 				18F006A21F7A297F00F68579 /* WYClassViewController.swift in Sources */,

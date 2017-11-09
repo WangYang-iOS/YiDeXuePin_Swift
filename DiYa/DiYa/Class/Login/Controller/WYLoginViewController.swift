@@ -9,6 +9,8 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import MJExtension
+import YYModel
 
 class WYLoginViewController: WYBaseViewController {
     @IBOutlet weak var bgImageView: UIImageView!
@@ -24,6 +26,8 @@ class WYLoginViewController: WYBaseViewController {
     @IBOutlet weak var forgetButton: UIButton!
     
     fileprivate var isLogin = true
+    
+    var userInfo = UserInfo()
     
     
     override func awakeFromNib() {
@@ -43,7 +47,6 @@ class WYLoginViewController: WYBaseViewController {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
     }
-    
     
     @IBAction func sendCode(_ sender: UIButton) {
         
@@ -106,20 +109,17 @@ extension WYLoginViewController {
 extension WYLoginViewController {
     func requestLogin(dic:[String:String], complete:((_ isSuccess:Bool)->())?) {
         //
-        WYNetWorkTool.request(url: "/user/login.htm", dic: dic) { (isSuccess, dictionary) in
-            
+        WYNetWorkTool.share.request(url: "/user/login.htm", dic: dic) { (isSuccess, result) in
+            if isSuccess {
+                self.userInfo = UserInfo.yy_model(withJSON: result ?? "")!
+                if self.userInfo.accessToken.count > 0 {
+                    WYCommomMethod.saveValue(value: self.userInfo.accessToken, key: ACCESS_TOKEN)
+                }
+                
+                self.dismiss(animated: true, completion: {
+                    //
+                })
+            }
         }
-        
-//        WYNetWorkTool.startRequest(url: "/user/login.htm", dic: dic) { (isSuccess, response) in
-//            if isSuccess == true {
-//                //请求成功
-////                let dic = response as? [String:Any] ?? [:]
-//                let data = JSONSerialization
-//                let userInfo = UserInfo.mj_object(withFile: data)
-//                print(userInfo?.nickname ?? "")
-//            }else {
-//                //请求失败
-//            }
-//        }
     }
 }

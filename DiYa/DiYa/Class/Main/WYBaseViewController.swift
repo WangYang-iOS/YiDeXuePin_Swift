@@ -10,6 +10,8 @@ import UIKit
 
 class WYBaseViewController: UIViewController {
 
+    var pageNumber = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

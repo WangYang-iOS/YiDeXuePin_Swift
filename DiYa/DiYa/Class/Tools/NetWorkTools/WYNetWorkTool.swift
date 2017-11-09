@@ -10,18 +10,23 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class WYNetWorkTool: NSObject {
-    class func request(url:String,dic:[String:Any],callBack:@escaping (_ isSuccess:Bool,_ response:[String:Any])->()) -> () {
+class WYNetWorkTool {
+    
+    static let share = WYNetWorkTool.init()
+    
+    private init() {
+        //
+    }
+    
+    func request(url:String,dic:[String:Any],callBack:@escaping (_ isSuccess:Bool,_ response:Any?)->()) -> () {
         
         Alamofire.request(BASE_URL + url, method: .post, parameters: dic, encoding: URLEncoding.default).responseJSON { (response) in
             switch response.result.isSuccess {
             case true:
                 if let value = response.result.value {
-                    let json = JSON(value)
-                    print(json)
-                    if let dic = json.dictionaryObject {
-                        callBack(true,dic)
-                    }
+                    let dic = value as? [String:Any]
+                    let result = dic?["data"] 
+                    callBack(true, result);
                 }
             case false:
                 callBack(false,["error":response.result.error as Any])
