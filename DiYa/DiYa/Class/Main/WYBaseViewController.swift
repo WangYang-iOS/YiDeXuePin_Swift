@@ -14,10 +14,9 @@ class WYBaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(endEdit))
+        tap.delegate = self;
         view.addGestureRecognizer(tap)
     }
     
@@ -33,18 +32,17 @@ class WYBaseViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension UIViewController:UIGestureRecognizerDelegate {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        let touchClass = NSStringFromClass((touch.view?.classForCoder)!)
+        let supClass = NSStringFromClass((touch.view?.superview!.superview?.classForCoder)!)
+        if touchClass == "UITableView" || touchClass == "UICollectionView" ||
+            supClass == "UITableView" || supClass == "UICollectionView" {
+            return false
+        }
+        return true
     }
-    */
-
 }

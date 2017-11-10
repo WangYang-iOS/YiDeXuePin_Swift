@@ -10,6 +10,11 @@ import UIKit
 
 let SCREEN_WIDTH = UIScreen.main.bounds.size.width
 let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
+let HEIGHT_MULTIPLE = UIScreen.main.bounds.size.height/667.0
+let WIDTH_MULTIPLE = UIScreen.main.bounds.size.width/375.0
+
+let Goods_MULTIPLE = CGFloat(628 / 750.0)
+
 
 let BASE_URL = "http://api.xuepin.logthin.com"
 let TIME_OUT = TimeInterval(60)

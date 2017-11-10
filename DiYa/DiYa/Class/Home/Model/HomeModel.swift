@@ -41,6 +41,12 @@ import Foundation
     var price = ""
     var title = ""
     
+    var name = ""
+    var isHot = ""
+    var sort = 0
+    var parentId = 0
+    var isSelected : Bool = false
+    
     override var description: String {
         return self.yy_modelDescription()
     }
@@ -55,5 +61,37 @@ import Foundation
     var title = ""
     override var description: String {
         return self.yy_modelDescription()
+    }
+}
+
+@objcMembers class CategoryModelList: NSObject {
+    var id = 0
+    var isHot = 0
+    var sort = 0
+    var name = ""
+    var picture = ""
+    var isSelected : Bool = false
+    
+    override var description: String {
+        return self.yy_modelDescription()
+    }
+}
+
+@objcMembers class CategoryModel:NSObject {
+    var id = 0
+    var parentId = 0
+    var name = ""
+    var goodsCategoryList = [GoodsModel]()
+    
+    override var description: String {
+        return self.yy_modelDescription()
+    }
+    
+    override static func mj_objectClassInArray() -> [AnyHashable : Any]! {
+        return ["goodsList":GoodsModel.self]
+    }
+    
+    static func modelContainerPropertyGenericClass() -> [AnyHashable : Any]! {
+        return ["goodsCategoryList":GoodsModel.self]
     }
 }

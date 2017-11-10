@@ -16,7 +16,7 @@ class WYTabBarController: UITabBarController {
         // Do any additional setup after loading the view.
         
         tabBar.tintColor = UIColor.hexString(colorString: "da2d27")
-
+        delegate = self
         setUI()
     }
     
@@ -61,5 +61,18 @@ extension WYTabBarController {
         
         let nav = WYNavigationController.init(rootViewController: vc)
         return nav
+    }
+}
+
+extension WYTabBarController:UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        let spaceName = Bundle.main.infoDictionary?["CFBundleName"] as? String ?? ""
+        let vc = (viewController as! WYNavigationController).visibleViewController
+        if NSStringFromClass(vc!.classForCoder) == (spaceName + ".WYClassViewController") {
+            let vc = vc as! WYClassViewController
+            vc.requestCategoryList()
+        }
+        
     }
 }

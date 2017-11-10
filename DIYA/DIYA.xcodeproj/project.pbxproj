@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181D3C9F1FB48F77007F581C /* WYClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D3C9D1FB48F77007F581C /* WYClassViewController.swift */; };
+		181D3CA01FB48F77007F581C /* WYClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181D3C9E1FB48F77007F581C /* WYClassViewController.xib */; };
+		181D3CA21FB49163007F581C /* OneClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D3CA11FB49163007F581C /* OneClassView.swift */; };
+		181D3CA41FB4918B007F581C /* TwoClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D3CA31FB4918B007F581C /* TwoClassView.swift */; };
+		181D3CA71FB53B04007F581C /* OneClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D3CA51FB53B04007F581C /* OneClassCell.swift */; };
+		181D3CA81FB53B04007F581C /* OneClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181D3CA61FB53B04007F581C /* OneClassCell.xib */; };
+		181D3CAD1FB55318007F581C /* TwoClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D3CAB1FB55318007F581C /* TwoClassCell.swift */; };
+		181D3CAE1FB55318007F581C /* TwoClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181D3CAC1FB55318007F581C /* TwoClassCell.xib */; };
+		181D3CB11FB557C0007F581C /* ClassReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D3CAF1FB557C0007F581C /* ClassReusableView.swift */; };
+		181D3CB21FB557C0007F581C /* ClassReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181D3CB01FB557C0007F581C /* ClassReusableView.xib */; };
+		181D3CB31FB594BB007F581C /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181D3CB41FB594BB007F581C /* SDWebImage.framework */; };
+		181D3CB71FB5956F007F581C /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D3CB51FB5956F007F581C /* HomeCell.swift */; };
+		181D3CB81FB5956F007F581C /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181D3CB61FB5956F007F581C /* HomeCell.xib */; };
+		181D3CBA1FB5991D007F581C /* YYScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D3CB91FB5991D007F581C /* YYScrollView.swift */; };
+		181D3CBC1FB59983007F581C /* GoodsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D3CBB1FB59983007F581C /* GoodsItem.swift */; };
+		181D3CBE1FB59990007F581C /* GoodsItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181D3CBD1FB59990007F581C /* GoodsItem.xib */; };
 		1822A2D71F7D0F3F00E99A4E /* WYCommomMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1822A2D61F7D0F3F00E99A4E /* WYCommomMethod.swift */; };
 		1822A2D91F7D1C2A00E99A4E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1822A2D81F7D1C2A00E99A4E /* UserInfo.swift */; };
 		184AFC191F7CD1B8005A4378 /* WYLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184AFC171F7CD1B8005A4378 /* WYLoginViewController.swift */; };
@@ -26,12 +42,27 @@
 		18F0069C1F7A248600F68579 /* WYNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F0069B1F7A248600F68579 /* WYNavigationController.swift */; };
 		18F0069E1F7A249500F68579 /* WYBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F0069D1F7A249500F68579 /* WYBaseViewController.swift */; };
 		18F006A01F7A297600F68579 /* WYHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F0069F1F7A297600F68579 /* WYHomeViewController.swift */; };
-		18F006A21F7A297F00F68579 /* WYClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F006A11F7A297F00F68579 /* WYClassViewController.swift */; };
 		18F006A41F7A298A00F68579 /* WYMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F006A31F7A298A00F68579 /* WYMineViewController.swift */; };
 		DF2AAFB72FF207E2DB35D039 /* Pods_DiYa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECBD3ACEB9F69EFF4FFB3DF /* Pods_DiYa.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		181D3C9D1FB48F77007F581C /* WYClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYClassViewController.swift; sourceTree = "<group>"; };
+		181D3C9E1FB48F77007F581C /* WYClassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WYClassViewController.xib; sourceTree = "<group>"; };
+		181D3CA11FB49163007F581C /* OneClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneClassView.swift; sourceTree = "<group>"; };
+		181D3CA31FB4918B007F581C /* TwoClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoClassView.swift; sourceTree = "<group>"; };
+		181D3CA51FB53B04007F581C /* OneClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneClassCell.swift; sourceTree = "<group>"; };
+		181D3CA61FB53B04007F581C /* OneClassCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OneClassCell.xib; sourceTree = "<group>"; };
+		181D3CAB1FB55318007F581C /* TwoClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoClassCell.swift; sourceTree = "<group>"; };
+		181D3CAC1FB55318007F581C /* TwoClassCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwoClassCell.xib; sourceTree = "<group>"; };
+		181D3CAF1FB557C0007F581C /* ClassReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassReusableView.swift; sourceTree = "<group>"; };
+		181D3CB01FB557C0007F581C /* ClassReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassReusableView.xib; sourceTree = "<group>"; };
+		181D3CB41FB594BB007F581C /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		181D3CB51FB5956F007F581C /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		181D3CB61FB5956F007F581C /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
+		181D3CB91FB5991D007F581C /* YYScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYScrollView.swift; sourceTree = "<group>"; };
+		181D3CBB1FB59983007F581C /* GoodsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsItem.swift; sourceTree = "<group>"; };
+		181D3CBD1FB59990007F581C /* GoodsItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoodsItem.xib; sourceTree = "<group>"; };
 		1822A2D61F7D0F3F00E99A4E /* WYCommomMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYCommomMethod.swift; sourceTree = "<group>"; };
 		1822A2D81F7D1C2A00E99A4E /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		1822A2DC1F7D21C600E99A4E /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,7 +98,6 @@
 		18F0069B1F7A248600F68579 /* WYNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYNavigationController.swift; sourceTree = "<group>"; };
 		18F0069D1F7A249500F68579 /* WYBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYBaseViewController.swift; sourceTree = "<group>"; };
 		18F0069F1F7A297600F68579 /* WYHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYHomeViewController.swift; sourceTree = "<group>"; };
-		18F006A11F7A297F00F68579 /* WYClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYClassViewController.swift; sourceTree = "<group>"; };
 		18F006A31F7A298A00F68579 /* WYMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYMineViewController.swift; sourceTree = "<group>"; };
 		4ECBD3ACEB9F69EFF4FFB3DF /* Pods_DiYa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiYa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		781644B67F6C84779FB63D0A /* Pods-DiYa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiYa.release.xcconfig"; path = "Pods/Target Support Files/Pods-DiYa/Pods-DiYa.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181D3CB31FB594BB007F581C /* SDWebImage.framework in Frameworks */,
 				18724CD71FB450E80084B324 /* MJExtension.framework in Frameworks */,
 				18724CD51FB4412E0084B324 /* YYModel.framework in Frameworks */,
 				DF2AAFB72FF207E2DB35D039 /* Pods_DiYa.framework in Frameworks */,
@@ -171,6 +202,11 @@
 			isa = PBXGroup;
 			children = (
 				185954F71F7C907B00131B59 /* WYHomeTitleView.swift */,
+				181D3CB51FB5956F007F581C /* HomeCell.swift */,
+				181D3CB61FB5956F007F581C /* HomeCell.xib */,
+				181D3CB91FB5991D007F581C /* YYScrollView.swift */,
+				181D3CBB1FB59983007F581C /* GoodsItem.swift */,
+				181D3CBD1FB59990007F581C /* GoodsItem.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,6 +222,14 @@
 		185954EE1F7C8FFA00131B59 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				181D3CA11FB49163007F581C /* OneClassView.swift */,
+				181D3CA51FB53B04007F581C /* OneClassCell.swift */,
+				181D3CA61FB53B04007F581C /* OneClassCell.xib */,
+				181D3CA31FB4918B007F581C /* TwoClassView.swift */,
+				181D3CAB1FB55318007F581C /* TwoClassCell.swift */,
+				181D3CAC1FB55318007F581C /* TwoClassCell.xib */,
+				181D3CAF1FB557C0007F581C /* ClassReusableView.swift */,
+				181D3CB01FB557C0007F581C /* ClassReusableView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -193,7 +237,8 @@
 		185954EF1F7C8FFA00131B59 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				18F006A11F7A297F00F68579 /* WYClassViewController.swift */,
+				181D3C9D1FB48F77007F581C /* WYClassViewController.swift */,
+				181D3C9E1FB48F77007F581C /* WYClassViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -358,6 +403,7 @@
 		D13AE96C48803F72C1527745 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				181D3CB41FB594BB007F581C /* SDWebImage.framework */,
 				18724CD81FB450E80084B324 /* MJExtension.framework */,
 				18724CD61FB4412E0084B324 /* YYModel.framework */,
 				18BCD1F71F7D2BA000A22FE6 /* Alamofire.framework */,
@@ -441,7 +487,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181D3CB81FB5956F007F581C /* HomeCell.xib in Resources */,
+				181D3CBE1FB59990007F581C /* GoodsItem.xib in Resources */,
+				181D3CA01FB48F77007F581C /* WYClassViewController.xib in Resources */,
+				181D3CA81FB53B04007F581C /* OneClassCell.xib in Resources */,
+				181D3CB21FB557C0007F581C /* ClassReusableView.xib in Resources */,
 				184AFC1A1F7CD1B8005A4378 /* WYLoginViewController.xib in Resources */,
+				181D3CAE1FB55318007F581C /* TwoClassCell.xib in Resources */,
 				18F006891F7A04F200F68579 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,9 +575,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181D3C9F1FB48F77007F581C /* WYClassViewController.swift in Sources */,
+				181D3CBA1FB5991D007F581C /* YYScrollView.swift in Sources */,
 				184AFC191F7CD1B8005A4378 /* WYLoginViewController.swift in Sources */,
+				181D3CA21FB49163007F581C /* OneClassView.swift in Sources */,
 				18F0069C1F7A248600F68579 /* WYNavigationController.swift in Sources */,
 				189A5FE21F7A3F8B00213BFB /* WYExtensions.swift in Sources */,
+				181D3CB71FB5956F007F581C /* HomeCell.swift in Sources */,
+				181D3CAD1FB55318007F581C /* TwoClassCell.swift in Sources */,
 				185954F81F7C907B00131B59 /* WYHomeTitleView.swift in Sources */,
 				1822A2D91F7D1C2A00E99A4E /* UserInfo.swift in Sources */,
 				18F006821F7A04F200F68579 /* AppDelegate.swift in Sources */,
@@ -533,13 +590,16 @@
 				185954EA1F7C8E7800131B59 /* FunctionHeader.swift in Sources */,
 				187D334C1FB1A9E8000BFA1D /* YYNetWorkTool.swift in Sources */,
 				188B10C71FB2EF3100B940D8 /* HomeModel.swift in Sources */,
+				181D3CBC1FB59983007F581C /* GoodsItem.swift in Sources */,
 				185954E81F7C8C5E00131B59 /* WYShopCartController.swift in Sources */,
+				181D3CA41FB4918B007F581C /* TwoClassView.swift in Sources */,
 				1822A2D71F7D0F3F00E99A4E /* WYCommomMethod.swift in Sources */,
-				18F006A21F7A297F00F68579 /* WYClassViewController.swift in Sources */,
 				184AFC1D1F7CE5C5005A4378 /* WYNetWorkTool.swift in Sources */,
 				18F0069E1F7A249500F68579 /* WYBaseViewController.swift in Sources */,
+				181D3CA71FB53B04007F581C /* OneClassCell.swift in Sources */,
 				18F006A41F7A298A00F68579 /* WYMineViewController.swift in Sources */,
 				18F006A01F7A297600F68579 /* WYHomeViewController.swift in Sources */,
+				181D3CB11FB557C0007F581C /* ClassReusableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

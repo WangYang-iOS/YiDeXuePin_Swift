@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="0qk-Ph-2ma" customClass="GoodsItem" customModule="DiYa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="189" height="158"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RTH-hn-t5m">
+                    <rect key="frame" x="51" y="0.0" width="88" height="88"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="88" id="ZXe-dT-i5C"/>
+                        <constraint firstAttribute="height" constant="88" id="jg5-X1-zei"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4v3-PC-GBC" userLabel="商品标题">
+                    <rect key="frame" x="0.0" y="88" width="189" height="41.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAx-ke-1dr" userLabel="折扣价">
+                    <rect key="frame" x="56" y="129.5" width="28.5" height="13.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdH-IR-GeC" userLabel="市场价">
+                    <rect key="frame" x="104.5" y="129.5" width="24" height="13.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="NAx-ke-1dr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0qk-Ph-2ma" secondAttribute="leading" constant="15" id="3pe-bT-9Sn"/>
+                <constraint firstItem="NAx-ke-1dr" firstAttribute="top" secondItem="4v3-PC-GBC" secondAttribute="bottom" id="A8R-64-9Se"/>
+                <constraint firstItem="NAx-ke-1dr" firstAttribute="trailing" secondItem="0qk-Ph-2ma" secondAttribute="centerX" constant="-10" id="AGN-qE-xZM"/>
+                <constraint firstItem="RTH-hn-t5m" firstAttribute="centerX" secondItem="0qk-Ph-2ma" secondAttribute="centerX" id="GWi-hf-zHq"/>
+                <constraint firstItem="4v3-PC-GBC" firstAttribute="leading" secondItem="0qk-Ph-2ma" secondAttribute="leading" id="JxS-Q8-Llh"/>
+                <constraint firstAttribute="bottom" secondItem="NAx-ke-1dr" secondAttribute="bottom" constant="15" id="MFY-Xn-p4C"/>
+                <constraint firstAttribute="bottom" secondItem="jdH-IR-GeC" secondAttribute="bottom" constant="15" id="O9i-Nk-mU0"/>
+                <constraint firstItem="jdH-IR-GeC" firstAttribute="centerY" secondItem="NAx-ke-1dr" secondAttribute="centerY" id="Og7-QA-pEX"/>
+                <constraint firstItem="jdH-IR-GeC" firstAttribute="top" secondItem="4v3-PC-GBC" secondAttribute="bottom" id="V50-7m-8kG"/>
+                <constraint firstItem="jdH-IR-GeC" firstAttribute="leading" secondItem="NAx-ke-1dr" secondAttribute="trailing" constant="20" id="bSa-ny-uY1"/>
+                <constraint firstItem="4v3-PC-GBC" firstAttribute="top" secondItem="RTH-hn-t5m" secondAttribute="bottom" id="hF3-c5-juB"/>
+                <constraint firstAttribute="trailing" secondItem="4v3-PC-GBC" secondAttribute="trailing" id="jsH-nC-abm"/>
+                <constraint firstItem="RTH-hn-t5m" firstAttribute="top" secondItem="0qk-Ph-2ma" secondAttribute="top" id="nI5-nD-l4K"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="discountLabel" destination="NAx-ke-1dr" id="4ps-Ab-Gaj"/>
+                <outlet property="goodsImageView" destination="RTH-hn-t5m" id="31O-Vu-fkF"/>
+                <outlet property="goodsTitleLable" destination="4v3-PC-GBC" id="9ga-ct-JzM"/>
+                <outlet property="imageHeight" destination="jg5-X1-zei" id="pgp-TU-Zd2"/>
+                <outlet property="imageWidth" destination="ZXe-dT-i5C" id="Onc-a7-YoH"/>
+                <outlet property="marketLabel" destination="jdH-IR-GeC" id="0oh-pB-77l"/>
+            </connections>
+            <point key="canvasLocation" x="-120.5" y="-168"/>
+        </view>
+    </objects>
+</document>
