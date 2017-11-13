@@ -55,9 +55,9 @@ extension WYTabBarController {
         vc.tabBarItem.selectedImage = UIImage(named: "ic_tabbar" + imgName + "light")
         vc.tabBarItem.imageInsets = UIEdgeInsetsMake(5.5, 0, -5.5, 0)
         //设置标题字体
-        vc.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColor.orange], for: .highlighted)
+    vc.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColor.orange], for: .selected)
         //系统默认12号，修改字体大小要设置Normal的字体大小
-        vc.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 12)], for: .normal)
+    vc.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 12)], for: .normal)
         
         let nav = WYNavigationController.init(rootViewController: vc)
         return nav

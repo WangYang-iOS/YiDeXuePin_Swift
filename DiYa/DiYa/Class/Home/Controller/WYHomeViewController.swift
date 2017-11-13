@@ -24,37 +24,80 @@ class WYHomeViewController: WYBaseViewController {
 
 extension WYHomeViewController {
     func setUI() {
+        self.automaticallyAdjustsScrollViewInsets = false
         tableView = UITableView(frame:CGRect(x: 0, y: 64, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 49 - 64), style: .plain)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
+        tableView.estimatedSectionHeaderHeight = 0
+        tableView.estimatedSectionFooterHeight = 0
         view.addSubview(tableView)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.register(UINib.init(nibName: "HomeCell", bundle: nil), forCellReuseIdentifier: "HomeCell")
         tableView.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
             self.homeData()
         })
+        tableView.tableHeaderView = YYBannerView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 150))
     }
 }
 
 extension WYHomeViewController:UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView .dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as? HomeCell
-        cell?.goodsList = (listArray[indexPath.row]).goodsList
+        cell?.categoryLabel.text = (listArray[indexPath.section]).categoryName
+        cell?.goodsList = (listArray[indexPath.section]).goodsList
+        if !tableView.isDragging && !tableView.isDecelerating {
+            cell?.scrollView.loadImage(array: (listArray[indexPath.section]).goodsList)
+        }else {
+            cell?.scrollView.loadImage(array: [GoodsModel]())
+        }
         return cell!
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return listArray.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 67*HEIGHT_MULTIPLE+88*HEIGHT_MULTIPLE*Goods_MULTIPLE
+        return 67*HEIGHT_MULTIPLE+88*HEIGHT_MULTIPLE*Goods_MULTIPLE+10+42
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.01
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.01
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        loadCell()
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if decelerate {
+            loadCell()
+        }
+    }
+    
+    func loadCell() {
+        guard let indexPathArray = tableView.indexPathsForVisibleRows else {
+            return
+        }
+        for (_,indexPath) in indexPathArray.enumerated() {
+            //
+            let cell = tableView.cellForRow(at: indexPath) as! HomeCell
+            cell.goodsList = (listArray[indexPath.section]).goodsList
+        }
+    }
 }
-
 
 extension WYHomeViewController {
     fileprivate func setNavigation() {

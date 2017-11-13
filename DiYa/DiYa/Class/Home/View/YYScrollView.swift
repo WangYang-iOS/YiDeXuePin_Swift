@@ -18,39 +18,57 @@ class YYScrollView: UIScrollView {
             guard let array = goodsList else {
                 return
             }
+            contentOffset = CGPoint(x: 0, y: 0)
             for (index,subView) in subviews.enumerated() {
                 //
                 if subView.isMember(of: GoodsItem.self) {
+                    let item = subView as! GoodsItem
+                    item.frame.origin.y = 0
+                    item.frame.size.height = bounds.height
                     if array.count > index {
-                        subView.isHidden = false
-                        let item = subView as! GoodsItem
+                        item.isHidden = false
                         moreButton.frame = CGRect(x: item.frame.origin.x + item.bounds.width, y: 0, width: 50, height: bounds.height)
                         item.goodsModel = array[index]
                     }else {
-                        subView.isHidden = true
+                        item.isHidden = true
                     }
-                    contentOffset = CGPoint(x: CGFloat(array.count)*ITEM_WIDTH + CGFloat(50), y: 0)
+                    contentSize = CGSize(width: CGFloat(array.count)*ITEM_WIDTH + CGFloat(50), height: 0)
                 }
             }
         }
     }
     
-    var moreButton = UIButton(title: "查看更多", fontSize: 14, normalColor: UIColor.hexString(colorString: "777777"), highLightColor: UIColor.hexString(colorString: "777777"), imageName: "ic_loadAll")
+    var moreButton = UIButton(title: "查\n看\n更\n多", fontSize: 14, normalColor: UIColor.hexString(colorString: "777777"), highLightColor: UIColor.hexString(colorString: "777777"), imageName: "ic_loadAll")
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setUI()
     }
     
+    func loadImage(array:[GoodsModel]) {
+        contentOffset = CGPoint(x: 0, y: 0)
+        for (index,subView) in subviews.enumerated() {
+            //
+            if subView.isMember(of: GoodsItem.self) {
+                let item = subView as! GoodsItem
+                item.frame.origin.y = 0
+                item.frame.size.height = bounds.height
+                if array.count > index {
+                    item.loadImage(imgUrl: array[index].picture)
+                }else {
+                    item.loadImage(imgUrl: "")
+                }
+            }
+        }
+    }
 }
 
 extension YYScrollView {
     fileprivate func setUI() {
         for i in 0..<9 {
-            
             let X = ITEM_WIDTH * CGFloat(i)
             let item = GoodsItem.loadNib()
-            item.frame = CGRect(x: X, y: 0, width: ITEM_WIDTH, height: bounds.width)
+            item.frame = CGRect(x: X, y: 0, width: ITEM_WIDTH, height: bounds.height)
             item.tag = 100 + i
             addSubview(item)
         }

@@ -11,28 +11,61 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="55" id="KGk-i7-Jjw" customClass="HomeCell" customModule="DiYa" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="360" height="55"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="343" id="KGk-i7-Jjw" customClass="HomeCell" customModule="DiYa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="343"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="360" height="54.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="360" height="342.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8tB-sc-q3m">
+                        <rect key="frame" x="0.0" y="0.0" width="360" height="42"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Uf-eb-h2k">
+                                <rect key="frame" x="15" y="0.0" width="330" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="6Uf-eb-h2k" secondAttribute="bottom" id="AXs-QC-Pkx"/>
+                            <constraint firstItem="6Uf-eb-h2k" firstAttribute="top" secondItem="8tB-sc-q3m" secondAttribute="top" id="Dl0-gf-eFm"/>
+                            <constraint firstItem="6Uf-eb-h2k" firstAttribute="leading" secondItem="8tB-sc-q3m" secondAttribute="leading" constant="15" id="bUc-jt-ydC"/>
+                            <constraint firstAttribute="height" constant="42" id="oIq-Rd-dZI"/>
+                            <constraint firstAttribute="trailing" secondItem="6Uf-eb-h2k" secondAttribute="trailing" constant="15" id="uj9-Rz-XXX"/>
+                        </constraints>
+                    </view>
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbk-Tl-ELB" customClass="YYScrollView" customModule="DiYa" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="360" height="54.5"/>
+                        <rect key="frame" x="0.0" y="42" width="360" height="290.5"/>
                     </scrollView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pnv-q9-wz6">
+                        <rect key="frame" x="0.0" y="332.5" width="360" height="10"/>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.96470588235294119" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="CHw-IU-Vrx"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="dbk-Tl-ELB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="AXu-sj-Na0"/>
-                    <constraint firstAttribute="bottom" secondItem="dbk-Tl-ELB" secondAttribute="bottom" id="ata-0q-Bz7"/>
-                    <constraint firstItem="dbk-Tl-ELB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ipD-wt-n6x"/>
-                    <constraint firstAttribute="trailing" secondItem="dbk-Tl-ELB" secondAttribute="trailing" id="u3t-QQ-ZTl"/>
+                    <constraint firstAttribute="bottom" secondItem="pnv-q9-wz6" secondAttribute="bottom" id="1p6-8Q-ozI"/>
+                    <constraint firstItem="8tB-sc-q3m" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="8Pa-St-SSe"/>
+                    <constraint firstAttribute="trailing" secondItem="8tB-sc-q3m" secondAttribute="trailing" id="Nj6-jH-Muy"/>
+                    <constraint firstItem="pnv-q9-wz6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Uix-GI-pqC"/>
+                    <constraint firstAttribute="trailing" secondItem="pnv-q9-wz6" secondAttribute="trailing" id="eRK-yL-bXS"/>
+                    <constraint firstItem="8tB-sc-q3m" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="eyC-AO-k9B"/>
+                    <constraint firstItem="dbk-Tl-ELB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="onJ-f7-Hst"/>
+                    <constraint firstItem="pnv-q9-wz6" firstAttribute="top" secondItem="dbk-Tl-ELB" secondAttribute="bottom" id="sfJ-E0-XRd"/>
+                    <constraint firstItem="dbk-Tl-ELB" firstAttribute="top" secondItem="8tB-sc-q3m" secondAttribute="bottom" id="u3N-wv-u3X"/>
+                    <constraint firstAttribute="trailing" secondItem="dbk-Tl-ELB" secondAttribute="trailing" id="ycT-cO-VKy"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="categoryLabel" destination="6Uf-eb-h2k" id="1ee-3a-FgR"/>
                 <outlet property="scrollView" destination="dbk-Tl-ELB" id="bph-hu-OLr"/>
             </connections>
-            <point key="canvasLocation" x="-89" y="90.5"/>
+            <point key="canvasLocation" x="267" y="29"/>
         </tableViewCell>
     </objects>
 </document>

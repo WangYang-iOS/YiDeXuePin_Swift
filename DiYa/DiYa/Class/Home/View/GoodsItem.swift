@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import YYWebImage
 
 class GoodsItem: UIView {
     
@@ -21,7 +22,8 @@ class GoodsItem: UIView {
     var goodsModel:GoodsModel? {
         didSet{
             //
-            goodsImageView.sd_setImage(with: URL(string: goodsModel?.picture ?? ""), placeholderImage: UIImage(named: "ic_home_logo"))
+//            goodsImageView.sd_setImage(with: URL(string: goodsModel?.picture ?? ""), placeholderImage: UIImage(named: "ic_home_logo"))
+            goodsImageView.yy_setImage(with: URL(string: goodsModel?.picture ?? ""), placeholder: UIImage(named: "ic_home_logo"))
             goodsTitleLable.text = goodsModel?.title
             discountLabel.text = "¥" + "\(goodsModel?.price ?? "")"
             marketLabel.text = "¥" + "\(goodsModel?.marketPrice ?? "")"
@@ -36,6 +38,10 @@ class GoodsItem: UIView {
         let nib = UINib.init(nibName: "GoodsItem", bundle: nil)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! GoodsItem
         return view
+    }
+    
+    func loadImage(imgUrl:String) {
+        goodsImageView.yy_setImage(with: URL(string: imgUrl), placeholder: UIImage(named: "ic_home_logo"))
     }
     
     override func awakeFromNib() {

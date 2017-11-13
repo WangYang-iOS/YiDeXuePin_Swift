@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import YYWebImage
 
 class WYBaseViewController: UIViewController {
 
@@ -32,6 +33,8 @@ class WYBaseViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        YYWebImageManager.shared().cache?.memoryCache.removeAllObjects()
+        YYWebImageManager.shared().cache?.diskCache.removeAllObjects()
     }
 }
 
