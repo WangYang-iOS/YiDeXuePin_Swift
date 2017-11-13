@@ -27,7 +27,7 @@ class WYBannerView: UIView {
         return pageControl
     }
     
-    var bannerArray : [AnnouncementModel]? 
+    var bannerArray : [String]?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,7 +42,7 @@ class WYBannerView: UIView {
 }
 
 extension WYBannerView {
-    func loadBanners(bannerList : [AnnouncementModel]?) {
+    func loadBanners(bannerList : [String]?) {
         bannerArray = bannerList
         guard let array = bannerList else {
             return
@@ -63,7 +63,7 @@ extension WYBannerView {
             pageControl.isHidden = true
             let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
             scrollView.addSubview(imageView)
-            imageView.yy_setImage(with: URL(string: array[0].picture), placeholder: UIImage(named: "ic_home_logo"))
+            imageView.yy_setImage(with: URL(string: array[0]), placeholder: UIImage(named: "ic_home_logo"))
             return
         }else {
             pageControl.isHidden = false
@@ -71,16 +71,16 @@ extension WYBannerView {
         
         let firstImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
         scrollView.addSubview(firstImageView)
-        firstImageView.yy_setImage(with: URL(string: array.last?.picture ?? ""), placeholder: UIImage(named: "ic_home_logo"))
+        firstImageView.yy_setImage(with: URL(string: array.last ?? ""), placeholder: UIImage(named: "ic_home_logo"))
         
         let lastImageView = UIImageView(frame: CGRect(x: width * CGFloat(array.count + 1), y: 0, width: width, height: height))
         scrollView.addSubview(lastImageView)
-        lastImageView.yy_setImage(with: URL(string: array.first?.picture ?? ""), placeholder: UIImage(named: "ic_home_logo"))
+        lastImageView.yy_setImage(with: URL(string: array.first ?? ""), placeholder: UIImage(named: "ic_home_logo"))
         
-        for (i,model) in array.enumerated() {
+        for (i,pic) in array.enumerated() {
             let imageView = UIImageView(frame: CGRect(x: CGFloat(i + 1) * width, y: 0, width: width, height: height))
             scrollView.addSubview(imageView)
-            imageView.yy_setImage(with: URL(string: model.picture), placeholder: UIImage(named: "ic_home_logo"))
+            imageView.yy_setImage(with: URL(string: pic), placeholder: UIImage(named: "ic_home_logo"))
             imageView.backgroundColor = UIColor.red
             print(imageView)
         }

@@ -25,6 +25,7 @@ class WYHomeViewController: WYBaseViewController {
         super.viewDidLoad()
         setNavigation()
         setUI()
+        view.addSubview(bannerView)
         homeData()
     }
 }
@@ -44,7 +45,7 @@ extension WYHomeViewController {
         tableView.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
             self.homeData()
         })
-        self.tableView.tableHeaderView = self.bannerView
+//        tableView.tableHeaderView = bannerView
     }
 }
 
@@ -132,7 +133,13 @@ extension WYHomeViewController {
                 
                 let announcementList = dic["announcementList"]
                 let announcementListArray = NSArray.yy_modelArray(with: AnnouncementModel.self, json: announcementList as Any) as? [AnnouncementModel] ?? [AnnouncementModel]()
-                self.bannerView.loadBanners(bannerList: announcementListArray)
+                
+                var pics = [String]()
+                for (_,model) in announcementListArray.enumerated() {
+                    pics.append(model.picture)
+                }
+                
+                self.bannerView.loadBanners(bannerList: pics)
             }
             self.tableView.mj_header.endRefreshing()
             self.tableView.reloadData()
