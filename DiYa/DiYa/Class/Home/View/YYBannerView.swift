@@ -26,7 +26,9 @@ class YYBannerView: UIView {
         super.awakeFromNib()
         scrollView.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height)
     }
-    
+}
+
+extension YYBannerView {
     func loadBanners(bannerList : [AnnouncementModel]?) {
         bannerArray = bannerList
         guard let array = bannerList else {
