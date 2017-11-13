@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1806F0851FB9943B00F77079 /* WYBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806F0841FB9943B00F77079 /* WYBannerView.swift */; };
 		181D3C9F1FB48F77007F581C /* WYClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D3C9D1FB48F77007F581C /* WYClassViewController.swift */; };
 		181D3CA01FB48F77007F581C /* WYClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181D3C9E1FB48F77007F581C /* WYClassViewController.xib */; };
 		181D3CA21FB49163007F581C /* OneClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D3CA11FB49163007F581C /* OneClassView.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1806F0841FB9943B00F77079 /* WYBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYBannerView.swift; sourceTree = "<group>"; };
 		181D3C9D1FB48F77007F581C /* WYClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYClassViewController.swift; sourceTree = "<group>"; };
 		181D3C9E1FB48F77007F581C /* WYClassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WYClassViewController.xib; sourceTree = "<group>"; };
 		181D3CA11FB49163007F581C /* OneClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneClassView.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				185954F71F7C907B00131B59 /* WYHomeTitleView.swift */,
+				1806F0841FB9943B00F77079 /* WYBannerView.swift */,
 				182859781FB93D210070241C /* YYBannerView.swift */,
 				1828597A1FB93D2C0070241C /* YYBannerView.xib */,
 				181D3CB51FB5956F007F581C /* HomeCell.swift */,
@@ -621,6 +624,7 @@
 				1822A2D71F7D0F3F00E99A4E /* WYCommomMethod.swift in Sources */,
 				184AFC1D1F7CE5C5005A4378 /* WYNetWorkTool.swift in Sources */,
 				18F0069E1F7A249500F68579 /* WYBaseViewController.swift in Sources */,
+				1806F0851FB9943B00F77079 /* WYBannerView.swift in Sources */,
 				181D3CA71FB53B04007F581C /* OneClassCell.swift in Sources */,
 				18F006A41F7A298A00F68579 /* WYMineViewController.swift in Sources */,
 				18F006A01F7A297600F68579 /* WYHomeViewController.swift in Sources */,

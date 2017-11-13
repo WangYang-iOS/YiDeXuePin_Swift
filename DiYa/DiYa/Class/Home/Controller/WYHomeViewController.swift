@@ -13,6 +13,13 @@ import MJRefresh
 class WYHomeViewController: WYBaseViewController {
     var tableView: UITableView!
     var listArray = [HomeModel]()
+    var bannerView : WYBannerView {
+//        let bannerView = YYBannerView.loadNib()
+//        bannerView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 200)
+//        return bannerView
+        let bannerView = WYBannerView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 200))
+        return bannerView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +44,7 @@ extension WYHomeViewController {
         tableView.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
             self.homeData()
         })
-        tableView.tableHeaderView = YYBannerView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 150))
+        self.tableView.tableHeaderView = self.bannerView
     }
 }
 
@@ -45,7 +52,9 @@ extension WYHomeViewController:UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView .dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as? HomeCell
         cell?.categoryLabel.text = (listArray[indexPath.section]).categoryName
+        ///先加载商品title和价格
         cell?.goodsList = (listArray[indexPath.section]).goodsList
+        /// 判断是否在拖拽和是否已经减速，用户停止滑动再加载图片
         if !tableView.isDragging && !tableView.isDecelerating {
             cell?.scrollView.loadImage(array: (listArray[indexPath.section]).goodsList)
         }else {
@@ -114,21 +123,19 @@ extension WYHomeViewController {
     func homeData() {
         WYNetWorkTool.share.request(url: "/main/index.htm", dic: ["pageNum":pageNumber]) { (isSuccess, result) in
             if isSuccess {
-                guard let dic = result as? [String:Any],
-                    let json = dic["categoryListModelList"],
-                    let array = NSArray.yy_modelArray(with: HomeModel.self, json: json) else {
+                guard let dic = result as? [String:Any] else {
                         return
                 }
-                self.listArray = array as! [HomeModel]
-//                print(array as! [HomeModel])
-//                print(self.listArray[0].categoryName)
-//                for (_,model) in self.listArray.enumerated() {
-//                    print(model.announcement)
-//                }
+                let categoryListModelList = dic["categoryListModelList"]
+                let array = NSArray.yy_modelArray(with: HomeModel.self, json: categoryListModelList as Any)
+                self.listArray = array as? [HomeModel] ?? [HomeModel]()
+                
+                let announcementList = dic["announcementList"]
+                let announcementListArray = NSArray.yy_modelArray(with: AnnouncementModel.self, json: announcementList as Any) as? [AnnouncementModel] ?? [AnnouncementModel]()
+                self.bannerView.loadBanners(bannerList: announcementListArray)
             }
             self.tableView.mj_header.endRefreshing()
             self.tableView.reloadData()
         }
     }
-    
 }

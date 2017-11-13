@@ -1,5 +1,5 @@
 //
-//  YYBannerView.swift
+//  WYBannerView.swift
 //  DiYa
 //
 //  Created by wangyang on 2017/11/13.
@@ -8,25 +8,40 @@
 
 import UIKit
 
-class YYBannerView: UIView {
+class WYBannerView: UIView {
 
-    @IBOutlet weak var scrollView:UIScrollView!
-
-    @IBOutlet weak var pageControl: UIPageControl!
-    
-    var bannerArray : [AnnouncementModel]?
-    
-    class func loadNib() -> YYBannerView {
-        let nib = UINib.init(nibName: "YYBannerView", bundle: nil)
-        let view = nib.instantiate(withOwner: self, options: nil)[0] as! YYBannerView
-        return view
+    var scrollView:UIScrollView! {
+        let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height))
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.delegate = self
+        return scrollView
+    }
+    var pageControl:UIPageControl! {
+        let pageControl = UIPageControl(frame: CGRect(x: 0, y: 0, width: 50, height: 5))
+        pageControl.center.y = bounds.height - 10
+        pageControl.center.x = bounds.width / 2.0
+        pageControl.tintColor = UIColor.white
+        pageControl.currentPageIndicatorTintColor = UIColor.red
+        pageControl.currentPage = 0
+        return pageControl
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        scrollView.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height)
+    var bannerArray : [AnnouncementModel]? 
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(scrollView)
+        addSubview(pageControl)
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+extension WYBannerView {
     func loadBanners(bannerList : [AnnouncementModel]?) {
         bannerArray = bannerList
         guard let array = bannerList else {
@@ -74,7 +89,7 @@ class YYBannerView: UIView {
     }
 }
 
-extension YYBannerView:UIScrollViewDelegate {
+extension WYBannerView:UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         ///
         var index = Int(scrollView.contentOffset.x / frame.size.width + 0.5)
@@ -108,3 +123,4 @@ extension YYBannerView:UIScrollViewDelegate {
         }
     }
 }
+

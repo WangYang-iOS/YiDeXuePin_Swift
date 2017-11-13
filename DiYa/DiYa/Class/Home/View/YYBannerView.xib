@@ -15,14 +15,14 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="alp-tC-KWa">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alp-tC-KWa">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="YZj-lZ-oZR"/>
                     </connections>
                 </scrollView>
-                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="2t6-rs-fAW">
-                    <rect key="frame" x="168" y="103" width="39" height="37"/>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="2t6-rs-fAW">
+                    <rect key="frame" x="176" y="103" width="23" height="37"/>
                     <color key="currentPageIndicatorTintColor" red="0.85490196080000003" green="0.1764705882" blue="0.1529411765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </pageControl>
             </subviews>
@@ -40,7 +40,7 @@
                 <outlet property="pageControl" destination="2t6-rs-fAW" id="a6W-kC-rAT"/>
                 <outlet property="scrollView" destination="alp-tC-KWa" id="J2E-df-ryv"/>
             </connections>
-            <point key="canvasLocation" x="-293" y="-4"/>
+            <point key="canvasLocation" x="-198" y="6"/>
         </view>
     </objects>
 </document>
