@@ -15,7 +15,6 @@ let WIDTH_MULTIPLE = UIScreen.main.bounds.size.width/375.0
 
 let Goods_MULTIPLE = CGFloat(628 / 750.0)
 
-
 let BASE_URL = "http://api.xuepin.logthin.com"
 let TIME_OUT = TimeInterval(60)
 
@@ -24,11 +23,6 @@ let DEVICE_TOKEN = "deviceToken"
 let DEVICE_ID = "deviceId"
 let APP_SOURCE = "source"
 let CURRENT_VERSION = "version"
-
-
-
-
-
 
 let COLOR_COMMON = "c4000e"
 let COLOR_BACKGROUND = "da2d27"

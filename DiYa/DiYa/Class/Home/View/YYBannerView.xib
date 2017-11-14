@@ -18,7 +18,7 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alp-tC-KWa">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                     <connections>
-                        <outlet property="delegate" destination="-1" id="YZj-lZ-oZR"/>
+                        <outlet property="delegate" destination="qtC-sM-vvz" id="4xU-py-LK7"/>
                     </connections>
                 </scrollView>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="2t6-rs-fAW">

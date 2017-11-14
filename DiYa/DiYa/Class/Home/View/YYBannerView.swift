@@ -24,7 +24,6 @@ class YYBannerView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        scrollView.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height)
     }
 }
 
@@ -69,7 +68,6 @@ extension YYBannerView {
             scrollView.addSubview(imageView)
             imageView.yy_setImage(with: URL(string: pic), placeholder: UIImage(named: "ic_home_logo"))
             imageView.backgroundColor = UIColor.red
-            print(imageView)
         }
         scrollView.contentOffset = CGPoint(x: width, y: 0)
         scrollView.contentSize = CGSize(width: CGFloat(array.count + 2) * width, height: height)

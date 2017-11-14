@@ -10,28 +10,26 @@ import UIKit
 
 class WYBannerView: UIView {
 
-    var scrollView:UIScrollView! {
-        let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height))
-        scrollView.showsVerticalScrollIndicator = false
-        scrollView.showsHorizontalScrollIndicator = false
-        scrollView.delegate = self
-        return scrollView
-    }
-    var pageControl:UIPageControl! {
-        let pageControl = UIPageControl(frame: CGRect(x: 0, y: 0, width: 50, height: 5))
-        pageControl.center.y = bounds.height - 10
-        pageControl.center.x = bounds.width / 2.0
-        pageControl.tintColor = UIColor.white
-        pageControl.currentPageIndicatorTintColor = UIColor.red
-        pageControl.currentPage = 0
-        return pageControl
-    }
+    var scrollView:UIScrollView!
+    var pageControl:UIPageControl!
     
     var bannerArray : [String]?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height))
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.delegate = self
+        scrollView.isPagingEnabled = true
         addSubview(scrollView)
+        
+        pageControl = UIPageControl(frame: CGRect(x: 0, y: 0, width: 50, height: 5))
+        pageControl.center.y = bounds.height - 10
+        pageControl.center.x = bounds.width / 2.0
+        pageControl.tintColor = UIColor.white
+        pageControl.currentPageIndicatorTintColor = UIColor.red
+        pageControl.currentPage = 0
         addSubview(pageControl)
     }
     
@@ -84,6 +82,7 @@ extension WYBannerView {
             imageView.backgroundColor = UIColor.red
             print(imageView)
         }
+        
         scrollView.contentOffset = CGPoint(x: width, y: 0)
         scrollView.contentSize = CGSize(width: CGFloat(array.count + 2) * width, height: height)
     }

@@ -13,19 +13,16 @@ import MJRefresh
 class WYHomeViewController: WYBaseViewController {
     var tableView: UITableView!
     var listArray = [HomeModel]()
-    var bannerView : WYBannerView {
-//        let bannerView = YYBannerView.loadNib()
-//        bannerView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 200)
-//        return bannerView
-        let bannerView = WYBannerView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 200))
+    lazy var bannerView : YYBannerView! = {
+        let bannerView = YYBannerView.loadNib()
+        bannerView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 200)
         return bannerView
-    }
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigation()
         setUI()
-        view.addSubview(bannerView)
         homeData()
     }
 }
@@ -45,7 +42,7 @@ extension WYHomeViewController {
         tableView.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
             self.homeData()
         })
-//        tableView.tableHeaderView = bannerView
+        tableView.tableHeaderView = bannerView
     }
 }
 
