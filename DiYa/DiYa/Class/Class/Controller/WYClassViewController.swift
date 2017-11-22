@@ -13,9 +13,13 @@ class WYClassViewController: WYBaseViewController {
 
     @IBOutlet weak var oneClassView: OneClassView!
     @IBOutlet weak var twoClassView: TwoClassView!
+    var categoryList : [CategoryModelList]?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "分类"
+        oneClassView.delegate = self
     }
 }
 
@@ -29,6 +33,7 @@ extension WYClassViewController {
                     return
                 }
                 self.oneClassView.categoryMenu = array as? [CategoryModelList]
+                self.categoryList = array as? [CategoryModelList]
                 
                 guard let json1 = dic["categoryModelList"],
                     let array1 = NSArray.yy_modelArray(with: CategoryModel.self, json: json1) else {
@@ -42,5 +47,32 @@ extension WYClassViewController {
                 
             }
         }
+    }
+    
+    ///根据一级分类获取二级分类
+    
+    func requestTwoClassViewData(dic:[String:Any]) {
+        WYNetWorkTool.share.request(url: "/goods/category/info.htm", dic: dic) { (success, result) in
+            if success {
+                guard let dic = result as? [String : Any],
+                    let json = dic["categoryModelList"],
+                    let array = NSArray.yy_modelArray(with: CategoryModel.self, json: json) else {
+                        return
+                }
+                self.twoClassView.categoryModel = array as? [CategoryModel]
+            }
+        }
+    }
+}
+
+extension WYClassViewController:OneClassViewDelegate {
+    func oneClassViewDidSelectedCell(index: Int) {
+        
+        guard let array = categoryList else {
+            return
+        }
+        
+        let model = array[index]
+        requestTwoClassViewData(dic: ["parentId":model.id])
     }
 }

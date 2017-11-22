@@ -36,9 +36,13 @@ class WYBaseViewController: UIViewController {
         YYWebImageManager.shared().cache?.memoryCache.removeAllObjects()
         YYWebImageManager.shared().cache?.diskCache.removeAllObjects()
     }
+    
+    @objc func clickLeftButton() {
+        navigationController?.popViewController(animated: true)
+    }
 }
 
-extension UIViewController:UIGestureRecognizerDelegate {
+extension WYBaseViewController:UIGestureRecognizerDelegate {
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         let touchClass = NSStringFromClass((touch.view?.classForCoder)!)
         let supClass = NSStringFromClass((touch.view?.superview!.superview?.classForCoder)!)
@@ -47,5 +51,17 @@ extension UIViewController:UIGestureRecognizerDelegate {
             return false
         }
         return true
+    }
+}
+
+extension WYBaseViewController {
+    func leftBarButton() {
+        let button = UIButton()
+        button.setImage(UIImage(named:"ic_login_back"), for: .normal)
+        button.imageEdgeInsets = UIEdgeInsetsMake(0, -30, 0, 0)
+        button.sizeToFit()
+        button.bounds = CGRect(x: 0, y: 0, width: 40, height: button.bounds.height)
+        button.addTarget(self, action: #selector(clickLeftButton), for: .touchUpInside)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
     }
 }

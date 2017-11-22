@@ -24,7 +24,19 @@ class WYHomeViewController: WYBaseViewController {
         setNavigation()
         setUI()
         homeData()
+        NotificationCenter.default.addObserver(self, selector: #selector(clickGoods), name: NSNotification.Name(rawValue:NSNotificationNameHomeGoodsClick), object: nil)
     }
+    
+    @objc func clickGoods(notification:NSNotification?){
+        guard let dic = notification?.userInfo as? [String:GoodsModel] ,
+            let model = dic["model"] else {
+            return
+        }
+        let vc = YYGoodsDetailController()
+        vc.goodsId = model.id
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 extension WYHomeViewController {

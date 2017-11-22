@@ -8,10 +8,15 @@
 
 import UIKit
 
+@objc protocol OneClassViewDelegate : NSObjectProtocol{
+    func oneClassViewDidSelectedCell(index:Int)
+}
 
 class OneClassView: UIView {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    weak var delegate : OneClassViewDelegate?
     
     var categoryMenu : [CategoryModelList]? {
         didSet {
@@ -54,6 +59,8 @@ extension OneClassView:UITableViewDelegate,UITableViewDataSource {
         lastModel.isSelected = false
         lastModel = model!
         tableView.reloadData()
+        
+        delegate?.oneClassViewDidSelectedCell(index: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

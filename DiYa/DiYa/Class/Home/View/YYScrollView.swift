@@ -61,6 +61,15 @@ class YYScrollView: UIScrollView {
             }
         }
     }
+    
+    @objc func tapItem(tap:UITapGestureRecognizer) {
+        guard let item = tap.view as? GoodsItem,
+            let goodsList = goodsList else {
+            return
+        }
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue:NSNotificationNameHomeGoodsClick), object: self, userInfo: ["model":goodsList[item.tag - 100]])
+    }
 }
 
 extension YYScrollView {
@@ -71,6 +80,8 @@ extension YYScrollView {
             item.frame = CGRect(x: X, y: 0, width: ITEM_WIDTH, height: bounds.height)
             item.tag = 100 + i
             addSubview(item)
+            let tap = UITapGestureRecognizer(target: self, action: #selector(tapItem))
+            item.addGestureRecognizer(tap)
         }
         let view = subviews.last as! GoodsItem
         moreButton.frame = CGRect(x: view.frame.origin.x + view.bounds.width, y: 0, width: 50, height: bounds.height)
