@@ -52,7 +52,9 @@ extension WYClassViewController {
     ///根据一级分类获取二级分类
     
     func requestTwoClassViewData(dic:[String:Any]) {
+        SHOW_PROGRESS(view: view)
         WYNetWorkTool.share.request(url: "/goods/category/info.htm", dic: dic) { (success, result) in
+            HIDDEN_PROGRESS(view: self.view)
             if success {
                 guard let dic = result as? [String : Any],
                     let json = dic["categoryModelList"],

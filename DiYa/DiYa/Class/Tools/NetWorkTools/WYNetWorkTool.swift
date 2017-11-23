@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import MBProgressHUD
 
 class WYNetWorkTool {
     
@@ -19,7 +20,6 @@ class WYNetWorkTool {
     }
     
     func request(url:String,dic:[String:Any],callBack:@escaping (_ isSuccess:Bool,_ response:Any?)->()) -> () {
-        
         Alamofire.request(BASE_URL + url, method: .post, parameters: dic, encoding: URLEncoding.default).responseJSON { (response) in
             switch response.result.isSuccess {
             case true:

@@ -131,7 +131,9 @@ extension WYHomeViewController {
 
 extension WYHomeViewController {
     func homeData() {
+        SHOW_PROGRESS(view: view)
         WYNetWorkTool.share.request(url: "/main/index.htm", dic: ["pageNum":pageNumber]) { (isSuccess, result) in
+            HIDDEN_PROGRESS(view: self.view)
             if isSuccess {
                 guard let dic = result as? [String:Any] else {
                         return

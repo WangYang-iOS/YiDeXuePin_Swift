@@ -9,5 +9,4 @@
 #ifndef DiYa_Bridging_Header_h
 #define DiYa_Bridging_Header_h
 #import <YYModel/YYModel.h>
-
 #endif /* DiYa_Bridging_Header_h */

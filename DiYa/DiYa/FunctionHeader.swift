@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 let SCREEN_WIDTH = UIScreen.main.bounds.size.width
 let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
@@ -30,5 +31,11 @@ let COLOR_LINE = "f7f6f5"
 
 let NSNotificationNameHomeGoodsClick = "NSNotificationNameHomeGoodsClick"
 
+func SHOW_PROGRESS(view:UIView?) {
+    MBProgressHUD.showAdded(to: view, animated: true)
+}
 
+func HIDDEN_PROGRESS(view:UIView?) {
+    MBProgressHUD.hide(for: view, animated: true)
+}
 
