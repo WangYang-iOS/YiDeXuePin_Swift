@@ -12,16 +12,19 @@ class WYMineViewController: WYBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         navigationItem.title = "个人中心"
     }
     
     override func viewWillAppear(_ animated: Bool) {
          super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
         if !isLogin() {
             presentLoginVC(complete: nil)
         }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
 

@@ -13,6 +13,8 @@ import MJRefresh
 class WYHomeViewController: WYBaseViewController {
     var tableView: UITableView!
     var listArray = [HomeModel]()
+    var pics = [String]()
+    
     lazy var bannerView : YYBannerView! = {
         let bannerView = YYBannerView.loadNib()
         bannerView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 200)
@@ -34,6 +36,7 @@ class WYHomeViewController: WYBaseViewController {
         }
         let vc = YYGoodsDetailController()
         vc.goodsId = model.id
+        vc.pics = pics
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -149,7 +152,7 @@ extension WYHomeViewController {
                 for (_,model) in announcementListArray.enumerated() {
                     pics.append(model.picture)
                 }
-                
+                self.pics = pics
                 self.bannerView.loadBanners(bannerList: pics)
             }
             self.tableView.mj_header.endRefreshing()

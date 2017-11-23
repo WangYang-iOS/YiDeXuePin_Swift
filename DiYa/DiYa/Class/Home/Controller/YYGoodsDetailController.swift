@@ -9,14 +9,25 @@
 import UIKit
 
 class YYGoodsDetailController: WYBaseViewController {
+    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var addShopCartButton: UIButton!
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var soldButton: UIButton!
     var goodsId : Int?
+    var pics = [String]()
+    
+    lazy var bannerView:YYBannerView! = {
+        let bannerView = YYBannerView.loadNib()
+        return bannerView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigation()
+//        let pics = ["","","",""]
+        bannerView.frame = CGRect(x: 0, y: 0, width: topView.bounds.width, height: topView.bounds.height)
+        topView.addSubview(bannerView)
+        bannerView.loadBanners(bannerList: pics)
     }
     @IBAction func addShopCartButton(_ sender: UIButton) {
     }

@@ -16,6 +16,7 @@
                 <outlet property="addShopCartButton" destination="J5I-4L-CgL" id="b3G-G6-Hds"/>
                 <outlet property="buyButton" destination="CX9-Yr-Siz" id="FDA-xM-Ria"/>
                 <outlet property="soldButton" destination="kC1-1o-1TI" id="U7n-kN-H4e"/>
+                <outlet property="topView" destination="nKJ-tm-57T" id="SkP-R0-3zG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,7 +28,7 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sML-AC-IE7">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="613"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nKJ-tm-57T" customClass="YYBannerView" customModule="DiYa" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nKJ-tm-57T">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="314"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>

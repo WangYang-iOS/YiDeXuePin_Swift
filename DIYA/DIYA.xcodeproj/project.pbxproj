@@ -40,6 +40,7 @@
 		185954EA1F7C8E7800131B59 /* FunctionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185954E91F7C8E7800131B59 /* FunctionHeader.swift */; };
 		185954F81F7C907B00131B59 /* WYHomeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185954F71F7C907B00131B59 /* WYHomeTitleView.swift */; };
 		18668A2F1FC6D9A700E4BB62 /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18668A301FC6D9A700E4BB62 /* MBProgressHUD.framework */; };
+		18668A321FC707E000E4BB62 /* WYMineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18668A311FC707E000E4BB62 /* WYMineViewController.xib */; };
 		18724CD51FB4412E0084B324 /* YYModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18724CD61FB4412E0084B324 /* YYModel.framework */; };
 		18724CD71FB450E80084B324 /* MJExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18724CD81FB450E80084B324 /* MJExtension.framework */; };
 		187D334C1FB1A9E8000BFA1D /* YYNetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D334B1FB1A9E8000BFA1D /* YYNetWorkTool.swift */; };
@@ -101,6 +102,7 @@
 		185954E91F7C8E7800131B59 /* FunctionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionHeader.swift; sourceTree = "<group>"; };
 		185954F71F7C907B00131B59 /* WYHomeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYHomeTitleView.swift; sourceTree = "<group>"; };
 		18668A301FC6D9A700E4BB62 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18668A311FC707E000E4BB62 /* WYMineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WYMineViewController.xib; sourceTree = "<group>"; };
 		18724CD61FB4412E0084B324 /* YYModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YYModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18724CD81FB450E80084B324 /* MJExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MJExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		187D334B1FB1A9E8000BFA1D /* YYNetWorkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYNetWorkTool.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				18F006A31F7A298A00F68579 /* WYMineViewController.swift */,
+				18668A311FC707E000E4BB62 /* WYMineViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				181D3CA01FB48F77007F581C /* WYClassViewController.xib in Resources */,
 				182859811FB968DA0070241C /* YYHeaderView.xib in Resources */,
 				181D3CA81FB53B04007F581C /* OneClassCell.xib in Resources */,
+				18668A321FC707E000E4BB62 /* WYMineViewController.xib in Resources */,
 				181D3CB21FB557C0007F581C /* ClassReusableView.xib in Resources */,
 				184AFC1A1F7CD1B8005A4378 /* WYLoginViewController.xib in Resources */,
 				1853DB751FC5C2D7007ECF1F /* YYGoodsDetailController.xib in Resources */,
