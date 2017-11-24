@@ -23,8 +23,7 @@ class YYGoodsDetailController: WYBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigation()
-//        let pics = ["","","",""]
+        navigationItem.title = "商品详情"
         bannerView.frame = CGRect(x: 0, y: 0, width: topView.bounds.width, height: topView.bounds.height)
         topView.addSubview(bannerView)
         bannerView.loadBanners(bannerList: pics)
@@ -35,9 +34,3 @@ class YYGoodsDetailController: WYBaseViewController {
     }
 }
 
-extension YYGoodsDetailController {
-    fileprivate func navigation() {
-        navigationItem.title = "商品详情"
-        leftBarButton()
-    }
-}

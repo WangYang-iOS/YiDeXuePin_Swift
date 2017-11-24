@@ -16,6 +16,13 @@ class WYNavigationController: UINavigationController {
         // Do any additional setup after loading the view.
         navigationBar.barTintColor = UIColor.hexString(colorString: COLOR_BACKGROUND)
         navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+        
+        interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
+        if viewControllers.count == 1 {
+            interactivePopGestureRecognizer?.isEnabled = false
+        }else {
+            interactivePopGestureRecognizer?.isEnabled = true
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

@@ -19,6 +19,17 @@ class WYBaseViewController: UIViewController {
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(endEdit))
         tap.delegate = self;
         view.addGestureRecognizer(tap)
+        
+        if navigationController?.childViewControllers.count ?? 0 > 0 {
+            leftBarButton()
+        }
+        
+//        navigationController?.interactivePopGestureRecognizer?.delegate = self
+//        if navigationController?.viewControllers.count == 1 {
+//            navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+//        }else {
+//            navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+//        }
     }
     
     @objc fileprivate func endEdit() {
