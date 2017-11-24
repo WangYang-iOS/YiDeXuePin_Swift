@@ -56,6 +56,8 @@
 		18724CD51FB4412E0084B324 /* YYModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18724CD61FB4412E0084B324 /* YYModel.framework */; };
 		18724CD71FB450E80084B324 /* MJExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18724CD81FB450E80084B324 /* MJExtension.framework */; };
 		187D334C1FB1A9E8000BFA1D /* YYNetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D334B1FB1A9E8000BFA1D /* YYNetWorkTool.swift */; };
+		1889CE181FC81EAD008C2673 /* YYFavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1889CE161FC81EAD008C2673 /* YYFavoriteCell.swift */; };
+		1889CE191FC81EAD008C2673 /* YYFavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1889CE171FC81EAD008C2673 /* YYFavoriteCell.xib */; };
 		188B10C71FB2EF3100B940D8 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B10C61FB2EF3100B940D8 /* HomeModel.swift */; };
 		189A5FE21F7A3F8B00213BFB /* WYExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A5FE11F7A3F8B00213BFB /* WYExtensions.swift */; };
 		18F006821F7A04F200F68579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F006811F7A04F200F68579 /* AppDelegate.swift */; };
@@ -131,6 +133,8 @@
 		18724CD81FB450E80084B324 /* MJExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MJExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		187D334B1FB1A9E8000BFA1D /* YYNetWorkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYNetWorkTool.swift; sourceTree = "<group>"; };
 		187D334D1FB1B40C000BFA1D /* DiYa-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DiYa-Bridging-Header.h"; sourceTree = "<group>"; };
+		1889CE161FC81EAD008C2673 /* YYFavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYFavoriteCell.swift; sourceTree = "<group>"; };
+		1889CE171FC81EAD008C2673 /* YYFavoriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYFavoriteCell.xib; sourceTree = "<group>"; };
 		188B10C61FB2EF3100B940D8 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		189A5FE11F7A3F8B00213BFB /* WYExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYExtensions.swift; sourceTree = "<group>"; };
 		18BCD1F71F7D2BA000A22FE6 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -359,6 +363,8 @@
 		185954F61F7C901600131B59 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1889CE161FC81EAD008C2673 /* YYFavoriteCell.swift */,
+				1889CE171FC81EAD008C2673 /* YYFavoriteCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -560,6 +566,7 @@
 				181D3CB81FB5956F007F581C /* HomeCell.xib in Resources */,
 				181D3CBE1FB59990007F581C /* GoodsItem.xib in Resources */,
 				181D3CA01FB48F77007F581C /* WYClassViewController.xib in Resources */,
+				1889CE191FC81EAD008C2673 /* YYFavoriteCell.xib in Resources */,
 				182859811FB968DA0070241C /* YYHeaderView.xib in Resources */,
 				181D3CA81FB53B04007F581C /* OneClassCell.xib in Resources */,
 				1809FCF71FC7B6180075C837 /* YYExpressViewController.xib in Resources */,
@@ -684,6 +691,7 @@
 				181D3CBC1FB59983007F581C /* GoodsItem.swift in Sources */,
 				185954E81F7C8C5E00131B59 /* WYShopCartController.swift in Sources */,
 				181D3CA41FB4918B007F581C /* TwoClassView.swift in Sources */,
+				1889CE181FC81EAD008C2673 /* YYFavoriteCell.swift in Sources */,
 				1822A2D71F7D0F3F00E99A4E /* WYCommomMethod.swift in Sources */,
 				184AFC1D1F7CE5C5005A4378 /* WYNetWorkTool.swift in Sources */,
 				18F0069E1F7A249500F68579 /* WYBaseViewController.swift in Sources */,

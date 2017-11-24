@@ -27,8 +27,12 @@ extension WYClassViewController {
     func requestCategoryList() {
         WYNetWorkTool.share.request(url: "/goods/category.htm", dic: [:]) { (isSuccess, result) in
             if isSuccess {
-                guard let dic = result as? [String:Any],
-                    let json = dic["categoryList"],
+                guard let result = result,
+                    let dic = result["data"] as? [String:Any] else {
+                        return
+                }
+                
+                guard let json = dic["categoryList"],
                     let array = NSArray.yy_modelArray(with: CategoryModelList.self, json: json) else {
                     return
                 }
@@ -44,7 +48,6 @@ extension WYClassViewController {
                 for (_,model) in array1.enumerated() {
                     print(model)
                 }
-                
             }
         }
     }
@@ -56,7 +59,8 @@ extension WYClassViewController {
         WYNetWorkTool.share.request(url: "/goods/category/info.htm", dic: dic) { (success, result) in
             HIDDEN_PROGRESS(view: self.view)
             if success {
-                guard let dic = result as? [String : Any],
+                guard let result = result,
+                    let dic = result["data"] as? [String:Any],
                     let json = dic["categoryModelList"],
                     let array = NSArray.yy_modelArray(with: CategoryModel.self, json: json) else {
                         return

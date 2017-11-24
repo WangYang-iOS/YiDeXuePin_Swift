@@ -40,6 +40,7 @@ import Foundation
     var picture = ""
     var price = ""
     var title = ""
+    var sales = ""
     
     var name = ""
     var isHot = ""

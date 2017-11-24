@@ -44,6 +44,7 @@ class WYMineViewController: WYBaseViewController {
     
     @IBAction func shopCart(_ sender: UIButton) {
         ///购物车
+        tabBarController?.selectedIndex = 2
     }
     @IBAction func myOrder(_ sender: UIButton) {
         ///我的订单

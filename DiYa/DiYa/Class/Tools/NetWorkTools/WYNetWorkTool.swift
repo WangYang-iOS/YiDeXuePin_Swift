@@ -19,14 +19,34 @@ class WYNetWorkTool {
         //
     }
     
-    func request(url:String,dic:[String:Any],callBack:@escaping (_ isSuccess:Bool,_ response:Any?)->()) -> () {
-        Alamofire.request(BASE_URL + url, method: .post, parameters: dic, encoding: URLEncoding.default).responseJSON { (response) in
+    func request(url:String,dic:[String:Any],callBack:@escaping (_ isSuccess:Bool,_ response:[String:Any]?)->()) -> () {
+        var dictionary = [String:Any]()
+        dictionary = dic
+        
+        if (WYCommomMethod.valueForKey(key: ACCESS_TOKEN) != nil) {
+            dictionary["accessToken"] = WYCommomMethod.valueForKey(key: ACCESS_TOKEN)
+        }
+        
+        Alamofire.request(BASE_URL + url, method: .post, parameters: dictionary, encoding: URLEncoding.default).responseJSON { (response) in
             switch response.result.isSuccess {
             case true:
                 if let value = response.result.value {
+//                    let dic = value as? [String:Any]
+//                    let result = dic?["data"]
+//                    callBack(true, result);
                     let dic = value as? [String:Any]
-                    let result = dic?["data"] 
-                    callBack(true, result);
+                    guard let retCode = dic?["retCode"] as? String else {
+                        callBack(false, dic);
+                        return
+                    }
+                    if retCode == "0" {
+                        callBack(true, dic)
+                    }else if retCode == "10002" {
+                        let window = UIApplication.shared.keyWindow
+                        let rootVC = window?.rootViewController
+                        rootVC?.present(WYNavigationController(rootViewController: WYLoginViewController()), animated: true, completion: nil)
+                        callBack(false, dic)
+                    }
                 }
             case false:
                 callBack(false,["error":response.result.error as Any])

@@ -138,9 +138,11 @@ extension WYHomeViewController {
         WYNetWorkTool.share.request(url: "/main/index.htm", dic: ["pageNum":pageNumber]) { (isSuccess, result) in
             HIDDEN_PROGRESS(view: self.view)
             if isSuccess {
-                guard let dic = result as? [String:Any] else {
+                guard let result = result,
+                let dic = result["data"] as? [String:Any] else {
                         return
                 }
+                
                 let categoryListModelList = dic["categoryListModelList"]
                 let array = NSArray.yy_modelArray(with: HomeModel.self, json: categoryListModelList as Any)
                 self.listArray = array as? [HomeModel] ?? [HomeModel]()

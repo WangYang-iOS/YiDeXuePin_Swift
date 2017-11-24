@@ -48,6 +48,10 @@ class WYLoginViewController: WYBaseViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     @IBAction func sendCode(_ sender: UIButton) {
         
     }
@@ -111,11 +115,14 @@ extension WYLoginViewController {
         //
         WYNetWorkTool.share.request(url: "/user/login.htm", dic: dic) { (isSuccess, result) in
             if isSuccess {
-                self.userInfo = UserInfo.yy_model(withJSON: result ?? "")!
+                guard let result = result,
+                    let dic = result["data"] else {
+                        return
+                }
+                self.userInfo = UserInfo.yy_model(withJSON: dic)!
                 if self.userInfo.accessToken.count > 0 {
                     WYCommomMethod.saveValue(value: self.userInfo.accessToken, key: ACCESS_TOKEN)
                 }
-                
                 self.dismiss(animated: true, completion: {
                     //
                 })

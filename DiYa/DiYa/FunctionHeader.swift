@@ -30,6 +30,7 @@ let COLOR_BACKGROUND = "da2d27"
 let COLOR_LINE = "f7f6f5"
 
 let NSNotificationNameHomeGoodsClick = "NSNotificationNameHomeGoodsClick"
+let NSNotificationNameTokenOutTime = "NSNotificationNameTokenOutTime"
 
 func SHOW_PROGRESS(view:UIView?) {
     MBProgressHUD.showAdded(to: view, animated: true)

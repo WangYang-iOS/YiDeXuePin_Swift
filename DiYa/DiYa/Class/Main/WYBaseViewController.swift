@@ -20,23 +20,18 @@ class WYBaseViewController: UIViewController {
         tap.delegate = self;
         view.addGestureRecognizer(tap)
         
-        if navigationController?.childViewControllers.count ?? 0 > 0 {
+        if navigationController?.viewControllers.count ?? 0 > 1 {
             leftBarButton()
         }
         
-//        navigationController?.interactivePopGestureRecognizer?.delegate = self
-//        if navigationController?.viewControllers.count == 1 {
-//            navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-//        }else {
-//            navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-//        }
+        NotificationCenter.default.addObserver(self, selector: #selector(presentLoginVC), name: NSNotification.Name(rawValue:NSNotificationNameTokenOutTime), object: nil)
     }
     
     @objc fileprivate func endEdit() {
         self.view .endEditing(true)
     }
     
-    func presentLoginVC(complete : (()->())?) -> () {
+    @objc func presentLoginVC(complete : (()->())?) -> () {
         self.present(WYNavigationController(rootViewController: WYLoginViewController()), animated: true) {
             complete?()
         }
@@ -50,6 +45,10 @@ class WYBaseViewController: UIViewController {
     
     @objc func clickLeftButton() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue:NSNotificationNameTokenOutTime), object: nil)
     }
 }
 
