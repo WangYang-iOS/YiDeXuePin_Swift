@@ -24,6 +24,7 @@ class YYBannerView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        pageControl.isHidden = true
     }
 }
 

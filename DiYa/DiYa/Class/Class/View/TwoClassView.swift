@@ -8,9 +8,15 @@
 
 import UIKit
 
+@objc protocol TwoClassViewDelegate {
+    func collectionViewCell(collectionViewCell:TwoClassCell?,didSelectedItemAt index:Int)
+}
+
 class TwoClassView: UIView {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    weak var delegate : TwoClassViewDelegate?
 
     var categoryModel : [CategoryModel]? {
         didSet {
@@ -40,6 +46,12 @@ extension TwoClassView:UICollectionViewDelegate,UICollectionViewDataSource,UICol
         let model = categoryModel?[indexPath.section]
         cell?.goodsModel = model?.goodsCategoryList[indexPath.row]
         return cell!
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //
+        let cell = collectionView.cellForItem(at: indexPath) as? TwoClassCell
+        delegate?.collectionViewCell(collectionViewCell: cell, didSelectedItemAt: indexPath.item)
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

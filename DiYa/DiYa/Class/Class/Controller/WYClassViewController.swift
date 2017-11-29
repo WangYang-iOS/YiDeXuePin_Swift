@@ -20,12 +20,15 @@ class WYClassViewController: WYBaseViewController {
         super.viewDidLoad()
         navigationItem.title = "分类"
         oneClassView.delegate = self
+        twoClassView.delegate = self
     }
 }
 
 extension WYClassViewController {
     func requestCategoryList() {
+        SHOW_PROGRESS(view: view)
         WYNetWorkTool.share.request(url: "/goods/category.htm", dic: [:]) { (isSuccess, result) in
+            HIDDEN_PROGRESS(view: self.view)
             if isSuccess {
                 guard let result = result,
                     let dic = result["data"] as? [String:Any] else {
@@ -71,7 +74,7 @@ extension WYClassViewController {
     }
 }
 
-extension WYClassViewController:OneClassViewDelegate {
+extension WYClassViewController:OneClassViewDelegate,TwoClassViewDelegate {
     func oneClassViewDidSelectedCell(index: Int) {
         
         guard let array = categoryList else {
@@ -80,5 +83,13 @@ extension WYClassViewController:OneClassViewDelegate {
         
         let model = array[index]
         requestTwoClassViewData(dic: ["parentId":model.id])
+    }
+    
+    func collectionViewCell(collectionViewCell: TwoClassCell?, didSelectedItemAt index: Int) {
+        //
+        
+        let listVC = YYClassListViewController()
+        listVC.vcTitle = collectionViewCell?.goodsModel?.name
+        navigationController?.pushViewController(listVC, animated: true)
     }
 }

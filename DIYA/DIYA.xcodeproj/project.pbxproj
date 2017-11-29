@@ -20,6 +20,8 @@
 		1809FCFB1FC7B6260075C837 /* YYAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1809FCF91FC7B6260075C837 /* YYAddressViewController.xib */; };
 		1809FCFE1FC7B6370075C837 /* YYSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809FCFC1FC7B6370075C837 /* YYSettingViewController.swift */; };
 		1809FCFF1FC7B6370075C837 /* YYSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1809FCFD1FC7B6370075C837 /* YYSettingViewController.xib */; };
+		1819224A1FCEAD4E003BA006 /* YYClassListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181922481FCEAD4E003BA006 /* YYClassListViewController.swift */; };
+		1819224B1FCEAD4E003BA006 /* YYClassListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181922491FCEAD4E003BA006 /* YYClassListViewController.xib */; };
 		181D3C9F1FB48F77007F581C /* WYClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D3C9D1FB48F77007F581C /* WYClassViewController.swift */; };
 		181D3CA01FB48F77007F581C /* WYClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181D3C9E1FB48F77007F581C /* WYClassViewController.xib */; };
 		181D3CA21FB49163007F581C /* OneClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D3CA11FB49163007F581C /* OneClassView.swift */; };
@@ -84,6 +86,8 @@
 		1809FCF91FC7B6260075C837 /* YYAddressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYAddressViewController.xib; sourceTree = "<group>"; };
 		1809FCFC1FC7B6370075C837 /* YYSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYSettingViewController.swift; sourceTree = "<group>"; };
 		1809FCFD1FC7B6370075C837 /* YYSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYSettingViewController.xib; sourceTree = "<group>"; };
+		181922481FCEAD4E003BA006 /* YYClassListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYClassListViewController.swift; sourceTree = "<group>"; };
+		181922491FCEAD4E003BA006 /* YYClassListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYClassListViewController.xib; sourceTree = "<group>"; };
 		181D3C9D1FB48F77007F581C /* WYClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYClassViewController.swift; sourceTree = "<group>"; };
 		181D3C9E1FB48F77007F581C /* WYClassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WYClassViewController.xib; sourceTree = "<group>"; };
 		181D3CA11FB49163007F581C /* OneClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneClassView.swift; sourceTree = "<group>"; };
@@ -296,6 +300,8 @@
 			children = (
 				181D3C9D1FB48F77007F581C /* WYClassViewController.swift */,
 				181D3C9E1FB48F77007F581C /* WYClassViewController.xib */,
+				181922481FCEAD4E003BA006 /* YYClassListViewController.swift */,
+				181922491FCEAD4E003BA006 /* YYClassListViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -574,6 +580,7 @@
 				1809FCEB1FC7B5E50075C837 /* YYMessageViewController.xib in Resources */,
 				181D3CB21FB557C0007F581C /* ClassReusableView.xib in Resources */,
 				184AFC1A1F7CD1B8005A4378 /* WYLoginViewController.xib in Resources */,
+				1819224B1FCEAD4E003BA006 /* YYClassListViewController.xib in Resources */,
 				1853DB751FC5C2D7007ECF1F /* YYGoodsDetailController.xib in Resources */,
 				1828597B1FB93D2C0070241C /* YYBannerView.xib in Resources */,
 				1809FCFB1FC7B6260075C837 /* YYAddressViewController.xib in Resources */,
@@ -680,6 +687,7 @@
 				1809FCFE1FC7B6370075C837 /* YYSettingViewController.swift in Sources */,
 				1809FCF61FC7B6180075C837 /* YYExpressViewController.swift in Sources */,
 				1809FCEA1FC7B5E50075C837 /* YYMessageViewController.swift in Sources */,
+				1819224A1FCEAD4E003BA006 /* YYClassListViewController.swift in Sources */,
 				1809FCF21FC7B60A0075C837 /* YYTicketViewController.swift in Sources */,
 				1822A2D91F7D1C2A00E99A4E /* UserInfo.swift in Sources */,
 				18F006821F7A04F200F68579 /* AppDelegate.swift in Sources */,
