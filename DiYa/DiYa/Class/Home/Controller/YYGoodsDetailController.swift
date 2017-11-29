@@ -13,7 +13,7 @@ class YYGoodsDetailController: WYBaseViewController {
     @IBOutlet weak var addShopCartButton: UIButton!
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var soldButton: UIButton!
-    var goodsId : Int?
+    var goodsId : String?
     var pics = [String]()
     
     lazy var bannerView:YYBannerView! = {

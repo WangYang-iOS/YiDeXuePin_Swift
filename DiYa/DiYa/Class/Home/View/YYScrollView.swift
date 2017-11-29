@@ -12,6 +12,8 @@ let ITEM_WIDTH:CGFloat = SCREEN_WIDTH / 2.5
 
 class YYScrollView: UIScrollView {
 
+    var moreBlock : (() -> ())?
+    
     var goodsList : [GoodsModel]? {
         didSet{
             //
@@ -70,6 +72,12 @@ class YYScrollView: UIScrollView {
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue:NSNotificationNameHomeGoodsClick), object: self, userInfo: ["model":goodsList[item.tag - 100]])
     }
+    
+    @objc func clickMore(button:UIButton) {
+        if moreBlock != nil {
+            moreBlock!()
+        }
+    }
 }
 
 extension YYScrollView {
@@ -88,5 +96,6 @@ extension YYScrollView {
         moreButton.titleLabel?.numberOfLines = 0;
         moreButton.titleLabel?.lineBreakMode = .byWordWrapping
         addSubview(moreButton)
+        moreButton.addTarget(self, action: #selector(clickMore), for: .touchUpInside)
     }
 }

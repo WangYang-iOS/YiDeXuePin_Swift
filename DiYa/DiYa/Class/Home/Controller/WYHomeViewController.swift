@@ -73,6 +73,12 @@ extension WYHomeViewController:UITableViewDataSource,UITableViewDelegate {
         }else {
             cell?.scrollView.loadImage(array: [GoodsModel]())
         }
+        cell?.clickMoreGoods = { [weak self] in
+            let vc = YYClassListViewController()
+            vc.vcTitle = (self?.listArray[indexPath.section])?.categoryName
+            vc.categoryId = (self?.listArray[indexPath.section])?.category
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
         return cell!
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

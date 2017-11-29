@@ -90,6 +90,7 @@ extension WYClassViewController:OneClassViewDelegate,TwoClassViewDelegate {
         
         let listVC = YYClassListViewController()
         listVC.vcTitle = collectionViewCell?.goodsModel?.name
+        listVC.categoryId = collectionViewCell?.goodsModel?.id
         navigationController?.pushViewController(listVC, animated: true)
     }
 }

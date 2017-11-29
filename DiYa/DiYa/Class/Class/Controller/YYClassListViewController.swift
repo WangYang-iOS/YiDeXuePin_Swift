@@ -11,7 +11,7 @@ import UIKit
 class YYClassListViewController: WYBaseViewController {
 
     var vcTitle:String?
-    
+    var categoryId : String?
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()

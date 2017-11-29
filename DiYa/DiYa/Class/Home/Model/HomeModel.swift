@@ -34,8 +34,8 @@ import Foundation
 }
 
 @objcMembers class GoodsModel: NSObject {
-    var category = 0
-    var id = 0
+    var category = ""
+    var id = ""
     var marketPrice = ""
     var picture = ""
     var price = ""
@@ -44,8 +44,8 @@ import Foundation
     
     var name = ""
     var isHot = ""
-    var sort = 0
-    var parentId = 0
+    var sort = ""
+    var parentId = ""
     var isSelected : Bool = false
     
     override var description: String {
@@ -55,7 +55,7 @@ import Foundation
 
 @objcMembers class AnnouncementModel: NSObject {
     var goodsId = ""
-    var id = 0
+    var id = ""
     var jumpUrl = ""
     var picture = ""
     var type = ""
@@ -66,9 +66,9 @@ import Foundation
 }
 
 @objcMembers class CategoryModelList: NSObject {
-    var id = 0
-    var isHot = 0
-    var sort = 0
+    var id = ""
+    var isHot = ""
+    var sort = ""
     var name = ""
     var picture = ""
     var isSelected : Bool = false
@@ -79,8 +79,8 @@ import Foundation
 }
 
 @objcMembers class CategoryModel:NSObject {
-    var id = 0
-    var parentId = 0
+    var id = ""
+    var parentId = ""
     var name = ""
     var goodsCategoryList = [GoodsModel]()
     
