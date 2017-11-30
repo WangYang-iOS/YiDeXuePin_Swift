@@ -19,8 +19,16 @@ class YYClassListViewController: WYBaseViewController {
 }
 
 extension YYClassListViewController {
-    func setUI() {
+    fileprivate func setUI() {
         navigationItem.title = vcTitle
         leftBarButton()
+    }
+}
+
+extension YYClassListViewController {
+    func requestGoodsList(dic:[String:Any]) {
+        WYNetWorkTool.share.request(url: "", dic: dic) { (success, result) in
+            //
+        }
     }
 }
