@@ -60,11 +60,12 @@ extension YYFavoriteViewController {
                     self.collectionView.reloadData()
                 }
                 guard let result = result,
+                    let page = result["totalPage"] as? String,
+                    let totalPage = Int(page),
                     let array = result["data"] as? [Any] else {
                         return
                 }
-                let totalPage = result["totalPage"] as? Int ?? 0
-                if self.pageNumber == 0 || totalPage == 0 {
+                if self.pageNumber == 0 && totalPage == 0 {
                     self.collectionView.mj_footer.endRefreshingWithNoMoreData()
                 }else if self.pageNumber == totalPage - 1 {
                     self.collectionView.mj_footer.endRefreshingWithNoMoreData()

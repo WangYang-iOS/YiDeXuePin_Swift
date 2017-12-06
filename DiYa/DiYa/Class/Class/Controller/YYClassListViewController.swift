@@ -55,13 +55,9 @@ extension YYClassListViewController {
                 }
                 guard let result = result,
                 let dic = result["data"],
-                let list = NSArray.yy_modelArray(with: GoodsModel.self, json: dic) as? [GoodsModel] else {
-                    return
-                }
-                guard let page = result["totalPage"] as? String,
-                let totalPage = Int(page) else {
-                    return
-                }
+                let page = result["totalPage"] as? String,
+                let totalPage = Int(page),
+                let list = NSArray.yy_modelArray(with: GoodsModel.self, json: dic) as? [GoodsModel] else {return}
                 if totalPage == 0 && self.pageNumber == 0 {
                     self.collectionView.mj_footer.endRefreshingWithNoMoreData()
                 }else if self.pageNumber == totalPage - 1  {
