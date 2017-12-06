@@ -27,13 +27,12 @@ class WYNetWorkTool {
             dictionary["accessToken"] = WYCommomMethod.valueForKey(key: ACCESS_TOKEN)
         }
         
+        print("请求参数：\(dic)")
+        
         Alamofire.request(BASE_URL + url, method: .post, parameters: dictionary, encoding: URLEncoding.default).responseJSON { (response) in
             switch response.result.isSuccess {
             case true:
                 if let value = response.result.value {
-//                    let dic = value as? [String:Any]
-//                    let result = dic?["data"]
-//                    callBack(true, result);
                     let dic = value as? [String:Any]
                     guard let retCode = dic?["retCode"] as? String else {
                         callBack(false, dic);

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MJRefresh
 class YYClassListViewController: WYBaseViewController {
 
     @IBOutlet weak var layout: UICollectionViewFlowLayout!
@@ -19,10 +19,7 @@ class YYClassListViewController: WYBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        guard let categoryId = categoryId else {
-            return
-        }
-        requestGoodsList(dic: ["type":"category","pageNum":"\(pageNumber)","category":categoryId])
+        requestGoodsList()
     }
 }
 
@@ -33,23 +30,50 @@ extension YYClassListViewController {
         let width = (SCREEN_WIDTH - 10) / 2.0
         layout.estimatedItemSize = CGSize(width: width, height: 400)
         collectionView.register(UINib.init(nibName: "YYFavoriteCell", bundle: nil), forCellWithReuseIdentifier: "YYFavoriteCell")
+        collectionView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
+            self.pageNumber = 0
+            self.requestGoodsList()
+        })
+        collectionView.mj_footer = MJRefreshBackNormalFooter(refreshingBlock: {
+            self.requestGoodsList()
+        })
     }
 }
 
 extension YYClassListViewController {
-    func requestGoodsList(dic:[String:Any]) {
+    func requestGoodsList() {
         SHOW_PROGRESS(view: view)
+        guard let categoryId = self.categoryId else {
+            return
+        }
+        let dic = ["type":"category","pageNum":"\(self.pageNumber)","category":categoryId]
         WYNetWorkTool.share.request(url: "/goods/category/goods_list.htm", dic: dic) { (success, result) in
             HIDDEN_PROGRESS(view: self.view)
             if success {
+                if self.pageNumber == 0 {
+                    self.goodsList.removeAll()
+                }
                 guard let result = result,
                 let dic = result["data"],
                 let list = NSArray.yy_modelArray(with: GoodsModel.self, json: dic) as? [GoodsModel] else {
                     return
                 }
+                guard let page = result["totalPage"] as? String,
+                let totalPage = Int(page) else {
+                    return
+                }
+                if totalPage == 0 && self.pageNumber == 0 {
+                    self.collectionView.mj_footer.endRefreshingWithNoMoreData()
+                }else if self.pageNumber == totalPage - 1  {
+                    self.collectionView.mj_footer.endRefreshingWithNoMoreData()
+                }else {
+                    self.pageNumber += 1
+                    self.collectionView.mj_footer.endRefreshing()
+                }
                 self.goodsList = self.goodsList + list
                 print(list)
             }
+            self.collectionView.mj_header.endRefreshing()
             self.collectionView.reloadData()
         }
     }
