@@ -76,3 +76,13 @@ extension UILabel {
         return label
     }
 }
+
+extension UIView {
+    class func loadXib1() -> UIView {
+        let spaceName = Bundle.main.infoDictionary?["CFBundleName"] as? String ?? ""
+        var classStr = NSStringFromClass(self.classForCoder())
+        classStr = classStr.substring(from: classStr.index(classStr.startIndex, offsetBy: spaceName.count + 1))
+        let view = UINib.init(nibName: classStr, bundle: nil).instantiate(withOwner: self, options: nil)[0] as! UIView
+        return view
+    }
+}

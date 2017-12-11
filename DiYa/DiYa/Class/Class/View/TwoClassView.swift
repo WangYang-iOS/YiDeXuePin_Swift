@@ -9,7 +9,7 @@
 import UIKit
 
 @objc protocol TwoClassViewDelegate {
-    func collectionViewCell(collectionViewCell:TwoClassCell?,didSelectedItemAt index:Int)
+    func collectionViewCell(collectionViewCell:TwoClassCell?,didSelectedItemAt indexPath:IndexPath)
 }
 
 class TwoClassView: UIView {
@@ -51,7 +51,7 @@ extension TwoClassView:UICollectionViewDelegate,UICollectionViewDataSource,UICol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //
         let cell = collectionView.cellForItem(at: indexPath) as? TwoClassCell
-        delegate?.collectionViewCell(collectionViewCell: cell, didSelectedItemAt: indexPath.item)
+        delegate?.collectionViewCell(collectionViewCell: cell, didSelectedItemAt: indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,10 +23,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XlN-y1-29q" customClass="OneClassView" customModule="DiYa" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="64" width="75" height="554"/>
+                    <rect key="frame" x="0.0" y="0.0" width="75" height="618"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="JDd-6b-DYE">
-                            <rect key="frame" x="0.0" y="0.0" width="75" height="554"/>
+                            <rect key="frame" x="0.0" y="0.0" width="75" height="618"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <color key="sectionIndexBackgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
@@ -47,7 +47,7 @@
                     <rect key="frame" x="75" y="0.0" width="300" height="667"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vCF-2Q-k2D">
-                            <rect key="frame" x="0.0" y="64" width="300" height="554"/>
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="618"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="DPh-19-l8u">
                                 <size key="itemSize" width="50" height="50"/>
@@ -59,7 +59,7 @@
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="vCF-2Q-k2D" secondAttribute="trailing" id="QyN-pR-tRm"/>
-                        <constraint firstItem="vCF-2Q-k2D" firstAttribute="top" secondItem="1QG-mR-W9y" secondAttribute="top" constant="64" id="Qzy-WN-TOu"/>
+                        <constraint firstItem="vCF-2Q-k2D" firstAttribute="top" secondItem="1QG-mR-W9y" secondAttribute="top" id="Qzy-WN-TOu"/>
                         <constraint firstAttribute="bottom" secondItem="vCF-2Q-k2D" secondAttribute="bottom" constant="49" id="lst-Qz-pfx"/>
                         <constraint firstItem="vCF-2Q-k2D" firstAttribute="leading" secondItem="1QG-mR-W9y" secondAttribute="leading" id="zKJ-gt-RrO"/>
                     </constraints>
@@ -73,7 +73,7 @@
                 <constraint firstItem="XlN-y1-29q" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.2" id="2Pw-Fq-nbd"/>
                 <constraint firstAttribute="bottom" secondItem="1QG-mR-W9y" secondAttribute="bottom" id="3eT-HN-YQc"/>
                 <constraint firstItem="XlN-y1-29q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Dcy-mx-mEY"/>
-                <constraint firstItem="XlN-y1-29q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="JsG-uV-x0k"/>
+                <constraint firstItem="XlN-y1-29q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JsG-uV-x0k"/>
                 <constraint firstItem="1QG-mR-W9y" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="aPk-OF-MMD"/>
                 <constraint firstAttribute="bottom" secondItem="XlN-y1-29q" secondAttribute="bottom" constant="49" id="ghU-Nc-Ebd"/>
                 <constraint firstItem="1QG-mR-W9y" firstAttribute="leading" secondItem="XlN-y1-29q" secondAttribute="trailing" id="tgE-6k-jOf"/>

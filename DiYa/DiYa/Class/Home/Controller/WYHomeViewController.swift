@@ -44,8 +44,7 @@ class WYHomeViewController: WYBaseViewController {
 
 extension WYHomeViewController {
     func setUI() {
-        self.automaticallyAdjustsScrollViewInsets = false
-        tableView = UITableView(frame:CGRect(x: 0, y: 64, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 49 - 64), style: .plain)
+        tableView = UITableView(frame:CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 49 - 64), style: .plain)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -77,6 +76,7 @@ extension WYHomeViewController:UITableViewDataSource,UITableViewDelegate {
             let vc = YYClassListViewController()
             vc.vcTitle = (self?.listArray[indexPath.section])?.categoryName
             vc.categoryId = (self?.listArray[indexPath.section])?.category
+            vc.type = "indexCategory"
             self?.navigationController?.pushViewController(vc, animated: true)
         }
         return cell!

@@ -12,8 +12,7 @@ class WYNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        navigationBar.isTranslucent = false;
         navigationBar.barTintColor = UIColor.hexString(colorString: COLOR_BACKGROUND)
         navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
         

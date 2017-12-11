@@ -10,16 +10,66 @@ import UIKit
 import MJRefresh
 class YYClassListViewController: WYBaseViewController {
 
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var topViewHeight: NSLayoutConstraint!
     @IBOutlet weak var layout: UICollectionViewFlowLayout!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    fileprivate lazy var bannerView : YYBannerScrollView = {
+        let bannerView = YYBannerScrollView.loadXib()
+        bannerView.backgroundColor = UIColor.hexString(colorString: COLOR_BACKGROUND)
+        bannerView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 45)
+        bannerView.delegate = self
+        return bannerView
+    }()
+    
+    fileprivate lazy var allClassView : YYAllClassView = {
+       let classView = YYAllClassView.loadXib1()
+        return classView as! YYAllClassView
+    }()
+    
+    
     var vcTitle:String?
     var categoryId : String?
+    var type = ""
+    
+    
     var goodsList = [GoodsModel]()
+    var classList : [GoodsModel]? {
+        didSet {
+            var titleArray = [String]()
+            guard let classList = classList else {
+                return
+            }
+            for (_,model) in classList.enumerated() {
+                titleArray.append(model.name)
+            }
+            bannerView.titleArray = titleArray;
+        }
+    }
+    var index : Int? {
+        didSet {
+            bannerView.index = index;
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if type == "indexCategory" {
+            topViewHeight.constant = 0
+            requestGoodsList(categoryId: categoryId ?? "")
+        }else {
+            topViewHeight.constant = 45
+        }
         setUI()
-        requestGoodsList()
+//        allClassView.frame = topView.bounds;
+//        topView.addSubview(allClassView)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.shadowImage = UIImage()
     }
 }
 
@@ -32,22 +82,26 @@ extension YYClassListViewController {
         collectionView.register(UINib.init(nibName: "YYFavoriteCell", bundle: nil), forCellWithReuseIdentifier: "YYFavoriteCell")
         collectionView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
             self.pageNumber = 0
-            self.requestGoodsList()
+            self.requestGoodsList(categoryId: self.categoryId ?? "")
         })
         collectionView.mj_footer = MJRefreshBackNormalFooter(refreshingBlock: {
-            self.requestGoodsList()
+            self.requestGoodsList(categoryId: self.categoryId ?? "")
         })
+        topView.addSubview(bannerView)
     }
 }
 
 extension YYClassListViewController {
-    func requestGoodsList() {
+    func requestGoodsList(categoryId:String) {
         SHOW_PROGRESS(view: view)
-        guard let categoryId = self.categoryId else {
-            return
+        var url = ""
+        if type == "category" {
+            url = "/goods/category/goods_list.htm"
+        }else {
+            url = "/goods/category/goods_list.htm"
         }
-        let dic = ["type":"category","pageNum":"\(self.pageNumber)","category":categoryId]
-        WYNetWorkTool.share.request(url: "/goods/category/goods_list.htm", dic: dic) { (success, result) in
+        let dic = ["type":type,"pageNum":"\(self.pageNumber)","category":categoryId]
+        WYNetWorkTool.share.request(url: url, dic: dic) { (success, result) in
             HIDDEN_PROGRESS(view: self.view)
             if success {
                 if self.pageNumber == 0 {
@@ -89,5 +143,19 @@ extension YYClassListViewController:UICollectionViewDelegate,UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = YYGoodsDetailController()
         navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension YYClassListViewController:YYBannerScrollViewDelegate {
+    func bannerScrollViewclickIndex(index: Int) {
+        guard let model = classList?[index] else {
+            return
+        }
+        if self.categoryId == model.id {
+            return
+        }
+        self.pageNumber = 0
+        self.categoryId = model.id
+        requestGoodsList(categoryId: model.id)
     }
 }

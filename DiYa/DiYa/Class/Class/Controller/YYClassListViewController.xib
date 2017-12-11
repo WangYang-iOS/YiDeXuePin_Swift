@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,6 +13,8 @@
             <connections>
                 <outlet property="collectionView" destination="bS0-tN-4xy" id="7xf-vO-pUN"/>
                 <outlet property="layout" destination="xx7-pX-ZwV" id="HLe-r0-adi"/>
+                <outlet property="topView" destination="4CD-TZ-4bH" id="uTx-3B-4Vu"/>
+                <outlet property="topViewHeight" destination="7m5-XL-V1o" id="Ids-DJ-2Oh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bS0-tN-4xy">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="45" width="375" height="622"/>
                     <color key="backgroundColor" red="0.96862745098039216" green="0.96470588235294119" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xx7-pX-ZwV">
                         <size key="itemSize" width="50" height="50"/>
@@ -35,14 +37,26 @@
                         <outlet property="delegate" destination="-1" id="FWL-H3-RW5"/>
                     </connections>
                 </collectionView>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4CD-TZ-4bH">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                    <color key="backgroundColor" red="0.85490196078431369" green="0.1764705882352941" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="7m5-XL-V1o"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="bS0-tN-4xy" firstAttribute="top" secondItem="4CD-TZ-4bH" secondAttribute="bottom" id="2fr-4J-jEf"/>
+                <constraint firstItem="4CD-TZ-4bH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4sl-JC-eVn"/>
+                <constraint firstItem="4CD-TZ-4bH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5Bt-K1-eSu"/>
                 <constraint firstAttribute="trailing" secondItem="bS0-tN-4xy" secondAttribute="trailing" id="9IJ-Qm-OsC"/>
-                <constraint firstItem="bS0-tN-4xy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="WD5-p8-eXD"/>
+                <constraint firstItem="bS0-tN-4xy" firstAttribute="top" secondItem="4CD-TZ-4bH" secondAttribute="bottom" id="WD5-p8-eXD"/>
                 <constraint firstAttribute="bottom" secondItem="bS0-tN-4xy" secondAttribute="bottom" id="dcK-Ph-CWK"/>
+                <constraint firstAttribute="trailing" secondItem="4CD-TZ-4bH" secondAttribute="trailing" id="pHW-b5-ahu"/>
                 <constraint firstItem="bS0-tN-4xy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wxg-Qu-VAe"/>
             </constraints>
+            <point key="canvasLocation" x="83" y="-19"/>
         </view>
     </objects>
 </document>

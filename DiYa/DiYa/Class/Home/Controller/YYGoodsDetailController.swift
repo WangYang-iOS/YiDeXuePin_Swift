@@ -14,13 +14,11 @@ class YYGoodsDetailController: WYBaseViewController {
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var soldButton: UIButton!
     var goodsId : String?
-    var pics = [String]()
-    
+    var pics = [String]()    
     lazy var bannerView:YYBannerView! = {
         let bannerView = YYBannerView.loadNib()
         return bannerView
     }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "商品详情"

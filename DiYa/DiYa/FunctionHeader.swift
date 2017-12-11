@@ -16,7 +16,7 @@ let WIDTH_MULTIPLE = UIScreen.main.bounds.size.width/375.0
 
 let Goods_MULTIPLE = CGFloat(628 / 750.0)
 
-let BASE_URL = "http://api.xuepin.logthin.com"
+let BASE_URL = "https://api.yidexuepin.com"
 let TIME_OUT = TimeInterval(60)
 
 let ACCESS_TOKEN = "accessToken"

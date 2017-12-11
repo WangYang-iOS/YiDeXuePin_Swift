@@ -17,7 +17,7 @@ class WYBaseViewController: UIViewController {
         super.viewDidLoad()
         
         automaticallyAdjustsScrollViewInsets = false
-        
+//        edgesForExtendedLayout = []
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(endEdit))
         tap.delegate = self;
         view.addGestureRecognizer(tap)

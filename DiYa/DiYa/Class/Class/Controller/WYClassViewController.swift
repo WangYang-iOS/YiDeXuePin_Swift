@@ -85,12 +85,14 @@ extension WYClassViewController:OneClassViewDelegate,TwoClassViewDelegate {
         requestTwoClassViewData(dic: ["parentId":model.id])
     }
     
-    func collectionViewCell(collectionViewCell: TwoClassCell?, didSelectedItemAt index: Int) {
+    func collectionViewCell(collectionViewCell: TwoClassCell?, didSelectedItemAt indexPath: IndexPath) {
         //
-        
+        let model = self.twoClassView.categoryModel?[indexPath.section]
         let listVC = YYClassListViewController()
         listVC.vcTitle = collectionViewCell?.goodsModel?.name
-        listVC.categoryId = collectionViewCell?.goodsModel?.id
+        listVC.classList = model?.goodsCategoryList;
+        listVC.index = indexPath.item
+        listVC.type = "category"
         navigationController?.pushViewController(listVC, animated: true)
     }
 }

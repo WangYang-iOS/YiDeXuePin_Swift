@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="td5-Un-bim" customClass="YYBannerScrollView" customModule="DiYa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oI-5F-rL3">
+                    <rect key="frame" x="0.0" y="0.0" width="322" height="45"/>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjl-O4-lxd">
+                    <rect key="frame" x="330" y="0.0" width="45" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="Vy8-YF-2FI"/>
+                        <constraint firstAttribute="width" constant="45" id="r6C-My-Ky2"/>
+                    </constraints>
+                    <state key="normal" image="icon_category_close"/>
+                    <state key="selected" image="icon_category_close"/>
+                    <connections>
+                        <action selector="openClassList:" destination="td5-Un-bim" eventType="touchUpInside" id="RhV-D2-rIH"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="4oI-5F-rL3" firstAttribute="top" secondItem="td5-Un-bim" secondAttribute="top" id="NBk-yt-tw1"/>
+                <constraint firstAttribute="bottom" secondItem="4oI-5F-rL3" secondAttribute="bottom" id="QMz-pE-IVr"/>
+                <constraint firstItem="xjl-O4-lxd" firstAttribute="top" secondItem="td5-Un-bim" secondAttribute="top" id="Zuj-Vv-U4x"/>
+                <constraint firstAttribute="trailing" secondItem="xjl-O4-lxd" secondAttribute="trailing" id="f3d-44-nUU"/>
+                <constraint firstItem="xjl-O4-lxd" firstAttribute="leading" secondItem="4oI-5F-rL3" secondAttribute="trailing" constant="8" id="fK2-Yv-y0x"/>
+                <constraint firstItem="4oI-5F-rL3" firstAttribute="leading" secondItem="td5-Un-bim" secondAttribute="leading" id="icg-we-X1H"/>
+                <constraint firstAttribute="bottom" secondItem="xjl-O4-lxd" secondAttribute="bottom" id="kfV-b5-sra"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="scrlloView" destination="4oI-5F-rL3" id="Emi-Ot-p77"/>
+            </connections>
+            <point key="canvasLocation" x="-1" y="-3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_category_close" width="8" height="4"/>
+    </resources>
+</document>
