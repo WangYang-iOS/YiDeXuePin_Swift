@@ -27,7 +27,7 @@ class WYNetWorkTool {
             dictionary["accessToken"] = WYCommomMethod.valueForKey(key: ACCESS_TOKEN)
         }
         
-        print("请求参数：\(dic)")
+        print("请求参数：\(dictionary)")
         
         Alamofire.request(BASE_URL + url, method: .post, parameters: dictionary, encoding: URLEncoding.default).responseJSON { (response) in
             switch response.result.isSuccess {

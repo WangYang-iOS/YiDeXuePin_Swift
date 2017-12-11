@@ -16,6 +16,8 @@ class WYBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        automaticallyAdjustsScrollViewInsets = false
+        
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(endEdit))
         tap.delegate = self;
         view.addGestureRecognizer(tap)
