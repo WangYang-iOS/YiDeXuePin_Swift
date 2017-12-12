@@ -98,6 +98,12 @@ extension YYBannerScrollView {
             self.lineLabel.bounds = CGRect(x: 0, y: 0, width: button.frame.size.width, height: 2)
             self.lineLabel.center = CGPoint(x: button.center.x, y: self.scrlloView.frame.size.height - 1)
         }) { (finish) in
+            guard let titleArray = self.titleArray else {
+                return
+            }
+            if titleArray.count <= 3 {
+                return
+            }
             let center_x = button.center.x
             let scrollView_width = self.scrlloView.frame.size.width
             let scrollView_contentWidth = self.scrlloView.contentSize.width

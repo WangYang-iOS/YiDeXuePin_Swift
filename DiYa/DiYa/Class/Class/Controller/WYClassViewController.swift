@@ -40,6 +40,7 @@ extension WYClassViewController {
                     return
                 }
                 self.oneClassView.categoryMenu = array as? [CategoryModelList]
+                self.oneClassView.index = 0;
                 self.categoryList = array as? [CategoryModelList]
                 
                 guard let json1 = dic["categoryModelList"],
@@ -54,9 +55,7 @@ extension WYClassViewController {
             }
         }
     }
-    
     ///根据一级分类获取二级分类
-    
     func requestTwoClassViewData(dic:[String:Any]) {
         SHOW_PROGRESS(view: view)
         WYNetWorkTool.share.request(url: "/goods/category/info.htm", dic: dic) { (success, result) in
@@ -76,11 +75,9 @@ extension WYClassViewController {
 
 extension WYClassViewController:OneClassViewDelegate,TwoClassViewDelegate {
     func oneClassViewDidSelectedCell(index: Int) {
-        
         guard let array = categoryList else {
             return
         }
-        
         let model = array[index]
         requestTwoClassViewData(dic: ["parentId":model.id])
     }

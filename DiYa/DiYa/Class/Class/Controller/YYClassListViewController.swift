@@ -49,7 +49,10 @@ class YYClassListViewController: WYBaseViewController {
             bannerView.titleArray = titleArray
             allClassView.titleArray = classList
             var line = titleArray.count / 4
-            if line != 0 {
+            let line1 = titleArray.count % 4
+            if line == 0 && line1 > 0{
+                line = line + 1
+            }else if line != 0 {
                 line = line + 1
             }
             let height = line * (25 + 20) - 20 + 14 + 51

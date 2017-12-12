@@ -23,11 +23,20 @@ class OneClassView: UIView {
             tableView.reloadData()
         }
     }
-    
     var lastModel = CategoryModelList()
-    
+    var index : Int? {
+        didSet {
+            guard let categoryMenu = categoryMenu,
+                let index = index else {
+                return
+            }
+            lastModel = categoryMenu[index]
+            lastModel.isSelected = true
+            tableView.reloadData()
+        }
+    }
     override func awakeFromNib() {
-         super.awakeFromNib()
+        super.awakeFromNib()
         setUI()
     }
 }
@@ -43,9 +52,9 @@ extension OneClassView {
 
 extension OneClassView:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "OneClassCell", for: indexPath) as? OneClassCell
-        cell?.categoryModelList = categoryMenu?[indexPath.row]
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "OneClassCell", for: indexPath) as! OneClassCell
+        cell.categoryModelList = categoryMenu?[indexPath.row]
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
