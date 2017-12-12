@@ -13,6 +13,7 @@ let PADDING : CGFloat = (SCREEN_WIDTH - 70 * 4) / 5.0;
 @objc protocol YYBannerScrollViewDelegate {
     @objc optional
     func bannerScrollViewclickIndex(index:Int)
+    func openClassView()
 }
 
 class YYBannerScrollView: UIView {
@@ -61,7 +62,7 @@ class YYBannerScrollView: UIView {
     }
     
     @IBAction func openClassList(_ sender: UIButton) {
-        
+        delegate?.openClassView()
     }
 }
 

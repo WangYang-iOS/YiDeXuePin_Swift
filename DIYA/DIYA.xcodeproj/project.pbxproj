@@ -45,6 +45,8 @@
 		1828597C1FB949660070241C /* YYWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1828597D1FB949660070241C /* YYWebImage.framework */; };
 		1828597F1FB968CE0070241C /* YYHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1828597E1FB968CE0070241C /* YYHeaderView.swift */; };
 		182859811FB968DA0070241C /* YYHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182859801FB968DA0070241C /* YYHeaderView.xib */; };
+		18429A691FDF56EF00ECB6B3 /* YYAllClassViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18429A671FDF56EF00ECB6B3 /* YYAllClassViewCell.swift */; };
+		18429A6A1FDF56EF00ECB6B3 /* YYAllClassViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18429A681FDF56EF00ECB6B3 /* YYAllClassViewCell.xib */; };
 		184AFC191F7CD1B8005A4378 /* WYLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184AFC171F7CD1B8005A4378 /* WYLoginViewController.swift */; };
 		184AFC1A1F7CD1B8005A4378 /* WYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184AFC181F7CD1B8005A4378 /* WYLoginViewController.xib */; };
 		184AFC1D1F7CE5C5005A4378 /* WYNetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184AFC1C1F7CE5C5005A4378 /* WYNetWorkTool.swift */; };
@@ -117,6 +119,8 @@
 		1828597D1FB949660070241C /* YYWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YYWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1828597E1FB968CE0070241C /* YYHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYHeaderView.swift; sourceTree = "<group>"; };
 		182859801FB968DA0070241C /* YYHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYHeaderView.xib; sourceTree = "<group>"; };
+		18429A671FDF56EF00ECB6B3 /* YYAllClassViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYAllClassViewCell.swift; sourceTree = "<group>"; };
+		18429A681FDF56EF00ECB6B3 /* YYAllClassViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYAllClassViewCell.xib; sourceTree = "<group>"; };
 		184AFC171F7CD1B8005A4378 /* WYLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYLoginViewController.swift; sourceTree = "<group>"; };
 		184AFC181F7CD1B8005A4378 /* WYLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WYLoginViewController.xib; sourceTree = "<group>"; };
 		184AFC1C1F7CE5C5005A4378 /* WYNetWorkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYNetWorkTool.swift; sourceTree = "<group>"; };
@@ -303,6 +307,8 @@
 				18B183411FDE6BA9004E666A /* YYBannerScrollView.xib */,
 				18B183431FDECB13004E666A /* YYAllClassView.swift */,
 				18B183451FDECB1E004E666A /* YYAllClassView.xib */,
+				18429A671FDF56EF00ECB6B3 /* YYAllClassViewCell.swift */,
+				18429A681FDF56EF00ECB6B3 /* YYAllClassViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -593,6 +599,7 @@
 				181D3CB21FB557C0007F581C /* ClassReusableView.xib in Resources */,
 				184AFC1A1F7CD1B8005A4378 /* WYLoginViewController.xib in Resources */,
 				1819224B1FCEAD4E003BA006 /* YYClassListViewController.xib in Resources */,
+				18429A6A1FDF56EF00ECB6B3 /* YYAllClassViewCell.xib in Resources */,
 				1853DB751FC5C2D7007ECF1F /* YYGoodsDetailController.xib in Resources */,
 				18B183461FDECB1E004E666A /* YYAllClassView.xib in Resources */,
 				1828597B1FB93D2C0070241C /* YYBannerView.xib in Resources */,
@@ -726,6 +733,7 @@
 				18F006A01F7A297600F68579 /* WYHomeViewController.swift in Sources */,
 				181D3CB11FB557C0007F581C /* ClassReusableView.swift in Sources */,
 				1828597F1FB968CE0070241C /* YYHeaderView.swift in Sources */,
+				18429A691FDF56EF00ECB6B3 /* YYAllClassViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

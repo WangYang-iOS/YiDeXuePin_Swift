@@ -25,14 +25,14 @@ class YYClassListViewController: WYBaseViewController {
     
     fileprivate lazy var allClassView : YYAllClassView = {
        let classView = YYAllClassView.loadXib1()
+        classView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 0)
+        classView.isHidden = true
         return classView as! YYAllClassView
     }()
-    
     
     var vcTitle:String?
     var categoryId : String?
     var type = ""
-    
     
     var goodsList = [GoodsModel]()
     var classList : [GoodsModel]? {
@@ -42,9 +42,17 @@ class YYClassListViewController: WYBaseViewController {
                 return
             }
             for (_,model) in classList.enumerated() {
+                print(model.isSelected)
                 titleArray.append(model.name)
             }
-            bannerView.titleArray = titleArray;
+            bannerView.titleArray = titleArray
+            allClassView.titleArray = classList
+            var line = titleArray.count / 4
+            if line != 0 {
+                line = line + 1
+            }
+            let height = line * (25 + 20) - 20 + 14 * 2
+            allClassView.frame.size.height = CGFloat(height)
         }
     }
     var index : Int? {
@@ -63,8 +71,6 @@ class YYClassListViewController: WYBaseViewController {
             topViewHeight.constant = 45
         }
         setUI()
-//        allClassView.frame = topView.bounds;
-//        topView.addSubview(allClassView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,6 +94,7 @@ extension YYClassListViewController {
             self.requestGoodsList(categoryId: self.categoryId ?? "")
         })
         topView.addSubview(bannerView)
+        view.addSubview(allClassView)
     }
 }
 
@@ -157,5 +164,20 @@ extension YYClassListViewController:YYBannerScrollViewDelegate {
         self.pageNumber = 0
         self.categoryId = model.id
         requestGoodsList(categoryId: model.id)
+    }
+    
+    func openClassView() {
+        allClassView.isHidden = false
+    }
+}
+
+extension YYClassListViewController {
+    fileprivate func showClassView() {
+        //
+        
+        
+    }
+    fileprivate func hiddenClassView() {
+        //
     }
 }
