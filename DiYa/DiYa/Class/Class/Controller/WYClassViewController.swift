@@ -87,10 +87,15 @@ extension WYClassViewController:OneClassViewDelegate,TwoClassViewDelegate {
     
     func collectionViewCell(collectionViewCell: TwoClassCell?, didSelectedItemAt indexPath: IndexPath) {
         //
-        let model = self.twoClassView.categoryModel?[indexPath.section]
+        guard let model = self.twoClassView.categoryModel?[indexPath.section] else {
+            return
+        }
+        for (_,model) in model.goodsCategoryList.enumerated() {
+            model.isSelected = false
+        }
         let listVC = YYClassListViewController()
         listVC.vcTitle = collectionViewCell?.goodsModel?.name
-        listVC.classList = model?.goodsCategoryList;
+        listVC.classList = model.goodsCategoryList;
         listVC.index = indexPath.item
         listVC.type = "category"
         navigationController?.pushViewController(listVC, animated: true)

@@ -24,10 +24,11 @@ class YYClassListViewController: WYBaseViewController {
     }()
     
     fileprivate lazy var allClassView : YYAllClassView = {
-       let classView = YYAllClassView.loadXib1()
+       let classView = YYAllClassView.loadXib1() as! YYAllClassView
         classView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 0)
         classView.isHidden = true
-        return classView as! YYAllClassView
+        classView.delegate = self
+        return classView
     }()
     
     var vcTitle:String?
@@ -51,25 +52,18 @@ class YYClassListViewController: WYBaseViewController {
             if line != 0 {
                 line = line + 1
             }
-            let height = line * (25 + 20) - 20 + 14 * 2
+            let height = line * (25 + 20) - 20 + 14 + 51
             allClassView.frame.size.height = CGFloat(height)
         }
     }
     var index : Int? {
         didSet {
             bannerView.index = index;
+            allClassView.index = index
         }
     }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        if type == "indexCategory" {
-            topViewHeight.constant = 0
-            requestGoodsList(categoryId: categoryId ?? "")
-        }else {
-            topViewHeight.constant = 45
-        }
         setUI()
     }
     
@@ -93,8 +87,14 @@ extension YYClassListViewController {
         collectionView.mj_footer = MJRefreshBackNormalFooter(refreshingBlock: {
             self.requestGoodsList(categoryId: self.categoryId ?? "")
         })
-        topView.addSubview(bannerView)
-        view.addSubview(allClassView)
+        if type == "indexCategory" {
+            topViewHeight.constant = 0
+            requestGoodsList(categoryId: categoryId ?? "")
+        }else {
+            topViewHeight.constant = 45
+            topView.addSubview(bannerView)
+            view.addSubview(allClassView)
+        }
     }
 }
 
@@ -179,5 +179,11 @@ extension YYClassListViewController {
     }
     fileprivate func hiddenClassView() {
         //
+    }
+}
+
+extension YYClassListViewController : YYAllClassViewDelegate {
+    func classViewClickIndex(index: Int) {
+        self.index = index
     }
 }
