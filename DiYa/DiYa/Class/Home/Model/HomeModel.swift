@@ -96,3 +96,11 @@ import Foundation
         return ["goodsCategoryList":GoodsModel.self]
     }
 }
+
+@objcMembers class SkuCategoryModel: NSObject {
+    var value = ""
+    var name = ""
+    override var description: String {
+        return self.yy_modelDescription()
+    }
+}

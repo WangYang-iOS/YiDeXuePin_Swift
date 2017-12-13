@@ -45,6 +45,8 @@
 		1828597C1FB949660070241C /* YYWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1828597D1FB949660070241C /* YYWebImage.framework */; };
 		1828597F1FB968CE0070241C /* YYHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1828597E1FB968CE0070241C /* YYHeaderView.swift */; };
 		182859811FB968DA0070241C /* YYHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182859801FB968DA0070241C /* YYHeaderView.xib */; };
+		182AEF851FE17F6F00859C6F /* YYGoodsCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182AEF841FE17F6F00859C6F /* YYGoodsCategoryView.swift */; };
+		182AEF871FE17FC200859C6F /* YYGoodsSingleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182AEF861FE17FC200859C6F /* YYGoodsSingleView.swift */; };
 		18429A691FDF56EF00ECB6B3 /* YYAllClassViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18429A671FDF56EF00ECB6B3 /* YYAllClassViewCell.swift */; };
 		18429A6A1FDF56EF00ECB6B3 /* YYAllClassViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18429A681FDF56EF00ECB6B3 /* YYAllClassViewCell.xib */; };
 		18429A6D1FDF677300ECB6B3 /* YYAllClassReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18429A6B1FDF677300ECB6B3 /* YYAllClassReusableView.swift */; };
@@ -61,6 +63,7 @@
 		18668A321FC707E000E4BB62 /* WYMineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18668A311FC707E000E4BB62 /* WYMineViewController.xib */; };
 		18724CD51FB4412E0084B324 /* YYModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18724CD61FB4412E0084B324 /* YYModel.framework */; };
 		18724CD71FB450E80084B324 /* MJExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18724CD81FB450E80084B324 /* MJExtension.framework */; };
+		1878BF081FE177F800895FA5 /* YYGoodsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878BF071FE177F800895FA5 /* YYGoodsInfoView.swift */; };
 		187D334C1FB1A9E8000BFA1D /* YYNetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D334B1FB1A9E8000BFA1D /* YYNetWorkTool.swift */; };
 		1889CE181FC81EAD008C2673 /* YYFavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1889CE161FC81EAD008C2673 /* YYFavoriteCell.swift */; };
 		1889CE191FC81EAD008C2673 /* YYFavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1889CE171FC81EAD008C2673 /* YYFavoriteCell.xib */; };
@@ -121,6 +124,8 @@
 		1828597D1FB949660070241C /* YYWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YYWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1828597E1FB968CE0070241C /* YYHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYHeaderView.swift; sourceTree = "<group>"; };
 		182859801FB968DA0070241C /* YYHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYHeaderView.xib; sourceTree = "<group>"; };
+		182AEF841FE17F6F00859C6F /* YYGoodsCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYGoodsCategoryView.swift; sourceTree = "<group>"; };
+		182AEF861FE17FC200859C6F /* YYGoodsSingleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYGoodsSingleView.swift; sourceTree = "<group>"; };
 		18429A671FDF56EF00ECB6B3 /* YYAllClassViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYAllClassViewCell.swift; sourceTree = "<group>"; };
 		18429A681FDF56EF00ECB6B3 /* YYAllClassViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYAllClassViewCell.xib; sourceTree = "<group>"; };
 		18429A6B1FDF677300ECB6B3 /* YYAllClassReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYAllClassReusableView.swift; sourceTree = "<group>"; };
@@ -147,6 +152,7 @@
 		18668A311FC707E000E4BB62 /* WYMineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WYMineViewController.xib; sourceTree = "<group>"; };
 		18724CD61FB4412E0084B324 /* YYModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YYModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18724CD81FB450E80084B324 /* MJExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MJExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1878BF071FE177F800895FA5 /* YYGoodsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYGoodsInfoView.swift; sourceTree = "<group>"; };
 		187D334B1FB1A9E8000BFA1D /* YYNetWorkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYNetWorkTool.swift; sourceTree = "<group>"; };
 		187D334D1FB1B40C000BFA1D /* DiYa-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DiYa-Bridging-Header.h"; sourceTree = "<group>"; };
 		1889CE161FC81EAD008C2673 /* YYFavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYFavoriteCell.swift; sourceTree = "<group>"; };
@@ -273,6 +279,7 @@
 		185954EC1F7C8FD500131B59 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1878BF061FE177D600895FA5 /* GoodsDetailViews */,
 				185954F71F7C907B00131B59 /* WYHomeTitleView.swift */,
 				1806F0841FB9943B00F77079 /* WYBannerView.swift */,
 				182859781FB93D210070241C /* YYBannerView.swift */,
@@ -397,6 +404,16 @@
 				1889CE171FC81EAD008C2673 /* YYFavoriteCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1878BF061FE177D600895FA5 /* GoodsDetailViews */ = {
+			isa = PBXGroup;
+			children = (
+				1878BF071FE177F800895FA5 /* YYGoodsInfoView.swift */,
+				182AEF841FE17F6F00859C6F /* YYGoodsCategoryView.swift */,
+				182AEF861FE17FC200859C6F /* YYGoodsSingleView.swift */,
+			);
+			path = GoodsDetailViews;
 			sourceTree = "<group>";
 		};
 		18F006751F7A04F200F68579 = {
@@ -702,6 +719,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1853DB741FC5C2D7007ECF1F /* YYGoodsDetailController.swift in Sources */,
+				182AEF871FE17FC200859C6F /* YYGoodsSingleView.swift in Sources */,
 				18B183441FDECB13004E666A /* YYAllClassView.swift in Sources */,
 				181D3C9F1FB48F77007F581C /* WYClassViewController.swift in Sources */,
 				181D3CBA1FB5991D007F581C /* YYScrollView.swift in Sources */,
@@ -710,6 +728,7 @@
 				18F0069C1F7A248600F68579 /* WYNavigationController.swift in Sources */,
 				189A5FE21F7A3F8B00213BFB /* WYExtensions.swift in Sources */,
 				1809FCEE1FC7B5F90075C837 /* YYFavoriteViewController.swift in Sources */,
+				1878BF081FE177F800895FA5 /* YYGoodsInfoView.swift in Sources */,
 				181D3CB71FB5956F007F581C /* HomeCell.swift in Sources */,
 				181D3CAD1FB55318007F581C /* TwoClassCell.swift in Sources */,
 				185954F81F7C907B00131B59 /* WYHomeTitleView.swift in Sources */,
@@ -717,6 +736,7 @@
 				1809FCF61FC7B6180075C837 /* YYExpressViewController.swift in Sources */,
 				1809FCEA1FC7B5E50075C837 /* YYMessageViewController.swift in Sources */,
 				1819224A1FCEAD4E003BA006 /* YYClassListViewController.swift in Sources */,
+				182AEF851FE17F6F00859C6F /* YYGoodsCategoryView.swift in Sources */,
 				1809FCF21FC7B60A0075C837 /* YYTicketViewController.swift in Sources */,
 				1822A2D91F7D1C2A00E99A4E /* UserInfo.swift in Sources */,
 				18F006821F7A04F200F68579 /* AppDelegate.swift in Sources */,
