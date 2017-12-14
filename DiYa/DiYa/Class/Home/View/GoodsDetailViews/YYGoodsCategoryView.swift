@@ -19,6 +19,7 @@ class YYGoodsCategoryView: UIView {
             for (i,model) in skuCategoryList.enumerated() {
                 let goodsSingleView = YYGoodsSingleView()
                 goodsSingleView.skuCategoryModel = model
+                self.addSubview(goodsSingleView)
                 let singleViewHeight = goodsSingleView.contentLabel.frame.size.height + CGFloat(24)
                 goodsSingleView.frame = CGRect(x: 0, y: lastViewHeight, width: SCREEN_WIDTH, height: singleViewHeight)
                 lastViewHeight = singleViewHeight + lastViewHeight
@@ -27,7 +28,6 @@ class YYGoodsCategoryView: UIView {
                 }else {
                     goodsSingleView.backgroundColor = UIColor.hexString(colorString: "ffffff")
                 }
-                self.addSubview(goodsSingleView)
             }
             self.frame.size.height = lastViewHeight
         }
