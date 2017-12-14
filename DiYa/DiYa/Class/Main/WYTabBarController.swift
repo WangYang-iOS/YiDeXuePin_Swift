@@ -42,12 +42,10 @@ extension WYTabBarController {
     
     fileprivate func addChilds(dictionary:[String:String]) -> UIViewController {
         
-        let spaceName = Bundle.main.infoDictionary?["CFBundleName"] as? String ?? ""
-        
         guard
         let imgName = dictionary["imageName"],
         let vcName = dictionary["vcName"],
-        let vcClass = NSClassFromString(spaceName + "." + vcName) as? UIViewController.Type else {
+        let vcClass = NSClassFromString(SPACE_NAME + "." + vcName) as? UIViewController.Type else {
             return UIViewController()
         }
         let vc = vcClass.init()
@@ -67,9 +65,8 @@ extension WYTabBarController {
 extension WYTabBarController:UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        let spaceName = Bundle.main.infoDictionary?["CFBundleName"] as? String ?? ""
         let vc = (viewController as! WYNavigationController).visibleViewController
-        if NSStringFromClass(vc!.classForCoder) == (spaceName + ".WYClassViewController") {
+        if NSStringFromClass(vc!.classForCoder) == (SPACE_NAME + ".WYClassViewController") {
             let vc = vc as! WYClassViewController
             vc.requestCategoryList()
         }

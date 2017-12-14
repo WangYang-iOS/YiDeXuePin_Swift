@@ -16,11 +16,14 @@
                 <outlet property="addShopCartButton" destination="J5I-4L-CgL" id="b3G-G6-Hds"/>
                 <outlet property="buyButton" destination="CX9-Yr-Siz" id="FDA-xM-Ria"/>
                 <outlet property="categoryView" destination="sae-Mm-CBD" id="c8E-kj-jhn"/>
+                <outlet property="goodsDesView" destination="S9u-9T-AuH" id="2zi-BT-jZd"/>
                 <outlet property="goodsInfoView" destination="BLr-4P-lVq" id="C2a-D3-nLr"/>
+                <outlet property="scrollViewWidth" destination="bxv-eV-sgv" id="7pP-kX-CrM"/>
                 <outlet property="skuCategoryViewHeight" destination="9ju-u2-sow" id="TAW-3r-2pi"/>
                 <outlet property="soldButton" destination="kC1-1o-1TI" id="U7n-kN-H4e"/>
                 <outlet property="topView" destination="nKJ-tm-57T" id="SkP-R0-3zG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webViewHeight" destination="WNK-R8-nbf" id="mzx-iY-X6u"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -192,7 +195,7 @@
                         <constraint firstAttribute="trailing" secondItem="BLr-4P-lVq" secondAttribute="trailing" id="HPN-TM-XRo"/>
                         <constraint firstItem="nKJ-tm-57T" firstAttribute="leading" secondItem="sML-AC-IE7" secondAttribute="leading" id="Jon-xw-mPD"/>
                         <constraint firstItem="BLr-4P-lVq" firstAttribute="top" secondItem="nKJ-tm-57T" secondAttribute="bottom" id="PvM-iC-bob"/>
-                        <constraint firstAttribute="bottom" secondItem="S9u-9T-AuH" secondAttribute="bottom" constant="147" id="ZdC-HL-yd8"/>
+                        <constraint firstAttribute="bottom" secondItem="S9u-9T-AuH" secondAttribute="bottom" id="ZdC-HL-yd8"/>
                         <constraint firstItem="nKJ-tm-57T" firstAttribute="top" secondItem="sML-AC-IE7" secondAttribute="top" id="bUh-oA-4dH"/>
                         <constraint firstItem="sae-Mm-CBD" firstAttribute="top" secondItem="BLr-4P-lVq" secondAttribute="bottom" id="l63-ii-DEj"/>
                         <constraint firstItem="S9u-9T-AuH" firstAttribute="top" secondItem="sae-Mm-CBD" secondAttribute="bottom" id="xoo-Vx-iK5"/>

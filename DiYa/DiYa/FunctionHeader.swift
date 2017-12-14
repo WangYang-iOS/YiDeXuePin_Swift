@@ -8,7 +8,7 @@
 
 import UIKit
 import MBProgressHUD
-
+let SPACE_NAME = Bundle.main.infoDictionary?["CFBundleName"] as? String ?? ""
 let SCREEN_WIDTH = UIScreen.main.bounds.size.width
 let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
 let HEIGHT_MULTIPLE = UIScreen.main.bounds.size.height/667.0
@@ -38,5 +38,9 @@ func SHOW_PROGRESS(view:UIView?) {
 
 func HIDDEN_PROGRESS(view:UIView?) {
     MBProgressHUD.hide(for: view, animated: true)
+}
+
+func RECT(x:CGFloat,y:CGFloat,width:CGFloat,height:CGFloat) -> CGRect {
+    return CGRect(x: x, y: y, width: width, height: height)
 }
 

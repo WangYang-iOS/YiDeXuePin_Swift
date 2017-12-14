@@ -76,4 +76,17 @@ extension WYBaseViewController {
         button.addTarget(self, action: #selector(clickLeftButton), for: .touchUpInside)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
     }
+    func rightBarButton(imgStr:String) {
+        let button = UIButton()
+        button.setImage(UIImage(named:imgStr), for: .normal)
+        button.imageEdgeInsets = UIEdgeInsetsMake(0, 20, 0, 0)
+        button.sizeToFit()
+        button.bounds = CGRect(x: 0, y: 0, width: 40, height: button.bounds.height)
+        button.addTarget(self, action: #selector(clickRightButton), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+    }
+    
+    @objc func clickRightButton() {
+        //
+    }
 }

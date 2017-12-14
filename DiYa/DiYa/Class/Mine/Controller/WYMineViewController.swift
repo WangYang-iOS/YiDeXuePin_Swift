@@ -10,17 +10,16 @@ import UIKit
 
 class WYMineViewController: WYBaseViewController {
 
+    @IBOutlet weak var scrollViewWidth: NSLayoutConstraint!
     @IBOutlet weak var headerImageVIew: UIImageView!
-    
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var signLabel: UILabel!
-    
     fileprivate var navigitionHidden = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "个人中心"
+        scrollViewWidth.constant = SCREEN_WIDTH
     }
     override func viewWillAppear(_ animated: Bool) {
          super.viewWillAppear(animated)

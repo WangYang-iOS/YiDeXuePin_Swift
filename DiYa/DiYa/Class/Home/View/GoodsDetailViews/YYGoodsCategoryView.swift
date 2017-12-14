@@ -17,7 +17,7 @@ class YYGoodsCategoryView: UIView {
                 return
             }
             for (i,model) in skuCategoryList.enumerated() {
-                let goodsSingleView = YYGoodsSingleView()
+                let goodsSingleView = YYGoodsSingleView.loadXib1() as! YYGoodsSingleView
                 goodsSingleView.skuCategoryModel = model
                 self.addSubview(goodsSingleView)
                 let singleViewHeight = goodsSingleView.contentLabel.frame.size.height + CGFloat(24)

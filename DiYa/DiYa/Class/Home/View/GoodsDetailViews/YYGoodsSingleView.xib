@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="OQG-pa-56S" customClass="YYGoodsSingleView" customModule="DiYa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMR-nY-4O8">
+                    <rect key="frame" x="15" y="12" width="31" height="14.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="eJi-86-pgm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1DT-kR-JLV">
+                    <rect key="frame" x="68" y="12" width="31" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="LMR-nY-4O8" firstAttribute="top" secondItem="OQG-pa-56S" secondAttribute="top" constant="12" id="2e1-83-9Y2"/>
+                <constraint firstItem="LMR-nY-4O8" firstAttribute="leading" secondItem="OQG-pa-56S" secondAttribute="leading" constant="15" id="NgO-Ap-0QL"/>
+                <constraint firstItem="1DT-kR-JLV" firstAttribute="leading" secondItem="LMR-nY-4O8" secondAttribute="trailing" constant="22" id="QOK-we-7or"/>
+                <constraint firstItem="1DT-kR-JLV" firstAttribute="top" secondItem="LMR-nY-4O8" secondAttribute="top" id="hMn-Y0-8Iw"/>
+                <constraint firstItem="1DT-kR-JLV" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="OQG-pa-56S" secondAttribute="trailing" constant="-15" id="hpz-4g-rYE"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="contentLabel" destination="1DT-kR-JLV" id="Hn5-MW-Nnh"/>
+                <outlet property="titleLabel" destination="LMR-nY-4O8" id="yOq-Ft-vdq"/>
+            </connections>
+            <point key="canvasLocation" x="-366" y="-400"/>
+        </view>
+    </objects>
+</document>

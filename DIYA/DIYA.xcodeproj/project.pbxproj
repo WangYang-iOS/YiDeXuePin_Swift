@@ -73,6 +73,7 @@
 		18B183421FDE6BA9004E666A /* YYBannerScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B183411FDE6BA9004E666A /* YYBannerScrollView.xib */; };
 		18B183441FDECB13004E666A /* YYAllClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B183431FDECB13004E666A /* YYAllClassView.swift */; };
 		18B183461FDECB1E004E666A /* YYAllClassView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B183451FDECB1E004E666A /* YYAllClassView.xib */; };
+		18B46F581FE2616A005038D7 /* YYGoodsSingleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B46F571FE2616A005038D7 /* YYGoodsSingleView.xib */; };
 		18F006821F7A04F200F68579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F006811F7A04F200F68579 /* AppDelegate.swift */; };
 		18F006891F7A04F200F68579 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F006881F7A04F200F68579 /* Assets.xcassets */; };
 		18F0069A1F7A241C00F68579 /* WYTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F006991F7A241C00F68579 /* WYTabBarController.swift */; };
@@ -163,6 +164,7 @@
 		18B183411FDE6BA9004E666A /* YYBannerScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYBannerScrollView.xib; sourceTree = "<group>"; };
 		18B183431FDECB13004E666A /* YYAllClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYAllClassView.swift; sourceTree = "<group>"; };
 		18B183451FDECB1E004E666A /* YYAllClassView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYAllClassView.xib; sourceTree = "<group>"; };
+		18B46F571FE2616A005038D7 /* YYGoodsSingleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYGoodsSingleView.xib; sourceTree = "<group>"; };
 		18BCD1F71F7D2BA000A22FE6 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F0067E1F7A04F200F68579 /* DiYa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiYa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F006811F7A04F200F68579 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 				1878BF071FE177F800895FA5 /* YYGoodsInfoView.swift */,
 				182AEF841FE17F6F00859C6F /* YYGoodsCategoryView.swift */,
 				182AEF861FE17FC200859C6F /* YYGoodsSingleView.swift */,
+				18B46F571FE2616A005038D7 /* YYGoodsSingleView.xib */,
 			);
 			path = GoodsDetailViews;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				1809FCF31FC7B60A0075C837 /* YYTicketViewController.xib in Resources */,
 				1809FCEF1FC7B5F90075C837 /* YYFavoriteViewController.xib in Resources */,
 				181D3CB81FB5956F007F581C /* HomeCell.xib in Resources */,
+				18B46F581FE2616A005038D7 /* YYGoodsSingleView.xib in Resources */,
 				181D3CBE1FB59990007F581C /* GoodsItem.xib in Resources */,
 				181D3CA01FB48F77007F581C /* WYClassViewController.xib in Resources */,
 				1889CE191FC81EAD008C2673 /* YYFavoriteCell.xib in Resources */,
