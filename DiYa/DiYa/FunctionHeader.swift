@@ -44,3 +44,10 @@ func RECT(x:CGFloat,y:CGFloat,width:CGFloat,height:CGFloat) -> CGRect {
     return CGRect(x: x, y: y, width: width, height: height)
 }
 
+func SIZE(width:CGFloat,height:CGFloat) -> CGSize {
+    return CGSize(width: width, height: height)
+}
+
+func POINT(x:CGFloat,y:CGFloat) -> CGPoint {
+    return CGPoint(x: x, y: y)
+}

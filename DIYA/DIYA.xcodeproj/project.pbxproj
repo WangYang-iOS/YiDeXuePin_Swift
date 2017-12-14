@@ -74,6 +74,12 @@
 		18B183441FDECB13004E666A /* YYAllClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B183431FDECB13004E666A /* YYAllClassView.swift */; };
 		18B183461FDECB1E004E666A /* YYAllClassView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B183451FDECB1E004E666A /* YYAllClassView.xib */; };
 		18B46F581FE2616A005038D7 /* YYGoodsSingleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B46F571FE2616A005038D7 /* YYGoodsSingleView.xib */; };
+		18B46F5C1FE2B265005038D7 /* YYGoodsSkuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B46F5B1FE2B265005038D7 /* YYGoodsSkuView.swift */; };
+		18B46F5E1FE2B270005038D7 /* YYGoodsSkuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B46F5D1FE2B270005038D7 /* YYGoodsSkuView.xib */; };
+		18B46F601FE2B7E3005038D7 /* YYChangeNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B46F5F1FE2B7E3005038D7 /* YYChangeNumberView.swift */; };
+		18B46F621FE2BB6E005038D7 /* YYSkuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B46F611FE2BB6E005038D7 /* YYSkuView.swift */; };
+		18B46F641FE2BB7A005038D7 /* YYSkuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B46F631FE2BB7A005038D7 /* YYSkuView.xib */; };
+		18B46F671FE2CF0D005038D7 /* YYGoodsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B46F661FE2CF0D005038D7 /* YYGoodsManager.swift */; };
 		18F006821F7A04F200F68579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F006811F7A04F200F68579 /* AppDelegate.swift */; };
 		18F006891F7A04F200F68579 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F006881F7A04F200F68579 /* Assets.xcassets */; };
 		18F0069A1F7A241C00F68579 /* WYTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F006991F7A241C00F68579 /* WYTabBarController.swift */; };
@@ -165,6 +171,12 @@
 		18B183431FDECB13004E666A /* YYAllClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYAllClassView.swift; sourceTree = "<group>"; };
 		18B183451FDECB1E004E666A /* YYAllClassView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYAllClassView.xib; sourceTree = "<group>"; };
 		18B46F571FE2616A005038D7 /* YYGoodsSingleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYGoodsSingleView.xib; sourceTree = "<group>"; };
+		18B46F5B1FE2B265005038D7 /* YYGoodsSkuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYGoodsSkuView.swift; sourceTree = "<group>"; };
+		18B46F5D1FE2B270005038D7 /* YYGoodsSkuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYGoodsSkuView.xib; sourceTree = "<group>"; };
+		18B46F5F1FE2B7E3005038D7 /* YYChangeNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYChangeNumberView.swift; sourceTree = "<group>"; };
+		18B46F611FE2BB6E005038D7 /* YYSkuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYSkuView.swift; sourceTree = "<group>"; };
+		18B46F631FE2BB7A005038D7 /* YYSkuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYSkuView.xib; sourceTree = "<group>"; };
+		18B46F661FE2CF0D005038D7 /* YYGoodsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYGoodsManager.swift; sourceTree = "<group>"; };
 		18BCD1F71F7D2BA000A22FE6 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F0067E1F7A04F200F68579 /* DiYa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiYa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F006811F7A04F200F68579 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -415,8 +427,21 @@
 				182AEF841FE17F6F00859C6F /* YYGoodsCategoryView.swift */,
 				182AEF861FE17FC200859C6F /* YYGoodsSingleView.swift */,
 				18B46F571FE2616A005038D7 /* YYGoodsSingleView.xib */,
+				18B46F5B1FE2B265005038D7 /* YYGoodsSkuView.swift */,
+				18B46F5D1FE2B270005038D7 /* YYGoodsSkuView.xib */,
+				18B46F5F1FE2B7E3005038D7 /* YYChangeNumberView.swift */,
+				18B46F611FE2BB6E005038D7 /* YYSkuView.swift */,
+				18B46F631FE2BB7A005038D7 /* YYSkuView.xib */,
 			);
 			path = GoodsDetailViews;
+			sourceTree = "<group>";
+		};
+		18B46F651FE2CEE7005038D7 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				18B46F661FE2CF0D005038D7 /* YYGoodsManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		18F006751F7A04F200F68579 = {
@@ -507,6 +532,7 @@
 		18F006981F7A23F100F68579 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				18B46F651FE2CEE7005038D7 /* Managers */,
 				1822A2D51F7D0F2D00E99A4E /* WYCommonMethods */,
 				184AFC1B1F7CE5B2005A4378 /* NetWorkTools */,
 				18F006BA1F7A35AF00F68579 /* WYExtenisons */,
@@ -611,9 +637,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18B46F641FE2BB7A005038D7 /* YYSkuView.xib in Resources */,
 				1809FCF31FC7B60A0075C837 /* YYTicketViewController.xib in Resources */,
 				1809FCEF1FC7B5F90075C837 /* YYFavoriteViewController.xib in Resources */,
 				181D3CB81FB5956F007F581C /* HomeCell.xib in Resources */,
+				18B46F5E1FE2B270005038D7 /* YYGoodsSkuView.xib in Resources */,
 				18B46F581FE2616A005038D7 /* YYGoodsSingleView.xib in Resources */,
 				181D3CBE1FB59990007F581C /* GoodsItem.xib in Resources */,
 				181D3CA01FB48F77007F581C /* WYClassViewController.xib in Resources */,
@@ -748,6 +776,7 @@
 				185954EA1F7C8E7800131B59 /* FunctionHeader.swift in Sources */,
 				187D334C1FB1A9E8000BFA1D /* YYNetWorkTool.swift in Sources */,
 				182859791FB93D210070241C /* YYBannerView.swift in Sources */,
+				18B46F621FE2BB6E005038D7 /* YYSkuView.swift in Sources */,
 				18429A6D1FDF677300ECB6B3 /* YYAllClassReusableView.swift in Sources */,
 				188B10C71FB2EF3100B940D8 /* HomeModel.swift in Sources */,
 				18B183401FDE6B9F004E666A /* YYBannerScrollView.swift in Sources */,
@@ -757,15 +786,18 @@
 				1889CE181FC81EAD008C2673 /* YYFavoriteCell.swift in Sources */,
 				1822A2D71F7D0F3F00E99A4E /* WYCommomMethod.swift in Sources */,
 				184AFC1D1F7CE5C5005A4378 /* WYNetWorkTool.swift in Sources */,
+				18B46F5C1FE2B265005038D7 /* YYGoodsSkuView.swift in Sources */,
 				18F0069E1F7A249500F68579 /* WYBaseViewController.swift in Sources */,
 				1809FCFA1FC7B6260075C837 /* YYAddressViewController.swift in Sources */,
 				1806F0851FB9943B00F77079 /* WYBannerView.swift in Sources */,
+				18B46F671FE2CF0D005038D7 /* YYGoodsManager.swift in Sources */,
 				181D3CA71FB53B04007F581C /* OneClassCell.swift in Sources */,
 				18F006A41F7A298A00F68579 /* WYMineViewController.swift in Sources */,
 				18F006A01F7A297600F68579 /* WYHomeViewController.swift in Sources */,
 				181D3CB11FB557C0007F581C /* ClassReusableView.swift in Sources */,
 				1828597F1FB968CE0070241C /* YYHeaderView.swift in Sources */,
 				18429A691FDF56EF00ECB6B3 /* YYAllClassViewCell.swift in Sources */,
+				18B46F601FE2B7E3005038D7 /* YYChangeNumberView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

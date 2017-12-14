@@ -22,6 +22,9 @@ class YYGoodsDetailController: WYBaseViewController {
     var goodsId : String?
     var pics = [String]()
     var goodsModel = GoodsModel()
+    var skuList = [SkuCategoryModel]()
+    var skuArray = [GoodsSkuModel]()
+    
     var isFavorite = false
     
     lazy var bannerView:YYBannerView! = {
@@ -33,6 +36,7 @@ class YYGoodsDetailController: WYBaseViewController {
         webView.navigationDelegate = self
         return webView
     }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollViewWidth.constant = SCREEN_WIDTH
@@ -40,8 +44,10 @@ class YYGoodsDetailController: WYBaseViewController {
         requestGoodsDetail()
     }
     @IBAction func addShopCartButton(_ sender: UIButton) {
+        YYGoodsManager.shareManagre.showGoodsSelectView(goodsModel:goodsModel, skuCategoryList: self.skuList, goodsSkuList: self.skuArray)
     }
     @IBAction func buyButton(_ sender: UIButton) {
+        YYGoodsManager.shareManagre.showGoodsSelectView(goodsModel:goodsModel,skuCategoryList: self.skuList, goodsSkuList: self.skuArray)
     }
 }
 ///UI
@@ -88,12 +94,16 @@ extension YYGoodsDetailController {
                     return
                 }
                 self.categoryView.skuCategoryList = skuCategoryList
+                self.skuList = skuCategoryList
+                
                 self.skuCategoryViewHeight.constant = self.categoryView.lastViewHeight
                 let urlStr = BASE_URL + "/goods/web/detail.htm?id=" + goodsModel.id
                 guard let url = URL(string: urlStr) else{
                     return
                 }
                 self.webView.load(URLRequest(url: url))
+
+                //判断是否已经收藏过
                 guard let favorite = json["favorite"] as? Bool else {
                     return
                 }
@@ -103,6 +113,20 @@ extension YYGoodsDetailController {
                 }else {
                     self.rightBarButton(imgStr: "icon_noCollect")
                 }
+            }
+        }
+    }
+    //请求商品规格列表
+    fileprivate func requestSkuData() {
+        WYNetWorkTool.share.request(url: "/goods/sku_list.htm", dic: ["id":goodsModel.id]) { (success, result) in
+            if success {
+                //
+                guard let result = result,
+                    let json = result["data"],
+                    let array = NSArray.yy_modelArray(with: GoodsSkuModel.self, json: json) as? [GoodsSkuModel] else {
+                        return
+                }
+                self.skuArray = array;
             }
         }
     }

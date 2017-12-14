@@ -41,6 +41,7 @@ import Foundation
     var price = ""
     var title = ""
     var sales = ""
+    var inventory = ""
     
     var name = ""
     var isHot = ""
@@ -100,6 +101,20 @@ import Foundation
 @objcMembers class SkuCategoryModel: NSObject {
     var value = ""
     var name = ""
+    override var description: String {
+        return self.yy_modelDescription()
+    }
+}
+
+@objc class GoodsSkuModel: NSObject {
+    var goodsId = ""
+    var id = ""
+    var discount = ""
+    var discountPrice = ""
+    var inventory = ""
+    var price = ""
+    var skuName = ""
+    var skuValue = ""
     override var description: String {
         return self.yy_modelDescription()
     }
