@@ -16,6 +16,8 @@ import UIKit
 class YYSkuView: UIView {
 
     @IBOutlet weak var skuLabel:UILabel!
+    fileprivate var lastLabel = UILabel()
+    
     weak var delegate : YYSkuViewDelegate?
     
     var lastMaxY : CGFloat = 0
@@ -47,25 +49,27 @@ extension YYSkuView {
         
         for (i,value) in array.enumerated() {
             labelWidth = ((value as NSString).size(withAttributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 12)])).width + CGFloat(28)
+            //判断下一个生成的Label的宽度 + 上一次Label的最大X值 是否大于 最大宽度 ，如果大于 换行，否则继续在这行创建
             if (lastMaxX + labelWidth) < maxWidth {
                 //不换行
                 if lastMaxX == CGFloat(0) {
-                    X = beginX + margin + lastMaxX
-                    lastMaxX = lastMaxX + margin + labelWidth
+                    //第一个label
+                    X = beginX
+                    lastMaxX = beginX + labelWidth
                     lastMaxY = lastMaxY + margin + CGFloat(24)
                 }else {
                     X = lastMaxX + margin
-                    Y = lastMaxY
+                    Y = lastMaxY - margin - CGFloat(24)
                     lastMaxX = lastMaxX + margin + labelWidth
                 }
             }else {
                 //换行
-                Y = lastMaxY + margin
+                Y = lastMaxY
                 X = beginX
                 lastMaxY = lastMaxY + margin + CGFloat(24)
-                lastMaxX = X
+                lastMaxX = beginX + labelWidth
             }
-            
+            print("x:\(X) Y:\(Y) labelWidth:\(labelWidth)")
             let label = UILabel(frame: RECT(x: X, y: Y, width: labelWidth, height: 24))
             label.backgroundColor = UIColor.hexString(colorString: "f2f2f2")
             label.font = UIFont.systemFont(ofSize: 12)
@@ -85,9 +89,17 @@ extension YYSkuView {
     @objc func tapLabel(tap:UITapGestureRecognizer) {
         //
         let label = tap.view as! UILabel
+        if lastLabel == label {
+            return
+        }
         guard let array = skuModel?.value.components(separatedBy: ",") else {
             return
         }
+        label.backgroundColor = UIColor.hexString(colorString: "c2001a")
+        label.textColor = UIColor.white
+        lastLabel.backgroundColor = UIColor.hexString(colorString: "f2f2f2")
+        lastLabel.textColor = UIColor.hexString(colorString: "666666")
+        lastLabel = label
         delegate?.didSelectedItem?(skuView: self, title: array[label.tag - 100])
     }
 }

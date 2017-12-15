@@ -8,11 +8,18 @@
 
 import UIKit
 
+@objc protocol YYGoodsSkuViewDelegate {
+    @objc optional
+    func didSelectedGoodsWith(skuValue:String,number:Int)
+}
+
 class YYGoodsSkuView: UIView {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var inventoryLabel: UILabel!
     @IBOutlet weak var skuView: UIView!
     @IBOutlet weak var skuViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var changeNumberView: YYChangeNumberView!
+    weak var delegate : YYGoodsSkuViewDelegate?
     var lastMaxY : CGFloat = 0
     var goodsSkuViewHieght : CGFloat = 0
     var dic = [Int:String]()
@@ -28,7 +35,7 @@ class YYGoodsSkuView: UIView {
     }
     
     var skuId = ""
-    
+    var skuValue = ""
     
     var skuList : [SkuCategoryModel]? {
         didSet {
@@ -48,6 +55,15 @@ class YYGoodsSkuView: UIView {
             goodsSkuViewHieght = skuView.frame.origin.y + skuView.frame.size.height + CGFloat(54 + 84)
         }
     }
+    @IBAction func clickButton(_ sender: UIButton) {
+        if sender.tag == 1000 {
+            //取消
+            YYGoodsManager.shareManagre.hiddenSelectView()
+        }else {
+            //确定
+            delegate?.didSelectedGoodsWith?(skuValue: skuValue, number: changeNumberView.number)
+        }
+    }
 }
 
 extension YYGoodsSkuView : YYSkuViewDelegate {
@@ -63,8 +79,8 @@ extension YYGoodsSkuView : YYSkuViewDelegate {
             let dictionary = dic.sorted(by: { (t1, t2) -> Bool in
                 return t1.0 < t2.0 ? true : false
             })
-            var skuValue = ""
-            for (key,value) in dictionary{
+            
+            for (key,value) in dictionary {
                 print(key,value)
                 skuValue = skuValue + "," + value
             }
@@ -75,6 +91,7 @@ extension YYGoodsSkuView : YYSkuViewDelegate {
                     skuId = model.id
                     priceLabel.text = "¥" + model.discountPrice
                     inventoryLabel.text = "库存" + model.inventory + "件"
+                    break
                 }else {
                     priceLabel.text = "¥" + model.price
                     inventoryLabel.text = "库存" + "0" + "件"

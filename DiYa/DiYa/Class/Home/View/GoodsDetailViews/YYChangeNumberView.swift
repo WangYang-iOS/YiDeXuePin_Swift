@@ -12,28 +12,19 @@ class YYChangeNumberView: UIView {
 
     @IBOutlet weak var numberLabel : UILabel!
     
-    var number : Int? {
+    var number : Int = 0 {
         didSet {
-            guard let number = number else {
-                return
-            }
             numberLabel.text = String(number)
         }
     }
     
     @IBAction func addNumber() {
-        guard var number = number else {
-            return
-        }
-        number += 1;
+        number += 1
     }
     @IBAction func deleteNumber() {
-        guard var number = number else {
-            return
-        }
         if number == 0 {
             return
         }
-        number -= 1;
+        number -= 1
     }
 }

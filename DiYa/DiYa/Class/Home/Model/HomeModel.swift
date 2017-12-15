@@ -106,7 +106,7 @@ import Foundation
     }
 }
 
-@objc class GoodsSkuModel: NSObject {
+@objcMembers class GoodsSkuModel: NSObject {
     var goodsId = ""
     var id = ""
     var discount = ""

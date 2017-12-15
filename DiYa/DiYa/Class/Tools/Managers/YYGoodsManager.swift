@@ -10,6 +10,7 @@ import UIKit
 
 var _goodsSelectView : YYGoodsSkuView!
 var _shadowView : UIView!
+var _complete: ((_ skuValue: String, _ number: Int)->())?
 
 class YYGoodsManager: NSObject {
     static let shareManagre = YYGoodsManager()
@@ -17,7 +18,8 @@ class YYGoodsManager: NSObject {
 }
 
 extension YYGoodsManager {
-    func showGoodsSelectView(goodsModel : GoodsModel, skuCategoryList:[SkuCategoryModel], goodsSkuList:[GoodsSkuModel]) {
+    func showGoodsSelectView(goodsModel : GoodsModel, skuCategoryList:[SkuCategoryModel], goodsSkuList:[GoodsSkuModel], complete:((_ skuValue: String, _ number: Int)->())?) {
+        _complete = complete
         let window = (UIApplication.shared.delegate as! AppDelegate).window
         _shadowView = UIView()
         _shadowView.frame = RECT(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT)
@@ -27,10 +29,12 @@ extension YYGoodsManager {
         _shadowView.addGestureRecognizer(tap)
         
         _goodsSelectView = YYGoodsSkuView.loadXib1() as! YYGoodsSkuView
+        _goodsSelectView.delegate = self
         window?.addSubview(_goodsSelectView)
         _goodsSelectView.goodsModel = goodsModel
         _goodsSelectView.skuList = skuCategoryList
         _goodsSelectView.goodsSkuList = goodsSkuList
+        _goodsSelectView.changeNumberView.number = 1;
         _goodsSelectView.frame = RECT(x: 0, y: SCREEN_HEIGHT, width: SCREEN_WIDTH, height: _goodsSelectView.goodsSkuViewHieght)
         
         UIView.animate(withDuration: 0.25) {
@@ -45,5 +49,11 @@ extension YYGoodsManager {
         }) { (finish) in
             _goodsSelectView.removeFromSuperview()
         }
+    }
+}
+
+extension YYGoodsManager : YYGoodsSkuViewDelegate {
+    func didSelectedGoodsWith(skuValue: String, number: Int) {
+        _complete?(skuValue,number)
     }
 }

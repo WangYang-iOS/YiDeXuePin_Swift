@@ -42,12 +42,22 @@ class YYGoodsDetailController: WYBaseViewController {
         scrollViewWidth.constant = SCREEN_WIDTH
         setUI()
         requestGoodsDetail()
+        requestSkuData()
     }
     @IBAction func addShopCartButton(_ sender: UIButton) {
-        YYGoodsManager.shareManagre.showGoodsSelectView(goodsModel:goodsModel, skuCategoryList: self.skuList, goodsSkuList: self.skuArray)
+        //加入购物车
+        YYGoodsManager.shareManagre.showGoodsSelectView(goodsModel:goodsModel, skuCategoryList: self.skuList, goodsSkuList: self.skuArray) { (skuValue, number) in
+            //
+            let dic = ["sku":skuValue,"goodsId":self.goodsModel.id,"number":number] as [String : Any]
+            self.requestAddCart(dic: dic)
+        }
     }
     @IBAction func buyButton(_ sender: UIButton) {
-        YYGoodsManager.shareManagre.showGoodsSelectView(goodsModel:goodsModel,skuCategoryList: self.skuList, goodsSkuList: self.skuArray)
+        //立即买入
+        YYGoodsManager.shareManagre.showGoodsSelectView(goodsModel:goodsModel, skuCategoryList: self.skuList, goodsSkuList: self.skuArray) { (skuValue, number) in
+            let dic = ["sku":skuValue,"goodsId":self.goodsModel.id,"number":number,"type":"goods"] as [String : Any]
+            self.requestBuyGoods(dic: dic)
+        }
     }
 }
 ///UI
@@ -67,8 +77,9 @@ extension YYGoodsDetailController {
     }
 }
 
-///请求商品详情
+///接口
 extension YYGoodsDetailController {
+    ///请求商品详情
     fileprivate func requestGoodsDetail() {
         guard let goodsId = goodsId else {
             return
@@ -116,21 +127,25 @@ extension YYGoodsDetailController {
             }
         }
     }
-    //请求商品规格列表
+    ///请求商品规格列表
     fileprivate func requestSkuData() {
-        WYNetWorkTool.share.request(url: "/goods/sku_list.htm", dic: ["id":goodsModel.id]) { (success, result) in
+        guard let goodsId = goodsId else {
+            return
+        }
+        WYNetWorkTool.share.request(url: "/goods/sku_list.htm", dic: ["id":goodsId]) { (success, result) in
             if success {
                 //
                 guard let result = result,
-                    let json = result["data"],
-                    let array = NSArray.yy_modelArray(with: GoodsSkuModel.self, json: json) as? [GoodsSkuModel] else {
+                    let json = result["data"] as? [String:Any],
+                    let goodsSkuList = json["goodsSkuList"],
+                    let array = NSArray.yy_modelArray(with: GoodsSkuModel.self, json: goodsSkuList) as? [GoodsSkuModel] else {
                         return
                 }
                 self.skuArray = array;
             }
         }
     }
-    
+    ///请求是否收藏
     fileprivate func requestFavorite() {
         SHOW_PROGRESS(view: view)
         WYNetWorkTool.share.request(url: "/goods/favorite.htm", dic: ["id":goodsModel.id]) { (success, result) in
@@ -143,6 +158,26 @@ extension YYGoodsDetailController {
                 }else {
                     self.rightBarButton(imgStr: "icon_noCollect")
                 }
+            }
+        }
+    }
+    ///请求加入购物车
+    fileprivate func requestAddCart(dic:[String:Any]) {
+        SHOW_PROGRESS(view: view)
+        WYNetWorkTool.share.request(url: "/cart/add.htm", dic: dic) { (success, result) in
+            HIDDEN_PROGRESS(view: self.view)
+            if success {
+                YYGoodsManager.shareManagre.hiddenSelectView()
+            }
+        }
+    }
+    ///请求立即购买
+    fileprivate func requestBuyGoods(dic:[String:Any]) {
+        SHOW_PROGRESS(view: view)
+        WYNetWorkTool.share.request(url: "/order/preview.htm", dic: dic) { (success, result) in
+            HIDDEN_PROGRESS(view: self.view)
+            if success {
+                YYGoodsManager.shareManagre.hiddenSelectView()
             }
         }
     }

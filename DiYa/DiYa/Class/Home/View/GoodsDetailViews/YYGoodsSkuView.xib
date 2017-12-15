@@ -35,7 +35,7 @@
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJ8-qN-wIB" userLabel="规格view">
                     <rect key="frame" x="0.0" y="83.5" width="375" height="60"/>
-                    <color key="backgroundColor" red="1" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="Piu-vq-3HL"/>
                     </constraints>
@@ -109,7 +109,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="clC-6Y-LeN">
                     <rect key="frame" x="0.0" y="197.5" width="375" height="84"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ja4-Rv-sJw">
+                        <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ja4-Rv-sJw">
                             <rect key="frame" x="35" y="37" width="135" height="37"/>
                             <color key="backgroundColor" red="0.95294117647058818" green="0.80000000000000004" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
@@ -125,8 +125,11 @@
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="clickButton:" destination="VgU-XT-Q4I" eventType="touchUpInside" id="ocX-dH-57t"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I47-0t-z5e">
+                        <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I47-0t-z5e">
                             <rect key="frame" x="205" y="37" width="135" height="37"/>
                             <color key="backgroundColor" red="0.76078431372549016" green="0.0" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
@@ -141,6 +144,9 @@
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="clickButton:" destination="VgU-XT-Q4I" eventType="touchUpInside" id="qVF-ic-I62"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -175,6 +181,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="changeNumberView" destination="IOn-TJ-Mf5" id="J4f-Xp-dJg"/>
                 <outlet property="inventoryLabel" destination="GeZ-9J-k2y" id="UL2-fK-1hz"/>
                 <outlet property="priceLabel" destination="SCa-hu-8sv" id="Jd0-Wv-ljO"/>
                 <outlet property="skuView" destination="uJ8-qN-wIB" id="ytP-2F-hAR"/>
