@@ -151,7 +151,9 @@ extension YYClassListViewController:UICollectionViewDelegate,UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let model = goodsList[indexPath.item]
         let vc = YYGoodsDetailController()
+        vc.goodsId = model.id
         navigationController?.pushViewController(vc, animated: true)
     }
 }

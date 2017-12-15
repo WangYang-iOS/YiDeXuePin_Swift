@@ -36,7 +36,6 @@ class WYHomeViewController: WYBaseViewController {
         }
         let vc = YYGoodsDetailController()
         vc.goodsId = model.id
-        vc.pics = pics
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

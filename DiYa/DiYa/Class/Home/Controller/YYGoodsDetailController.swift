@@ -20,7 +20,6 @@ class YYGoodsDetailController: WYBaseViewController {
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var soldButton: UIButton!
     var goodsId : String?
-    var pics = [String]()
     var goodsModel = GoodsModel()
     var skuList = [SkuCategoryModel]()
     var skuArray = [GoodsSkuModel]()
