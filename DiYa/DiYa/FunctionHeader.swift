@@ -13,6 +13,7 @@ let SCREEN_WIDTH = UIScreen.main.bounds.size.width
 let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
 let HEIGHT_MULTIPLE = UIScreen.main.bounds.size.height/667.0
 let WIDTH_MULTIPLE = UIScreen.main.bounds.size.width/375.0
+let STATUS_BAR_HEIGHT = UIApplication.shared.statusBarFrame.size.height
 
 let Goods_MULTIPLE = CGFloat(628 / 750.0)
 

@@ -43,6 +43,15 @@ import Foundation
     var sales = ""
     var inventory = ""
     
+    var cartId = ""
+    var skuId = ""
+    var discountPrice = ""
+    var skuName = ""
+    var skuValue = ""
+    var skuState = ""
+    var number = ""
+    var isInvalid : Bool = false
+    
     var name = ""
     var isHot = ""
     var sort = ""
@@ -119,3 +128,20 @@ import Foundation
         return self.yy_modelDescription()
     }
 }
+
+@objcMembers class ShopcartModel: NSObject {
+    var cartGoodsFormList = [GoodsModel]()
+    var categoryId = ""
+    var categoryName = ""
+    var type = ""
+    var isSelected : Bool = false
+    var isEditing : Bool = false
+    var isHidden : Bool = false
+    override var description: String {
+        return self.yy_modelDescription()
+    }
+    static func modelContainerPropertyGenericClass() -> [AnyHashable : Any]! {
+        return ["cartGoodsFormList":GoodsModel.self]
+    }
+}
+

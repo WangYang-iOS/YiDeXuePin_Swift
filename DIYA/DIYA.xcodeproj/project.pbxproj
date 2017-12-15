@@ -38,6 +38,11 @@
 		181D3CBA1FB5991D007F581C /* YYScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D3CB91FB5991D007F581C /* YYScrollView.swift */; };
 		181D3CBC1FB59983007F581C /* GoodsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D3CBB1FB59983007F581C /* GoodsItem.swift */; };
 		181D3CBE1FB59990007F581C /* GoodsItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181D3CBD1FB59990007F581C /* GoodsItem.xib */; };
+		1820D5911FE3ACB8001CD4B2 /* WYShopCartController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1820D5901FE3ACB8001CD4B2 /* WYShopCartController.xib */; };
+		1820D5941FE3B7EF001CD4B2 /* YYShopcartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1820D5921FE3B7EF001CD4B2 /* YYShopcartCell.swift */; };
+		1820D5951FE3B7EF001CD4B2 /* YYShopcartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1820D5931FE3B7EF001CD4B2 /* YYShopcartCell.xib */; };
+		1820D5971FE3DBCD001CD4B2 /* YYShopcartHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1820D5961FE3DBCD001CD4B2 /* YYShopcartHeaderView.swift */; };
+		1820D5991FE3DBDA001CD4B2 /* YYShopcartHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1820D5981FE3DBDA001CD4B2 /* YYShopcartHeaderView.xib */; };
 		1822A2D71F7D0F3F00E99A4E /* WYCommomMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1822A2D61F7D0F3F00E99A4E /* WYCommomMethod.swift */; };
 		1822A2D91F7D1C2A00E99A4E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1822A2D81F7D1C2A00E99A4E /* UserInfo.swift */; };
 		182859791FB93D210070241C /* YYBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182859781FB93D210070241C /* YYBannerView.swift */; };
@@ -122,6 +127,11 @@
 		181D3CB91FB5991D007F581C /* YYScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYScrollView.swift; sourceTree = "<group>"; };
 		181D3CBB1FB59983007F581C /* GoodsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsItem.swift; sourceTree = "<group>"; };
 		181D3CBD1FB59990007F581C /* GoodsItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoodsItem.xib; sourceTree = "<group>"; };
+		1820D5901FE3ACB8001CD4B2 /* WYShopCartController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WYShopCartController.xib; sourceTree = "<group>"; };
+		1820D5921FE3B7EF001CD4B2 /* YYShopcartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYShopcartCell.swift; sourceTree = "<group>"; };
+		1820D5931FE3B7EF001CD4B2 /* YYShopcartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYShopcartCell.xib; sourceTree = "<group>"; };
+		1820D5961FE3DBCD001CD4B2 /* YYShopcartHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYShopcartHeaderView.swift; sourceTree = "<group>"; };
+		1820D5981FE3DBDA001CD4B2 /* YYShopcartHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYShopcartHeaderView.xib; sourceTree = "<group>"; };
 		1822A2D61F7D0F3F00E99A4E /* WYCommomMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYCommomMethod.swift; sourceTree = "<group>"; };
 		1822A2D81F7D1C2A00E99A4E /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		1822A2DC1F7D21C600E99A4E /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -361,6 +371,10 @@
 		185954F11F7C900300131B59 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1820D5921FE3B7EF001CD4B2 /* YYShopcartCell.swift */,
+				1820D5931FE3B7EF001CD4B2 /* YYShopcartCell.xib */,
+				1820D5961FE3DBCD001CD4B2 /* YYShopcartHeaderView.swift */,
+				1820D5981FE3DBDA001CD4B2 /* YYShopcartHeaderView.xib */,
 			);
 			name = View;
 			path = DiYa/Class/Class/View;
@@ -370,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				185954E71F7C8C5E00131B59 /* WYShopCartController.swift */,
+				1820D5901FE3ACB8001CD4B2 /* WYShopCartController.xib */,
 			);
 			name = Controller;
 			path = DiYa/Class/Class/Controller;
@@ -646,10 +661,13 @@
 				181D3CBE1FB59990007F581C /* GoodsItem.xib in Resources */,
 				181D3CA01FB48F77007F581C /* WYClassViewController.xib in Resources */,
 				1889CE191FC81EAD008C2673 /* YYFavoriteCell.xib in Resources */,
+				1820D5951FE3B7EF001CD4B2 /* YYShopcartCell.xib in Resources */,
 				182859811FB968DA0070241C /* YYHeaderView.xib in Resources */,
+				1820D5991FE3DBDA001CD4B2 /* YYShopcartHeaderView.xib in Resources */,
 				181D3CA81FB53B04007F581C /* OneClassCell.xib in Resources */,
 				1809FCF71FC7B6180075C837 /* YYExpressViewController.xib in Resources */,
 				18668A321FC707E000E4BB62 /* WYMineViewController.xib in Resources */,
+				1820D5911FE3ACB8001CD4B2 /* WYShopCartController.xib in Resources */,
 				18429A6E1FDF677300ECB6B3 /* YYAllClassReusableView.xib in Resources */,
 				1809FCEB1FC7B5E50075C837 /* YYMessageViewController.xib in Resources */,
 				181D3CB21FB557C0007F581C /* ClassReusableView.xib in Resources */,
@@ -762,6 +780,7 @@
 				1809FCEE1FC7B5F90075C837 /* YYFavoriteViewController.swift in Sources */,
 				1878BF081FE177F800895FA5 /* YYGoodsInfoView.swift in Sources */,
 				181D3CB71FB5956F007F581C /* HomeCell.swift in Sources */,
+				1820D5941FE3B7EF001CD4B2 /* YYShopcartCell.swift in Sources */,
 				181D3CAD1FB55318007F581C /* TwoClassCell.swift in Sources */,
 				185954F81F7C907B00131B59 /* WYHomeTitleView.swift in Sources */,
 				1809FCFE1FC7B6370075C837 /* YYSettingViewController.swift in Sources */,
@@ -798,6 +817,7 @@
 				1828597F1FB968CE0070241C /* YYHeaderView.swift in Sources */,
 				18429A691FDF56EF00ECB6B3 /* YYAllClassViewCell.swift in Sources */,
 				18B46F601FE2B7E3005038D7 /* YYChangeNumberView.swift in Sources */,
+				1820D5971FE3DBCD001CD4B2 /* YYShopcartHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

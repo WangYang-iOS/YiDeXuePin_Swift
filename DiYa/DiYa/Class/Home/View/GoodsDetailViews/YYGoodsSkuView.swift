@@ -69,6 +69,7 @@ class YYGoodsSkuView: UIView {
 extension YYGoodsSkuView : YYSkuViewDelegate {
     func didSelectedItem(skuView: YYSkuView, title: String) {
         dic[skuView.tag - 10] = title
+        skuValue = ""
         guard
             let skuList = skuList else {
             return

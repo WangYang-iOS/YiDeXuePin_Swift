@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="x6k-cX-2hJ" customClass="YYShopcartHeaderView" customModule="DiYa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWh-Cu-hCq">
+                    <rect key="frame" x="0.0" y="-1" width="46" height="46"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="PQI-1c-2wY"/>
+                        <constraint firstAttribute="width" constant="46" id="fXi-cG-IsK"/>
+                    </constraints>
+                    <state key="normal" image="icon_unSelected"/>
+                    <state key="selected" image="icon_selected"/>
+                    <connections>
+                        <action selector="clickButton:" destination="x6k-cX-2hJ" eventType="touchUpInside" id="JC2-Yy-qyV"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQZ-Kb-iAe">
+                    <rect key="frame" x="46" y="0.0" width="4" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="pcD-pK-TfX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" image="icon_goods_accessory">
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="dWh-Cu-hCq" firstAttribute="leading" secondItem="x6k-cX-2hJ" secondAttribute="leading" id="ULQ-2h-gjk"/>
+                <constraint firstItem="dWh-Cu-hCq" firstAttribute="centerY" secondItem="x6k-cX-2hJ" secondAttribute="centerY" id="a0w-TB-1ch"/>
+                <constraint firstItem="jQZ-Kb-iAe" firstAttribute="centerY" secondItem="x6k-cX-2hJ" secondAttribute="centerY" id="dqs-mM-agM"/>
+                <constraint firstItem="jQZ-Kb-iAe" firstAttribute="leading" secondItem="dWh-Cu-hCq" secondAttribute="trailing" id="o75-fD-APO"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="selectedButton" destination="dWh-Cu-hCq" id="HlK-Yf-uct"/>
+                <outlet property="titleButton" destination="jQZ-Kb-iAe" id="lb4-CC-Luv"/>
+            </connections>
+            <point key="canvasLocation" x="11.5" y="90"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_goods_accessory" width="4" height="8"/>
+        <image name="icon_selected" width="16" height="16"/>
+        <image name="icon_unSelected" width="16" height="16"/>
+    </resources>
+</document>
