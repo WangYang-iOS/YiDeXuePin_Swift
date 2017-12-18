@@ -68,6 +68,9 @@
 		18668A321FC707E000E4BB62 /* WYMineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18668A311FC707E000E4BB62 /* WYMineViewController.xib */; };
 		18724CD51FB4412E0084B324 /* YYModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18724CD61FB4412E0084B324 /* YYModel.framework */; };
 		18724CD71FB450E80084B324 /* MJExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18724CD81FB450E80084B324 /* MJExtension.framework */; };
+		18770FA31FE76F6000F25E2F /* YYShopcartBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18770FA21FE76F6000F25E2F /* YYShopcartBottomView.swift */; };
+		18770FA61FE7AC0800F25E2F /* YYEditShopCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18770FA41FE7AC0800F25E2F /* YYEditShopCartCell.swift */; };
+		18770FA71FE7AC0800F25E2F /* YYEditShopCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18770FA51FE7AC0800F25E2F /* YYEditShopCartCell.xib */; };
 		1878BF081FE177F800895FA5 /* YYGoodsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878BF071FE177F800895FA5 /* YYGoodsInfoView.swift */; };
 		187D334C1FB1A9E8000BFA1D /* YYNetWorkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D334B1FB1A9E8000BFA1D /* YYNetWorkTool.swift */; };
 		1889CE181FC81EAD008C2673 /* YYFavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1889CE161FC81EAD008C2673 /* YYFavoriteCell.swift */; };
@@ -169,6 +172,9 @@
 		18668A311FC707E000E4BB62 /* WYMineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WYMineViewController.xib; sourceTree = "<group>"; };
 		18724CD61FB4412E0084B324 /* YYModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YYModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18724CD81FB450E80084B324 /* MJExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MJExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18770FA21FE76F6000F25E2F /* YYShopcartBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYShopcartBottomView.swift; sourceTree = "<group>"; };
+		18770FA41FE7AC0800F25E2F /* YYEditShopCartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYEditShopCartCell.swift; sourceTree = "<group>"; };
+		18770FA51FE7AC0800F25E2F /* YYEditShopCartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YYEditShopCartCell.xib; sourceTree = "<group>"; };
 		1878BF071FE177F800895FA5 /* YYGoodsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYGoodsInfoView.swift; sourceTree = "<group>"; };
 		187D334B1FB1A9E8000BFA1D /* YYNetWorkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYNetWorkTool.swift; sourceTree = "<group>"; };
 		187D334D1FB1B40C000BFA1D /* DiYa-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DiYa-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -373,8 +379,11 @@
 			children = (
 				1820D5921FE3B7EF001CD4B2 /* YYShopcartCell.swift */,
 				1820D5931FE3B7EF001CD4B2 /* YYShopcartCell.xib */,
+				18770FA41FE7AC0800F25E2F /* YYEditShopCartCell.swift */,
+				18770FA51FE7AC0800F25E2F /* YYEditShopCartCell.xib */,
 				1820D5961FE3DBCD001CD4B2 /* YYShopcartHeaderView.swift */,
 				1820D5981FE3DBDA001CD4B2 /* YYShopcartHeaderView.xib */,
+				18770FA21FE76F6000F25E2F /* YYShopcartBottomView.swift */,
 			);
 			name = View;
 			path = DiYa/Class/Class/View;
@@ -665,6 +674,7 @@
 				182859811FB968DA0070241C /* YYHeaderView.xib in Resources */,
 				1820D5991FE3DBDA001CD4B2 /* YYShopcartHeaderView.xib in Resources */,
 				181D3CA81FB53B04007F581C /* OneClassCell.xib in Resources */,
+				18770FA71FE7AC0800F25E2F /* YYEditShopCartCell.xib in Resources */,
 				1809FCF71FC7B6180075C837 /* YYExpressViewController.xib in Resources */,
 				18668A321FC707E000E4BB62 /* WYMineViewController.xib in Resources */,
 				1820D5911FE3ACB8001CD4B2 /* WYShopCartController.xib in Resources */,
@@ -791,11 +801,13 @@
 				1809FCF21FC7B60A0075C837 /* YYTicketViewController.swift in Sources */,
 				1822A2D91F7D1C2A00E99A4E /* UserInfo.swift in Sources */,
 				18F006821F7A04F200F68579 /* AppDelegate.swift in Sources */,
+				18770FA61FE7AC0800F25E2F /* YYEditShopCartCell.swift in Sources */,
 				18F0069A1F7A241C00F68579 /* WYTabBarController.swift in Sources */,
 				185954EA1F7C8E7800131B59 /* FunctionHeader.swift in Sources */,
 				187D334C1FB1A9E8000BFA1D /* YYNetWorkTool.swift in Sources */,
 				182859791FB93D210070241C /* YYBannerView.swift in Sources */,
 				18B46F621FE2BB6E005038D7 /* YYSkuView.swift in Sources */,
+				18770FA31FE76F6000F25E2F /* YYShopcartBottomView.swift in Sources */,
 				18429A6D1FDF677300ECB6B3 /* YYAllClassReusableView.swift in Sources */,
 				188B10C71FB2EF3100B940D8 /* HomeModel.swift in Sources */,
 				18B183401FDE6B9F004E666A /* YYBannerScrollView.swift in Sources */,
