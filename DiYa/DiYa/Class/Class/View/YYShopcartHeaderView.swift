@@ -8,9 +8,16 @@
 
 import UIKit
 
+@objc protocol YYShopcartHeaderViewDelegate {
+    @objc optional
+    func didSelectedCategory(categoryId:String)
+    func didClickCategory(shopcartModel:ShopcartModel)
+}
+
 class YYShopcartHeaderView: UIView {
     @IBOutlet weak var selectedButton: UIButton!
     @IBOutlet weak var titleButton: UIButton!
+    weak var delegate : YYShopcartHeaderViewDelegate?
     var shopCarModel : ShopcartModel? {
         didSet {
             guard let shopCarModel = shopCarModel else {
@@ -30,5 +37,15 @@ class YYShopcartHeaderView: UIView {
     }
     
     @IBAction func clickButton(_ sender: UIButton) {
+        if sender == selectedButton {
+            //选中
+            guard let shopcartModel = shopCarModel else {
+                return
+            }
+            delegate?.didClickCategory(shopcartModel: shopcartModel)
+        }else {
+            //查看分类
+            delegate?.didSelectedCategory?(categoryId: shopCarModel?.categoryId ?? "")
+        }
     }
 }

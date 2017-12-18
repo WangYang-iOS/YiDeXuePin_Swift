@@ -69,6 +69,9 @@ extension WYTabBarController:UITabBarControllerDelegate {
         if NSStringFromClass(vc!.classForCoder) == (SPACE_NAME + ".WYClassViewController") {
             let vc = vc as! WYClassViewController
             vc.requestCategoryList()
+        } else if NSStringFromClass(vc!.classForCoder) == (SPACE_NAME + ".WYShopCartController") {
+            let vc = vc as! WYShopCartController
+            vc.requestShopcartData()
         }
         
     }

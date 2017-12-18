@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WYShopCartController" customModule="DiYa" customModuleProvider="target">
             <connections>
                 <outlet property="bottomHeight" destination="d9L-dr-Zlp" id="3fc-IF-yuu"/>
+                <outlet property="bottomView" destination="Kdy-a3-Bhd" id="h1e-Kr-TTl"/>
                 <outlet property="tableView" destination="uhq-gD-EAW" id="aDS-K9-NGF"/>
                 <outlet property="view" destination="7mp-PA-2bX" id="v17-Id-BEJ"/>
             </connections>
@@ -21,12 +22,81 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kdy-a3-Bhd">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kdy-a3-Bhd" customClass="YYShopcartBottomView" customModule="DiYa" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="569" width="375" height="49"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abr-Fi-QUb">
+                            <rect key="frame" x="0.0" y="0.0" width="75" height="49"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="75" id="gIg-OX-KNF"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="-5" minY="0.0" maxX="5" maxY="0.0"/>
+                            <state key="normal" title="全选" image="icon_unSelected">
+                                <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="selected" image="icon_selected"/>
+                            <connections>
+                                <action selector="clickSelectedButton:" destination="Kdy-a3-Bhd" eventType="touchUpInside" id="YH8-TU-UMk"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6m-rj-SZr">
+                            <rect key="frame" x="252" y="5.5" width="108" height="37"/>
+                            <color key="backgroundColor" red="0.76078431372549016" green="0.0" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="108" id="JXW-a9-mMD"/>
+                                <constraint firstAttribute="height" constant="37" id="fcL-ty-Tws"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="提交订单">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <real key="value" value="18.5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="commitOrder:" destination="Kdy-a3-Bhd" eventType="touchUpInside" id="v0O-Zs-EAt"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="合计：¥%.2f（不含运费）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BJ-Tv-I4i">
+                            <rect key="frame" x="75" y="0.0" width="167" height="49"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="49" id="de1-q0-5Nn"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.76078431372549016" green="0.0" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zh9-MD-23Y">
+                            <rect key="frame" x="75" y="0.0" width="300" height="0.5"/>
+                            <color key="backgroundColor" red="0.89411764705882346" green="0.8901960784313725" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="XvN-X6-AB1"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="9BJ-Tv-I4i" firstAttribute="leading" secondItem="Abr-Fi-QUb" secondAttribute="trailing" id="1HI-u4-hbi"/>
+                        <constraint firstAttribute="trailing" secondItem="B6m-rj-SZr" secondAttribute="trailing" constant="15" id="3Vb-MF-ZPy"/>
+                        <constraint firstItem="B6m-rj-SZr" firstAttribute="centerY" secondItem="Kdy-a3-Bhd" secondAttribute="centerY" id="3YK-pz-UG6"/>
+                        <constraint firstItem="Zh9-MD-23Y" firstAttribute="leading" secondItem="Abr-Fi-QUb" secondAttribute="trailing" id="3vY-bl-xdT"/>
+                        <constraint firstItem="B6m-rj-SZr" firstAttribute="leading" secondItem="9BJ-Tv-I4i" secondAttribute="trailing" constant="10" id="D1v-e3-aiG"/>
+                        <constraint firstItem="Abr-Fi-QUb" firstAttribute="leading" secondItem="Kdy-a3-Bhd" secondAttribute="leading" id="W99-9S-wBp"/>
+                        <constraint firstAttribute="bottom" secondItem="Abr-Fi-QUb" secondAttribute="bottom" id="asf-j2-5bY"/>
+                        <constraint firstItem="9BJ-Tv-I4i" firstAttribute="centerY" secondItem="Kdy-a3-Bhd" secondAttribute="centerY" id="hHN-aJ-ZCU"/>
+                        <constraint firstItem="Abr-Fi-QUb" firstAttribute="top" secondItem="Kdy-a3-Bhd" secondAttribute="top" id="hg1-Fq-DNr"/>
+                        <constraint firstAttribute="trailing" secondItem="Zh9-MD-23Y" secondAttribute="trailing" id="keC-4B-ahw"/>
                         <constraint firstAttribute="height" constant="49" id="pmc-pL-jzG"/>
+                        <constraint firstItem="Zh9-MD-23Y" firstAttribute="top" secondItem="Kdy-a3-Bhd" secondAttribute="top" id="rLE-cr-mBD"/>
                     </constraints>
+                    <connections>
+                        <outlet property="priceLabel" destination="9BJ-Tv-I4i" id="qvF-67-QxJ"/>
+                    </connections>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="110" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uhq-gD-EAW">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="569"/>
@@ -50,4 +120,8 @@
             <point key="canvasLocation" x="9" y="111"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon_selected" width="16" height="16"/>
+        <image name="icon_unSelected" width="16" height="16"/>
+    </resources>
 </document>

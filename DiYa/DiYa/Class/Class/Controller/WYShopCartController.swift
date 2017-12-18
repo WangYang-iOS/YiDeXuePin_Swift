@@ -7,31 +7,40 @@
 //
 
 import UIKit
+import MJRefresh
 
 class WYShopCartController: WYBaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottomHeight: NSLayoutConstraint!
+    @IBOutlet weak var bottomView: YYShopcartBottomView!
+    
     var goodsList = [ShopcartModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "购物车"
-        bottomHeight.constant = tabBarController?.tabBar.frame.size.height ?? 49
-        tableView.register(UINib.init(nibName: "YYShopcartCell", bundle: nil), forCellReuseIdentifier: "YYShopcartCell")
-        requestShopcartData()
+        setUI()
     }
 }
 
 extension WYShopCartController : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "YYShopcartCell", for: indexPath) as! YYShopcartCell
+        cell.delegate = self
         let list = goodsList[indexPath.section]
         cell.goodsModel = list.cartGoodsFormList[indexPath.row]
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //
+        let model = goodsList[indexPath.section].cartGoodsFormList[indexPath.row]
+        let vc = YYGoodsDetailController()
+        vc.goodsId = model.id
+        navigationController?.pushViewController(vc, animated: true)
+    }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = YYShopcartHeaderView.loadXib1() as! YYShopcartHeaderView
         headerView.frame = RECT(x: 0, y: 0, width: SCREEN_WIDTH, height: 44)
+        headerView.delegate = self
         headerView.shopCarModel = goodsList[section]
         return headerView
     }
@@ -49,9 +58,46 @@ extension WYShopCartController : UITableViewDelegate,UITableViewDataSource {
          return 0.01
     }
 }
-
+///设置UI 下拉刷新
 extension WYShopCartController {
-    fileprivate func requestShopcartData() {
+    fileprivate func setUI() {
+        navigationItem.title = "购物车"
+        bottomHeight.constant = tabBarController?.tabBar.frame.size.height ?? 49
+        bottomView.delegate = self
+        tableView.register(UINib.init(nibName: "YYShopcartCell", bundle: nil), forCellReuseIdentifier: "YYShopcartCell")
+//        requestShopcartData()
+        tableView.mj_header = MJRefreshStateHeader.init(refreshingBlock: {
+            self.requestShopcartData()
+        })
+    }
+    
+    fileprivate func refreshSelectedprice() {
+        var price : CGFloat = 0
+        
+        for (_,shopcartModel) in goodsList.enumerated() {
+            if shopcartModel.isSelected {
+                for (_,goodsModel) in shopcartModel.cartGoodsFormList.enumerated() {
+//                    price = Float(goodsModel.marketPrice) * Float(goodsModel.number)
+                    
+                }
+            }else {
+                var allSelected = true
+                for (_,goodsModel) in shopcartModel.cartGoodsFormList.enumerated() {
+                    if goodsModel.isSelected == false {
+                        allSelected = false
+                    }
+                }
+                if allSelected {
+                    shopcartModel.isSelected = true
+                }
+            }
+        }
+        tableView.reloadData()
+    }
+}
+///求情数据
+extension WYShopCartController {
+    func requestShopcartData() {
         SHOW_PROGRESS(view: view)
         WYNetWorkTool.share.request(url: "/cart/list.htm", dic: [:]) { (success, result) in
             HIDDEN_PROGRESS(view: self.view)
@@ -64,7 +110,69 @@ extension WYShopCartController {
                 }
                 self.goodsList = array
             }
+            self.tableView.mj_header.endRefreshing()
             self.tableView.reloadData()
         }
+    }
+}
+
+extension WYShopCartController : YYShopcartHeaderViewDelegate {
+    func didClickCategory(shopcartModel: ShopcartModel) {
+        shopcartModel.isSelected = !shopcartModel.isSelected
+        //更改该分区全部商品的选中状态
+        for (_,goodsModel) in shopcartModel.cartGoodsFormList.enumerated() {
+            goodsModel.isSelected = shopcartModel.isSelected
+        }
+        tableView.reloadData()
+    }
+    func didSelectedCategory(categoryId: String) {
+        let vc = YYClassListViewController()
+        vc.categoryId = categoryId
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension WYShopCartController : YYShopcartCellDelegate {
+    func didSelectCell(goodsModel: GoodsModel) {
+        goodsModel.isSelected = !goodsModel.isSelected
+        ///遍历购物车数组，判断每个分区商品是否全部选中
+        for (_,shopcartModel) in goodsList.enumerated() {
+            //设置一个遍历，标记该分区是否全选
+            var allSelected = true
+            for (_,model) in shopcartModel.cartGoodsFormList.enumerated() {
+                //如果点击的商品是这个分区下
+                if model == goodsModel {
+                    //则先判断是否选中，如果没有选中，则该分区不是全选状态
+                    if goodsModel.isSelected == false {
+                        shopcartModel.isSelected = false
+                        allSelected = false
+                    }
+                }else {
+                    //如果点击的商品和遍历的商品不是同一个 ，则先判断是否选中，如果不是，则该分区并不是全部选中状态
+                    if model.isSelected == false {
+                        allSelected = false
+                    }
+                }
+            }
+            //将上述过程产生的标记赋值给该分区
+            shopcartModel.isSelected = allSelected
+        }
+        //刷新表格
+        tableView.reloadData()
+    }
+}
+
+extension WYShopCartController : YYShopcartBottomViewDelegate {
+    func didAllSelectedGoods(isSelected: Bool) {
+        for (_,shopcartModel) in goodsList.enumerated() {
+            shopcartModel.isSelected = isSelected
+            for (_,goodsModel) in shopcartModel.cartGoodsFormList.enumerated() {
+                goodsModel.isSelected = shopcartModel.isSelected
+            }
+        }
+        tableView.reloadData()
+    }
+    func didCommitOrder() {
+        //
     }
 }

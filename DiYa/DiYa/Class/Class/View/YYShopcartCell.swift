@@ -8,6 +8,11 @@
 
 import UIKit
 
+@objc protocol YYShopcartCellDelegate {
+    @objc optional
+    func didSelectCell(goodsModel : GoodsModel)
+}
+
 class YYShopcartCell: UITableViewCell {
     @IBOutlet weak var selectedButton: UIButton!
     @IBOutlet weak var goodsImageView: UIImageView!
@@ -15,7 +20,7 @@ class YYShopcartCell: UITableViewCell {
     @IBOutlet weak var skuLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var numberLabel: UILabel!
-    
+    weak var delegate : YYShopcartCellDelegate?
     var goodsModel : GoodsModel? {
         didSet {
             guard let goodsModel = goodsModel else {
@@ -43,6 +48,9 @@ class YYShopcartCell: UITableViewCell {
     }
     
     @IBAction func clickSelectButton(_ sender: UIButton) {
-        
+        guard let goodsModel = goodsModel else {
+            return
+        }
+        delegate?.didSelectCell?(goodsModel: goodsModel)
     }
 }
