@@ -49,6 +49,12 @@ extension YYFavoriteViewController:UICollectionViewDelegate,UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return favoriteList.count
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = YYGoodsDetailController()
+        vc.goodsId = favoriteList[indexPath.row].id
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension YYFavoriteViewController {

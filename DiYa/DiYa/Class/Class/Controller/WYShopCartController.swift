@@ -16,6 +16,11 @@ class WYShopCartController: WYBaseViewController {
     
     var goodsList = [ShopcartModel]()
     var price : CGFloat = 0
+    var isEditingShopCart: Bool = false {
+        didSet {
+            bottomView.isEditing = isEditingShopCart
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +30,19 @@ class WYShopCartController: WYBaseViewController {
 
 extension WYShopCartController : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "YYShopcartCell", for: indexPath) as! YYShopcartCell
-        cell.delegate = self
-        let list = goodsList[indexPath.section]
-        cell.goodsModel = list.cartGoodsFormList[indexPath.row]
-        return cell
+        if isEditingShopCart {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "YYEditShopCartCell", for: indexPath) as! YYEditShopCartCell
+            cell.delegate = self
+            let list = goodsList[indexPath.section]
+            cell.goodsModel = list.cartGoodsFormList[indexPath.row]
+            return cell
+        }else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "YYShopcartCell", for: indexPath) as! YYShopcartCell
+            cell.delegate = self
+            let list = goodsList[indexPath.section]
+            cell.goodsModel = list.cartGoodsFormList[indexPath.row]
+            return cell
+        }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //
@@ -63,11 +76,14 @@ extension WYShopCartController : UITableViewDelegate,UITableViewDataSource {
 extension WYShopCartController {
     fileprivate func setUI() {
         navigationItem.title = "购物车"
+        rightBarButton(title: "编辑")
+        isEditingShopCart = false
         bottomHeight.constant = tabBarController?.tabBar.frame.size.height ?? 49
         bottomView.delegate = self
         bottomView.price = "0.00"
         tableView.register(UINib.init(nibName: "YYShopcartCell", bundle: nil), forCellReuseIdentifier: "YYShopcartCell")
-//        requestShopcartData()
+        tableView.register(UINib.init(nibName: "YYEditShopCartCell", bundle: nil), forCellReuseIdentifier: "YYEditShopCartCell")
+        requestShopcartData()
         tableView.mj_header = MJRefreshStateHeader.init(refreshingBlock: {
             self.requestShopcartData()
         })
@@ -89,9 +105,20 @@ extension WYShopCartController {
             }
         }
         bottomView.price = String(format: "%.2f", price)
+        refreshBottomSelectedButton()
+    }
+    
+    fileprivate func refreshBottomSelectedButton() {
+        var allSelected = true
+        for (_,shopcartModel) in goodsList.enumerated() {
+            if !shopcartModel.isSelected {
+                allSelected = false
+            }
+        }
+        bottomView.allSelected = allSelected
     }
 }
-///求情数据
+///请求数据
 extension WYShopCartController {
     func requestShopcartData() {
         SHOW_PROGRESS(view: view)
@@ -160,6 +187,40 @@ extension WYShopCartController : YYShopcartCellDelegate {
     }
 }
 
+extension WYShopCartController : YYEditShopCartCellDelegate {
+    func didSelectedGoods(goodsModel: GoodsModel) {
+        goodsModel.isSelected = !goodsModel.isSelected
+        ///遍历购物车数组，判断每个分区商品是否全部选中
+        for (_,shopcartModel) in goodsList.enumerated() {
+            //设置一个标记，标记该分区是否全选
+            var allSelected = true
+            for (_,model) in shopcartModel.cartGoodsFormList.enumerated() {
+                //如果点击的商品是这个分区下
+                if model == goodsModel {
+                    //则先判断是否选中，如果没有选中，则该分区不是全选状态
+                    if goodsModel.isSelected == false {
+                        shopcartModel.isSelected = false
+                        allSelected = false
+                    }
+                }else {
+                    //如果点击的商品和遍历的商品不是同一个 ，则先判断是否选中，如果不是，则该分区并不是全部选中状态
+                    if model.isSelected == false {
+                        allSelected = false
+                    }
+                }
+            }
+            //将上述过程产生的标记赋值给该分区
+            shopcartModel.isSelected = allSelected
+        }
+        //刷新表格
+        tableView.reloadData()
+        refreshSelectedprice()
+    }
+    func didSelectedCategory(goodsModel: GoodsModel) {
+        //选择分类
+    }
+}
+
 extension WYShopCartController : YYShopcartBottomViewDelegate {
     func didAllSelectedGoods(isSelected: Bool) {
         for (_,shopcartModel) in goodsList.enumerated() {
@@ -173,5 +234,24 @@ extension WYShopCartController : YYShopcartBottomViewDelegate {
     }
     func didCommitOrder() {
         //
+    }
+    func didClickDeleteGoods() {
+        //
+    }
+    
+    func didClickFavorateGoods() {
+        //
+    }
+}
+
+extension WYShopCartController {
+    override func clickRightButton() {
+        isEditingShopCart = !isEditingShopCart
+        if isEditingShopCart {
+            rightBarButton(title: "完成")
+        }else {
+            rightBarButton(title: "编辑")
+        }
+        tableView.reloadData()
     }
 }

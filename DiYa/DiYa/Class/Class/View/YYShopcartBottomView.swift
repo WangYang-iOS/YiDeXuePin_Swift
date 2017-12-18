@@ -11,13 +11,48 @@ import UIKit
     @objc optional
     func didAllSelectedGoods(isSelected:Bool)
     func didCommitOrder()
+    func didClickDeleteGoods()
+    func didClickFavorateGoods()
 }
 
 class YYShopcartBottomView: UIView {
 
     @IBOutlet weak var priceLabel : UILabel!
+    @IBOutlet weak var deleteButton : UIButton!
+    @IBOutlet weak var favorateButton : UIButton!
+    @IBOutlet weak var commitButton : UIButton!
+    @IBOutlet weak var selectedButton : UIButton!
     
     weak var delegate : YYShopcartBottomViewDelegate?
+    
+    var isEditing : Bool? {
+        didSet {
+            guard let isEditing = isEditing else {
+                return
+            }
+            if isEditing {
+                deleteButton.isHidden = false
+                favorateButton.isHidden = false
+                priceLabel.isHidden = true
+                commitButton.isHidden = true
+            }else {
+                deleteButton.isHidden = true
+                favorateButton.isHidden = true
+                priceLabel.isHidden = false
+                commitButton.isHidden = false
+            }
+        }
+    }
+    
+    var allSelected : Bool? {
+        didSet {
+            guard let allSelected = allSelected else {
+                return
+            }
+            selectedButton.isSelected = allSelected
+        }
+    }
+    
     
     var price:String? {
         didSet {
@@ -43,4 +78,13 @@ class YYShopcartBottomView: UIView {
     @IBAction func commitOrder(_ sender : UIButton) {
         delegate?.didCommitOrder()
     }
+    
+    @IBAction func favoriteGoods(_ sender : UIButton) {
+        delegate?.didClickFavorateGoods()
+    }
+    @IBAction func deleteButton(_ sender : UIButton) {
+        delegate?.didClickDeleteGoods()
+    }
+    
+    
 }

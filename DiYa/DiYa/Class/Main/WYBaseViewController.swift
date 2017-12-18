@@ -85,6 +85,16 @@ extension WYBaseViewController {
         button.addTarget(self, action: #selector(clickRightButton), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
     }
+    func rightBarButton(title:String) {
+        let button = UIButton()
+        button.setTitle(title, for: [])
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        button.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -10)
+        button.sizeToFit()
+        button.bounds = CGRect(x: 0, y: 0, width: button.bounds.width + 10, height: 30)
+        button.addTarget(self, action: #selector(clickRightButton), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+    }
     
     @objc func clickRightButton() {
         //

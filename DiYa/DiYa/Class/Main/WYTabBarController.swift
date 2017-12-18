@@ -70,8 +70,8 @@ extension WYTabBarController:UITabBarControllerDelegate {
             let vc = vc as! WYClassViewController
             vc.requestCategoryList()
         } else if NSStringFromClass(vc!.classForCoder) == (SPACE_NAME + ".WYShopCartController") {
-            let vc = vc as! WYShopCartController
-            vc.requestShopcartData()
+//            let vc = vc as! WYShopCartController
+//            vc.requestShopcartData()
         }
         
     }

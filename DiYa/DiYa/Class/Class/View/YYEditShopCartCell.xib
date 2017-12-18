@@ -28,6 +28,9 @@
                         </constraints>
                         <state key="normal" image="icon_unSelected"/>
                         <state key="selected" image="icon_selected"/>
+                        <connections>
+                            <action selector="clickSelectedButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hPi-rt-XXM"/>
+                        </connections>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e1r-I8-KWe">
                         <rect key="frame" x="46" y="18" width="88" height="74"/>
@@ -62,14 +65,20 @@
                         <state key="normal" title="选择分类" image="icon_goods_accessory">
                             <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <connections>
+                            <action selector="clickCategoryButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ugp-g1-g70"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDy-K4-fSg">
+                    <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDy-K4-fSg">
                         <rect key="frame" x="336" y="70" width="24" height="24"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="24" id="nEw-Co-Q3A"/>
                             <constraint firstAttribute="width" constant="24" id="tfP-1h-fM8"/>
                         </constraints>
                         <state key="normal" image="icon_goods_add"/>
+                        <connections>
+                            <action selector="clickNumberButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Mhd-91-Jpy"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoY-VH-cGg">
                         <rect key="frame" x="294" y="76" width="42" height="13"/>
@@ -80,9 +89,12 @@
                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDC-Cx-hQz">
+                    <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDC-Cx-hQz">
                         <rect key="frame" x="270" y="70" width="24" height="24"/>
                         <state key="normal" image="icon_goods_delete"/>
+                        <connections>
+                            <action selector="clickNumberButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fUe-00-nm5"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -109,6 +121,13 @@
                     <constraint firstItem="RVu-nm-41V" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="yqW-Zy-nG6"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="categoryLabel" destination="hQO-Rk-ksp" id="xgO-ix-vVX"/>
+                <outlet property="goodsImageView" destination="e1r-I8-KWe" id="8UL-7v-Dmj"/>
+                <outlet property="numberLabel" destination="LoY-VH-cGg" id="cJo-W1-Qde"/>
+                <outlet property="selectedButton" destination="G2c-et-62T" id="QCZ-hP-l7e"/>
+                <outlet property="titleLabel" destination="RVu-nm-41V" id="rY5-kz-QPA"/>
+            </connections>
             <point key="canvasLocation" x="-362" y="-23"/>
         </tableViewCell>
     </objects>
