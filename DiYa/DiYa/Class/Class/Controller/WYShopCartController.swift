@@ -15,6 +15,7 @@ class WYShopCartController: WYBaseViewController {
     @IBOutlet weak var bottomView: YYShopcartBottomView!
     
     var goodsList = [ShopcartModel]()
+    var price : CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,35 +65,30 @@ extension WYShopCartController {
         navigationItem.title = "购物车"
         bottomHeight.constant = tabBarController?.tabBar.frame.size.height ?? 49
         bottomView.delegate = self
+        bottomView.price = "0.00"
         tableView.register(UINib.init(nibName: "YYShopcartCell", bundle: nil), forCellReuseIdentifier: "YYShopcartCell")
 //        requestShopcartData()
         tableView.mj_header = MJRefreshStateHeader.init(refreshingBlock: {
             self.requestShopcartData()
         })
     }
-    
+    ///计算选中的商品总价
     fileprivate func refreshSelectedprice() {
-        var price : CGFloat = 0
-        
+        price = 0
         for (_,shopcartModel) in goodsList.enumerated() {
             if shopcartModel.isSelected {
                 for (_,goodsModel) in shopcartModel.cartGoodsFormList.enumerated() {
-//                    price = Float(goodsModel.marketPrice) * Float(goodsModel.number)
-                    
+                    price = price + CGFloat((goodsModel.discountPrice as NSString).floatValue * (goodsModel.number as NSString).floatValue)
                 }
             }else {
-                var allSelected = true
                 for (_,goodsModel) in shopcartModel.cartGoodsFormList.enumerated() {
-                    if goodsModel.isSelected == false {
-                        allSelected = false
+                    if goodsModel.isSelected {
+                        price = price + CGFloat((goodsModel.discountPrice as NSString).floatValue * (goodsModel.number as NSString).floatValue)
                     }
-                }
-                if allSelected {
-                    shopcartModel.isSelected = true
                 }
             }
         }
-        tableView.reloadData()
+        bottomView.price = String(format: "%.2f", price)
     }
 }
 ///求情数据
@@ -124,6 +120,7 @@ extension WYShopCartController : YYShopcartHeaderViewDelegate {
             goodsModel.isSelected = shopcartModel.isSelected
         }
         tableView.reloadData()
+        refreshSelectedprice()
     }
     func didSelectedCategory(categoryId: String) {
         let vc = YYClassListViewController()
@@ -159,6 +156,7 @@ extension WYShopCartController : YYShopcartCellDelegate {
         }
         //刷新表格
         tableView.reloadData()
+        refreshSelectedprice()
     }
 }
 
@@ -171,6 +169,7 @@ extension WYShopCartController : YYShopcartBottomViewDelegate {
             }
         }
         tableView.reloadData()
+        refreshSelectedprice()
     }
     func didCommitOrder() {
         //

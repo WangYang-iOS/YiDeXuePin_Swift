@@ -24,7 +24,13 @@ class YYShopcartBottomView: UIView {
             guard let price = price else {
                 return
             }
-            priceLabel.text = price
+            let string = "合计：¥\(price)（不含运费）"
+            let attributedStr = NSMutableAttributedString(string: string)
+            attributedStr.addAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 12),
+                                         NSAttributedStringKey.foregroundColor:UIColor.hexString(colorString: "333333")], range: NSRange(location: 0, length: 3))
+            attributedStr.addAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 14)], range: NSRange(location: 3, length: string.count - 3 - 6))
+            attributedStr.addAttributes([NSAttributedStringKey.font:UIFont.systemFont(ofSize: 10)], range: NSRange(location: string.count - 6, length: 6))
+            priceLabel.attributedText = attributedStr
         }
     }
     
