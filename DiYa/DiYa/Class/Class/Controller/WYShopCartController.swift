@@ -19,12 +19,23 @@ class WYShopCartController: WYBaseViewController {
     var isEditingShopCart: Bool = false {
         didSet {
             bottomView.isEditing = isEditingShopCart
+            if isEditingShopCart {
+                rightBarButton(title: "完成")
+            }else {
+                rightBarButton(title: "编辑")
+            }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        isEditingShopCart = false
+        tableView.reloadData()
     }
 }
 
@@ -76,7 +87,6 @@ extension WYShopCartController : UITableViewDelegate,UITableViewDataSource {
 extension WYShopCartController {
     fileprivate func setUI() {
         navigationItem.title = "购物车"
-        rightBarButton(title: "编辑")
         isEditingShopCart = false
         bottomHeight.constant = tabBarController?.tabBar.frame.size.height ?? 49
         bottomView.delegate = self
@@ -247,11 +257,6 @@ extension WYShopCartController : YYShopcartBottomViewDelegate {
 extension WYShopCartController {
     override func clickRightButton() {
         isEditingShopCart = !isEditingShopCart
-        if isEditingShopCart {
-            rightBarButton(title: "完成")
-        }else {
-            rightBarButton(title: "编辑")
-        }
         tableView.reloadData()
     }
 }
